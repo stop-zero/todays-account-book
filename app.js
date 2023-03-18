@@ -24,4 +24,5 @@ app.get('/main', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`SERVER RUNNING ${PORT} !`);
+    console.log(`http://localhost:${PORT}`);
 })
