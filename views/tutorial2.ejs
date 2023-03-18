@@ -30,6 +30,7 @@
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
           rel="stylesheet"
         />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <style>
           body {
             background-color: #6fb1b4;
@@ -80,14 +81,17 @@
             padding-top: 20%;
             font-weight: 700;
           }
-          .select {
+          .select,
+          .select2 {
             padding: 15px 10px;
             padding-top: 7rem;
           }
-          .select input[type="radio"] {
+          .select input[type="radio"],
+          .select2 input[type="radio"] {
             display: none;
           }
-          .select input[type="radio"] + label {
+          .select input[type="radio"] + label,
+          .select2 input[type="radio"] + label {
             display: inline-block;
             cursor: pointer;
             height: 3rem;
@@ -98,11 +102,13 @@
             font-size: 1rem;
             border-radius: 3rem;
           }
-          .select input[type="radio"] + label {
+          .select input[type="radio"] + label,
+          .select2 input[type="radio"] + label {
             background-color: #fff;
             color: #333;
           }
-          .select input[type="radio"]:checked + label {
+          .select input[type="radio"]:checked + label,
+          .select2 input[type="radio"]:checked + label {
             background-color: #333;
             color: #fff;
           }
@@ -121,7 +127,35 @@
             outline: none;
             padding-left: 10px;
             background-color: #fff;
-            margin-top: 7rem;
+            margin-top: 8rem;
+          }
+          #input-won::placeholder {
+            font-family: "Noto Sans KR", sans-serif;
+          }
+          .submit_btn {
+            width: 8rem;
+            line-height: 2rem;
+            text-align: center;
+            position: relative;
+            border: none;
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 15px;
+            font-family: "paybooc-Light", sans-serif;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.25s;
+            margin-top: 15rem;
+          }
+          .submit_btn:hover {
+            letter-spacing: 2px;
+            transform: scale(1.2);
+            cursor: pointer;
+          }
+          .w-btn-green {
+            background-color: #6fb1b4;
+            color: #fff;
           }
         </style>
       </head>
@@ -133,23 +167,23 @@
                 <h2>연령대가 어떻게 되시나요?🤔</h2>
                 <img src="/static/img/hotdog.png" alt="..." />
                 <div class="select">
-                  <input type="radio" id="select" name="shop" /><label
+                  <input type="radio" id="select" name="age" /><label
                     for="select"
                     >10대</label
                   >
-                  <input type="radio" id="select2" name="shop" /><label
+                  <input type="radio" id="select2" name="age" /><label
                     for="select2"
                     >20대</label
                   >
-                  <input type="radio" id="select3" name="shop" /><label
+                  <input type="radio" id="select3" name="age" /><label
                     for="select3"
                     >30대</label
                   >
-                  <input type="radio" id="select4" name="shop" /><label
+                  <input type="radio" id="select4" name="age" /><label
                     for="select4"
                     >40대</label
                   >
-                  <input type="radio" id="select5" name="shop" /><label
+                  <input type="radio" id="select5" name="age" /><label
                     for="select5"
                     >50대 이상</label
                   >
@@ -158,42 +192,42 @@
             </div>
             <div class="swiper-slide">
               <div class="inner-slide">
-                <h2>가장 많이 소비하는 카테고리를 3개만 골라주세요!🤔</h2>
+                <h2>가장 많이 소비하는 카테고리를 골라주세요!🤔</h2>
                 <img src="/static/img/hotdog.png" alt="..." />
-                <div class="select">
-                  <input type="radio" id="item1" name="shop" /><label
+                <div class="select2">
+                  <input type="radio" id="item1" name="category" /><label
                     for="item1"
                     >식비</label
                   >
-                  <input type="radio" id="item2" name="shop" /><label
+                  <input type="radio" id="item2" name="category" /><label
                     for="item2"
                     >여행</label
                   >
-                  <input type="radio" id="item3" name="shop" /><label
+                  <input type="radio" id="item3" name="category" /><label
                     for="item3"
                     >건강</label
                   >
-                  <input type="radio" id="item4" name="shop" /><label
+                  <input type="radio" id="item4" name="category" /><label
                     for="item4"
                     >교통</label
                   >
-                  <input type="radio" id="item5" name="shop" /><label
+                  <input type="radio" id="item5" name="category" /><label
                     for="item5"
                     >주거</label
                   >
-                  <input type="radio" id="item6" name="shop" /><label
+                  <input type="radio" id="item6" name="category" /><label
                     for="item6"
                     >통신</label
                   >
-                  <input type="radio" id="item7" name="shop" /><label
+                  <input type="radio" id="item7" name="category" /><label
                     for="item7"
                     >카페</label
                   >
-                  <input type="radio" id="item8" name="shop" /><label
+                  <input type="radio" id="item8" name="category" /><label
                     for="item8"
                     >생활</label
                   >
-                  <input type="radio" id="item9" name="shop" /><label
+                  <input type="radio" id="item9" name="category" /><label
                     for="item9"
                     >금융</label
                   >
@@ -206,9 +240,16 @@
                 <img src="/static/img/hotdog.png" alt="..." />
                 <input
                   type="text"
-                  placeholder="금액을 입력해 주세요 !"
+                  placeholder="금액을 입력해 주세요 (숫자만) !"
                   id="input-won"
                 />
+                <br />
+                <button
+                  class="submit_btn w-btn-green"
+                  onclick="Swal.fire('결과를 확인해주세요 !')"
+                >
+                  제출
+                </button>
               </div>
             </div>
           </div>
