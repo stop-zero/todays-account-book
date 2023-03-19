@@ -31,6 +31,7 @@
           rel="stylesheet"
         />
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script defer src="/static/js/tutorial2.js"></script>
         <style>
           body {
             background-color: #6fb1b4;
@@ -167,26 +168,34 @@
                 <h2>연령대가 어떻게 되시나요?🤔</h2>
                 <img src="/static/img/hotdog.png" alt="..." />
                 <div class="select">
-                  <input type="radio" id="select" name="age" /><label
+                  <input type="radio" id="select" name="age" value="10" /><label
                     for="select"
                     >10대</label
                   >
-                  <input type="radio" id="select2" name="age" /><label
-                    for="select2"
-                    >20대</label
-                  >
-                  <input type="radio" id="select3" name="age" /><label
-                    for="select3"
-                    >30대</label
-                  >
-                  <input type="radio" id="select4" name="age" /><label
-                    for="select4"
-                    >40대</label
-                  >
-                  <input type="radio" id="select5" name="age" /><label
-                    for="select5"
-                    >50대 이상</label
-                  >
+                  <input
+                    type="radio"
+                    id="select2"
+                    name="age"
+                    value="20"
+                  /><label for="select2">20대</label>
+                  <input
+                    type="radio"
+                    id="select3"
+                    name="age"
+                    value="30"
+                  /><label for="select3">30대</label>
+                  <input
+                    type="radio"
+                    id="select4"
+                    name="age"
+                    value="40"
+                  /><label for="select4">40대</label>
+                  <input
+                    type="radio"
+                    id="select5"
+                    name="age"
+                    value="50"
+                  /><label for="select5">50대 이상</label>
                 </div>
               </div>
             </div>
@@ -195,42 +204,60 @@
                 <h2>가장 많이 소비하는 카테고리를 골라주세요!🤔</h2>
                 <img src="/static/img/hotdog.png" alt="..." />
                 <div class="select2">
-                  <input type="radio" id="item1" name="category" /><label
-                    for="item1"
-                    >식비</label
-                  >
-                  <input type="radio" id="item2" name="category" /><label
-                    for="item2"
-                    >여행</label
-                  >
-                  <input type="radio" id="item3" name="category" /><label
-                    for="item3"
-                    >건강</label
-                  >
-                  <input type="radio" id="item4" name="category" /><label
-                    for="item4"
-                    >교통</label
-                  >
-                  <input type="radio" id="item5" name="category" /><label
-                    for="item5"
-                    >주거</label
-                  >
-                  <input type="radio" id="item6" name="category" /><label
-                    for="item6"
-                    >통신</label
-                  >
-                  <input type="radio" id="item7" name="category" /><label
-                    for="item7"
-                    >카페</label
-                  >
-                  <input type="radio" id="item8" name="category" /><label
-                    for="item8"
-                    >생활</label
-                  >
-                  <input type="radio" id="item9" name="category" /><label
-                    for="item9"
-                    >금융</label
-                  >
+                  <input
+                    type="radio"
+                    id="item1"
+                    name="category"
+                    value="식비"
+                  /><label for="item1">식비</label>
+                  <input
+                    type="radio"
+                    id="item2"
+                    name="category"
+                    value="여행"
+                  /><label for="item2">여행</label>
+                  <input
+                    type="radio"
+                    id="item3"
+                    name="category"
+                    value="건강"
+                  /><label for="item3">건강</label>
+                  <input
+                    type="radio"
+                    id="item4"
+                    name="category"
+                    value="교통"
+                  /><label for="item4">교통</label>
+                  <input
+                    type="radio"
+                    id="item5"
+                    name="category"
+                    value="주거"
+                  /><label for="item5">주거</label>
+                  <input
+                    type="radio"
+                    id="item6"
+                    name="category"
+                    value="통신"
+                  /><label for="item6">통신</label>
+                  <input
+                    type="radio"
+                    id="item7"
+                    name="category"
+                    value="카페"
+                  /><label for="item7">카페</label>
+                  <input
+                    type="radio"
+                    id="item8"
+                    name="category"
+                    value="생활"
+                  /><label for="item8">생활</label>
+                  <input
+                    type="radio"
+                    id="item9"
+                    name="category"
+                    value="금융"
+                  /><label for="item9">금융</label>
                 </div>
               </div>
             </div>
@@ -239,17 +266,12 @@
                 <h2>한달에 평균적으로 얼마를 소비하시나요?🤔</h2>
                 <img src="/static/img/hotdog.png" alt="..." />
                 <input
-                  type="text"
+                  type="number"
                   placeholder="금액을 입력해 주세요 (숫자만) !"
                   id="input-won"
                 />
                 <br />
-                <button
-                  class="submit_btn w-btn-green"
-                  onclick="Swal.fire('결과를 확인해주세요 !')"
-                >
-                  제출
-                </button>
+                <button class="submit_btn w-btn-green">제출</button>
               </div>
             </div>
           </div>
