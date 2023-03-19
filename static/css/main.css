@@ -1,43 +1,43 @@
 .container1 {
-    width: 100%;
-    height: 100vh;
-    background-color: skyblue;
+  width: 100%;
+  height: 100vh;
+  background-color: skyblue;
 }
 
 .container2 {
-    width: 100%;
-    height: 100vh;
-    background-color: aquamarine;
+  width: 100%;
+  height: 100vh;
+  background-color: aquamarine;
 }
 
 .article {
-    width: 100%;
-    height: 70vh;
-    background-color: beige;
-    display: flex;
-    flex-direction: row;
+  width: 100%;
+  height: 70vh;
+  background-color: beige;
+  display: flex;
+  flex-direction: row;
 }
 
 .article_left {
-    width: 50%;
-    height: 70vh;
-    background-color: red;
+  width: 60%;
+  height: 70vh;
+  background-color: beige;
 }
 
 .article_right {
-    width: 50%;
-    height: 70vh;
-    background-color: azure;
+  width: 50%;
+  height: 70vh;
+  background-color: azure;
 }
 
 .article_footer {
-    width: 100%;
-    height: 30vh;
-    background-color: blue;
+  width: 100%;
+  height: 30vh;
+  background-color: blue;
 }
 
 .footer {
-    width: 100%;
-    height: 30vh;
-    background-color: aqua;
+  width: 100%;
+  height: 30vh;
+  background-color: aqua;
 }
