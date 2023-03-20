@@ -1,0 +1,146 @@
+.result {
+    width: 100%;
+    height: 100vh;
+    background-color: #6fb1b4;
+    display: flex;
+    flex-direction: row;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.outer-result {
+    width: 100%;
+    height: 90vh;
+    padding-top: 5vh;
+}
+
+.inner-result {
+    width: 50%;
+    min-width: 520px;
+    height: 98%;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 3rem;
+    font-size: 2rem;
+}
+
+.padding-setter {
+    padding: 3rem;
+}
+
+.result-tag {
+    width: 40%;
+    height: 4rem;
+    background-color: #f2d58f;
+    color: #fff;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    line-height: 4rem;
+    font-size: 1.4rem;
+}
+
+.result-tag:nth-child(2) {
+    margin-top: 1rem;
+}
+
+
+.tag-icon {
+    width: 20%;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.tag-name {
+    width: 80%;
+    text-align: left;
+}
+
+.inner-result p {
+    margin-top: 1.8rem;
+    font-size: 1.5vw;
+    font-weight: 300;
+    text-align: left;
+}
+
+.d-flex {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3rem;
+    background-color: #f2d58f;
+    height: 40vh;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+}
+
+.link-left {
+    width: 40%;
+    height: 100%;
+    background-color: antiquewhite;
+}
+
+.link-left img {
+    width: 100%;
+    height: 100%;
+}
+
+.link-right {
+    width: 60%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 576px) {
+    .inner-result {
+        min-width: 300px !important;
+    }
+
+    .d-flex-setter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .result-tag:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .d-flex {
+        flex-direction: column;
+        height: 30vh;
+    }
+
+    .link-left {
+        width: 100%;
+    }
+
+    .link-right {
+        width: 100%;
+    }
+
+    .link-right h2,
+    h3,
+    h4 {
+        font-size: 1vw;
+    }
+
+}

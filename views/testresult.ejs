@@ -6,9 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/static/css/reset.css" />
+    <link rel="stylesheet" href="/static/css/testresult.css" />
+    <script defer src="/static/js/testresult.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    test result !
-    <a href="/main">next</a>
+    <div class="result">
+      <div class="outer-result">
+        <div class="inner-result">
+          <div class="padding-setter">
+            <div class="d-flex-setter">
+              <div class="result-tag">
+                <div class="tag-icon">🍈</div>
+                <div class="tag-name">#과일_박사</div>
+              </div>
+              <div class="result-tag">
+                <div class="tag-icon">🍕</div>
+                <div class="tag-name">#프로_배달러</div>
+              </div>
+            </div>
+            <p class="result-percent"></p>
+            <p class="result-percent2"></p>
+            <div class="d-flex">
+              <div class="link-left">
+                <img src="/static/img/goldpig.png" alt="..." />
+              </div>
+              <div class="link-right">
+                <h2>제목</h2>
+                <h3>설명</h3>
+                <h4>링크>>></h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
