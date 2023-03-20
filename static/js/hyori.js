@@ -1,4 +1,3 @@
-// $(document).ready(function () {
 calendarInit();
 // });
 /*
@@ -82,6 +81,8 @@ function calendarInit() {
       let currentMonthDate = document.querySelectorAll(".dates .current");
       currentMonthDate[todayDate - 1].classList.add("today");
     }
+
+    dateClick();
   }
 
   // 이전달로 이동
@@ -97,4 +98,47 @@ function calendarInit() {
     thisMonth = new Date(currentYear, currentMonth + 1, 1);
     renderCalender(thisMonth);
   });
+
+  console.log($(".current"));
 }
+
+function dateClick() {
+  $(".current").click(function () {
+    console.log(`${this.innerText}일을 선택하셨습니다.`);
+  });
+
+  // 선택한 날짜에 해당되는 지출/소득 리스트 render
+  function renderList() {
+    let tmp = document.querySelector(".year-month");
+    tmp = tmp.innerText;
+    let year,
+      month = tmp.split(".");
+    console.log(year, month);
+
+    let date = this.innerText;
+  }
+
+  renderList();
+}
+
+// dateSelected[0].addEventListener("click", function () {
+//   console.log(`${this.innerText}일을 선택하셨습니다.`);
+// });
+
+// 반응형
+// 모바일 버전(576px 이하)으로 바뀌면 요일 표시가 더 짧은 월, 화, 수 로 바뀐다.
+window.onresize = function () {
+  if (window.innerWidth <= 576) {
+    let days = document.querySelectorAll(".days>.day");
+    days_li = ["월", "화", "수", "목", "금", "토", "일"];
+    for (let i = 0; i < days.length; i++) {
+      days[i].innerText = days_li[i];
+    }
+  } else if (window.innerWidth > 576) {
+    let days = document.querySelectorAll(".days>.day");
+    days_li = ["Mon", "Tue", "Wed", "Tur", "Fri", "Sat", "Son"];
+    for (let i = 0; i < days.length; i++) {
+      days[i].innerText = days_li[i];
+    }
+  }
+};
