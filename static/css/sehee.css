@@ -133,3 +133,21 @@ input:focus {
   flex-direction: row;
   justify-content: space-around;
 }
+
+.enter {
+  position: absolute;
+  background-color: #274b58;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 30px 30px 30px 30px;
+  border: 0;
+  text-align: center;
+  padding: 3%;
+  left: 85%;
+  top: 5%;
+}
+
+.enter:hover {
+  background-color: #0081f3;
+  color: white;
+}

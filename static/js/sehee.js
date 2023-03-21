@@ -7,6 +7,8 @@ let breakdown1 = document.querySelector(".breakdown1");
 let credit = document.querySelector(".btn-pay1");
 let expense = document.querySelector(".btn-pay2");
 
+let enter = document.querySelectorAll(".enter");
+
 let aa = () => {
   let breakdown1 = document.querySelector(".breakdown1");
   breakdown1.style.display = "flex";
