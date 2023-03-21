@@ -58,7 +58,7 @@
 
 .inner-result p {
     margin-top: 1.8rem;
-    font-size: 1.5vw;
+    font-size: 1.5rem;
     font-weight: 300;
     text-align: left;
 }
@@ -109,7 +109,36 @@
     justify-content: space-around;
 }
 
+.href-main {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+@media screen and (max-width: 1920px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    html {
+        font-size: 11px;
+    }
+}
+
 @media screen and (max-width: 576px) {
+    html {
+        font-size: 10px;
+    }
+
     .inner-result {
         min-width: 300px !important;
     }
@@ -126,7 +155,6 @@
 
     .d-flex {
         flex-direction: column;
-        height: 30vh;
     }
 
     .link-left {
@@ -140,7 +168,8 @@
     .link-right h2,
     h3,
     h4 {
-        font-size: 1vw;
+        font-size: 1.5rem !important;
+        padding: 0.3rem;
     }
 
 }
