@@ -1,4 +1,61 @@
-calendarInit();
+console.log("연결");
+
+let btn = document.querySelectorAll(".btn");
+console.log(btn);
+let breakdown1 = document.querySelector(".breakdown1");
+
+let credit = document.querySelector(".btn-pay1");
+let expense = document.querySelector(".btn-pay2");
+
+let enter = document.querySelectorAll(".enter");
+
+let aa = () => {
+  let breakdown1 = document.querySelector(".breakdown1");
+  breakdown1.style.display = "flex";
+  credit.style.display = "none";
+  expense.style.display = "none";
+};
+
+let bb = () => {
+  let breakdown2 = document.querySelector(".breakdown2");
+  breakdown2.style.display = "flex";
+  credit.style.display = "none";
+  expense.style.display = "none";
+};
+
+// btn.addEventListener("click", (e) => {
+//   e.preventDefault(); //브라우저의 기본동작을 막아줌
+//   let li = document.createElement("li");
+//   ul.append(li);
+
+//   let id = document.querySelector("input").value;
+//   let comment = document.querySelector("#input");
+
+//   li.innerHTML = `${id}`;
+// });
+
+// function changeResult() {
+//   let result = document.querySelector("input");
+//   result.innerHTML = `₩ ${input}`;
+// }
+
+function inputNumberFormat(obj) {
+  obj.value = comma(uncomma(obj.value));
+}
+
+function comma(str) {
+  str = String(str);
+  return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, "$1,");
+}
+
+function uncomma(str) {
+  str = String(str);
+  return str.replace(/[^\d]+/g, "");
+}
+
+console.log(
+  "---------------------------------------------------------------------------------------------------------------------"
+);
 // });
 /*
       달력 렌더링 할 때 필요한 정보 목록 
@@ -7,6 +64,8 @@ calendarInit();
       금월 마지막일 날짜와 요일
       전월 마지막일 날짜와 요일
   */
+
+calendarInit();
 
 function calendarInit() {
   // 날짜 정보 가져오기
@@ -27,8 +86,8 @@ function calendarInit() {
   let currentDate = thisMonth.getDate(); // 달력에서 표기하는 일
 
   // kst 기준 현재시간
-  // console.log(thisMonth);
-
+  // console.log(thidsMonth);
+  d;
   // 캘린더 렌더링
   renderCalender(thisMonth);
 
