@@ -2,11 +2,11 @@
 
 
 @media (max-width:500px) {
-  .tag-slide {
+  .tip-slide {
     width: 28rem !important;
     height: 36rem !important;
   }
-  .tag-slide .tag-slide-img img {
+  .tip-slide .tip-slide-img img {
     width: 28rem !important;
     height: 36rem !important;
   }
@@ -32,36 +32,21 @@ html {
   padding: 2rem;
 }
 
-#tag {
+#tip {
   padding: 4rem 0;
 }
 
-#tag .tag-slider {
-  height: 40rem;
-  padding: 2rem 0;
-  position: relative;
-}
 
-.tag-slide {
+.tip-slide {
   width: 30rem;
   height: 40rem;
   position: relative;
 }
 
 
-.tag-slide .tag-slide-img img {
+.tip-slide .tip-slide-img img {
   width: 30rem;
   height: 40rem;
   border-radius: 2rem;
   object-fit: cover;
 }
-
-.tag-slider-control {
-  position: relative;
-  bottom: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
