@@ -1,4 +1,5 @@
 const urlParams = new URLSearchParams(location.search);
+console.log(location.search);
 console.log(urlParams.get('age'));
 console.log(urlParams.get('category'));
 console.log(urlParams.get('inputWon'));
