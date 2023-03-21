@@ -5,9 +5,10 @@ document.querySelector('.submit_btn').onclick = () => {
     let selectedAge = Array.from(ageRadios).find(radio => radio.checked);
     let selectedCategory = Array.from(categoryRadios).find(radio => radio.checked);
     let inputWonValue = inputWon.value;
+    const formatter = new Intl.NumberFormat('ko', { notation: 'compact' });
     console.log(selectedAge.value + selectedCategory.value + inputWonValue);
     Swal.fire({
-        title: `나이 : ${selectedAge.value}대 <br/> 가장 많은 소비 : ${selectedCategory.value} <br/> 평균 소비 금액 : ${inputWonValue}원`,
+        title: `나이 : ${selectedAge.value}대 <br/> 가장 많은 소비 : ${selectedCategory.value} <br/> 평균 소비 금액 : ${formatter.format(inputWonValue)}원`,
         text: "입력하신 정보가 맞으신가요?",
         icon: 'warning',
         showCancelButton: true,

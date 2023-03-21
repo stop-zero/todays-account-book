@@ -39,7 +39,7 @@
           .swiper {
             width: 100%;
             height: 90vh;
-            font-size: 50px;
+            font-size: 2.5rem;
             padding-top: 5vh;
             font-family: "Noto Sans KR", sans-serif;
           }
@@ -71,6 +71,7 @@
           }
           .inner-slide {
             width: 50%;
+            min-width: 520px;
             height: 98%;
             margin: 0 auto;
             background-color: #f4f4f4;
@@ -78,7 +79,7 @@
             border-radius: 3rem;
           }
           .inner-slide h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             padding-top: 20%;
             font-weight: 700;
           }
@@ -120,7 +121,7 @@
             left: 13%;
           }
           #input-won {
-            width: 500px;
+            width: 28rem;
             height: 3rem;
             font-size: 15px;
             border: 0;
@@ -158,6 +159,34 @@
             background-color: #6fb1b4;
             color: #fff;
           }
+          @media screen and (max-width: 576px) {
+            .inner-slide {
+              min-width: 300px !important;
+            }
+            .inner-slide h2 {
+              font-size: 1.5rem !important;
+              padding-left: 1rem;
+              padding-right: 1rem;
+            }
+            .submit_btn {
+              margin-top: 7rem !important;
+            }
+            .select input[type="radio"] + label,
+            .select2 input[type="radio"] + label {
+              display: inline-block;
+              cursor: pointer;
+              height: 3rem;
+              width: 7rem;
+              line-height: 3rem;
+              text-align: center;
+              font-weight: bold;
+              font-size: 1rem;
+              border-radius: 3rem;
+            }
+            #input-won {
+              width: 15rem;
+            }
+          }
         </style>
       </head>
       <body>
@@ -166,7 +195,7 @@
             <div class="swiper-slide">
               <div class="inner-slide">
                 <h2>연령대가 어떻게 되시나요?🤔</h2>
-                <img src="/static/img/hotdog.png" alt="..." />
+                <!-- <img src="/static/img/hotdog.png" alt="..." /> -->
                 <div class="select">
                   <input type="radio" id="select" name="age" value="10" /><label
                     for="select"
@@ -202,7 +231,6 @@
             <div class="swiper-slide">
               <div class="inner-slide">
                 <h2>가장 많이 소비하는 카테고리를 골라주세요!🤔</h2>
-                <img src="/static/img/hotdog.png" alt="..." />
                 <div class="select2">
                   <input
                     type="radio"
@@ -264,7 +292,6 @@
             <div class="swiper-slide">
               <div class="inner-slide">
                 <h2>한달에 평균적으로 얼마를 소비하시나요?🤔</h2>
-                <img src="/static/img/hotdog.png" alt="..." />
                 <input
                   type="number"
                   placeholder="금액을 입력해 주세요 (숫자만) !"

@@ -1,97 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>오늘의 가계부</title>
     <link rel="stylesheet" href="/static/css/reset.css" />
-    <!-- 폰트 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
-      rel="stylesheet"
-    />
+    
     <style>
-      * {
+      @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css); 
+      
+      @media (max-width: 996px) {
+        img {
+          display: none;
+        }
+        .title {
+          font-size: 4.8vw !important;
+        }
+
+        .catchphrase {
+          font-size: 2vw !important;
+        }
+
+        .container_right {
+          width: 52vw !important;
+        }
+
+        .body_bg {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 547px) {
+        .button {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+        }
+      }
+
+      /* --------------------------------------------------------------------- */
+      .body_bg {
+        background-color: rgb(55, 132, 255);
+      }
+
+      .box {
         font-family: "Noto Sans KR", sans-serif;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 100px 0px;
       }
 
       .container {
-        margin-top: 80px;
+        width: 80vw;
+        height: 70vh;
+        border-radius: 20px;
+        background-color: rgb(255, 221, 239);
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      img {
+        width: 35vw;
+        height: 50vh;
+        border-radius: 15px;
+        margin: 10px;
+      }
+
+      .container_right {
+        width: 35vw;
+        height: 50vh;
+        margin: 30px;
+      }
+
+      .title {
+        margin: 20px;
+        font-weight: 700;
+        font-size: 4.5vw;
+      }
+
+      .catchphrase {
+        padding-top: 30px;
+        margin: 20px;
+        height: 20vh;
+        font-size: 1.2vw;
+        line-height: 1.5;
+        color: black;
+      }
+
+      .button_box {
+        height: 10vh;
+        display: flex;
         align-items: center;
         flex-direction: column;
       }
 
-      .title {
-        margin: 10px;
-        padding: 20px;
-        font-weight: 700;
-        font-size: 4rem;
-      }
-
-      .catchphrase {
-        margin: 20px;
-        padding: 30px;
-        width: 800px;
-        height: 200px;
-        font-size: 1.5rem;
-        text-align: center;
-        line-height: 200px;
-        color: black;
-        background-color: #3a797f3f;
-      }
-
       button {
-        background-color: #3a797f3f;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-          0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        cursor: pointer;
-        transition: 0.5s;
+        width: 9vw;
+        line-height: 2rem;
+        text-align: center;
+        border: none;
+        display: inline-block;
+        padding: 15px 30px;
+        border-radius: 15px;
+        font-family: "paybooc-Light", sans-serif;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.25s;
+
+        background-color: #6fb1b4;
+        color: #fff;
       }
+
       .yes {
         margin: 20px;
-        width: 60px;
-        height: 30px;
-        font-size: 20px;
-        text-align: center;
-        line-height: 30px;
       }
       .no {
         margin: 20px;
-        margin: 20px;
-        width: 60px;
-        height: 30px;
-        font-size: 20px;
-        line-height: 30px;
+      }
+
+      .yes:hover {
+        letter-spacing: 2px;
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+
+      .no:hover {
+        letter-spacing: 2px;
+        transform: scale(1.2);
+        cursor: pointer;
       }
     </style>
   </head>
 
-  <body>
+<<<<<<< HEAD
+  <body class="body_bg">
+=======
 
+>>>>>>> 60d4046ec4a1262325acba74c425a6e668c2944f
     <!-- tutorial -->
-    <div class="container">
-      <div class="title">
-        <h1>오늘의 가계부</h1>
+    <div class="box">
+      <div class="container">
+        <img src="/static/img/pig_tutorial.jpg" alt="pig_tutorial" />
+
+        <div class="container_right">
+          <div class="title">
+            <p>오늘의 가계부</p>
+          </div>
+
+          <div class="catchphrase">
+            <p>저희 서비스를 이용한 경험이 있으신가요?</p>
+            <br />
+            <p>1인 가구를 위한 간단한 기능부터 생활 꿀팁까지!</p>
+            <br />
+            <p>오늘부터 가계부 작성하시고 알뜰한 삶을 얻어보세요👍</p>
+          </div>
+
+          <div class="button_box">
+            <div class="button">
+              <!-- 캘린더 페이지로 이동 -->
+              <button
+                type="button"
+                class="yes"
+                onclick="location.href='main'"
+                ;
+              >
+                Yes
+              </button>
+
+              <!-- 소비성향 테스트로 이동 -->
+              <button
+                type="button"
+                class="no"
+                onclick="location.href='tutorial2'"
+                ;
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="catchphrase">
-        <p>저희 서비스를 이용한 경험이 있으신가요?</p>
-      </div>
-
-      <div class="button">
-        <!-- 캘린더 페이지로 이동 -->
-        <button type="button" class="yes" onclick="" ;>Yes</button>
-
-        <!-- 소비성향 테스트로 이동 -->
-        <button type="button" class="no" onclick="" ;>No</button>
-      </div>
-
-      <a href="/tutorial2">next</a>
     </div>
   </body>
 </html>

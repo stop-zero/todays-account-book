@@ -1,0 +1,52 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css); 
+
+
+@media (max-width:500px) {
+  .tip-slide {
+    width: 28rem !important;
+    height: 36rem !important;
+  }
+  .tip-slide .tip-slide-img img {
+    width: 28rem !important;
+    height: 36rem !important;
+  }
+}
+
+
+html {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.container {
+ /*  max-width: 150rem; */
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.text {
+  text-align: center;
+}
+
+.tag_title {
+  font-size: 3rem;
+  padding: 2rem;
+}
+
+#tip {
+  padding: 4rem 0;
+}
+
+
+.tip-slide {
+  width: 30rem;
+  height: 40rem;
+  position: relative;
+}
+
+
+.tip-slide .tip-slide-img img {
+  width: 30rem;
+  height: 40rem;
+  border-radius: 2rem;
+  object-fit: cover;
+}
