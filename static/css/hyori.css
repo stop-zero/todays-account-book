@@ -114,6 +114,32 @@
   color: #ddd;
 }
 
+.current:hover {
+  background-color: rgb(179, 219, 236);
+  width: 100px;
+}
+
+.list > .account-li {
+  width: 100%;
+  font-size: 1.2rem;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgb(201, 199, 199);
+  display: flex;
+}
+
+.category {
+  width: 25%;
+  padding-left: 30px;
+}
+.list > li > .name {
+  width: 50%;
+}
+.list > li > .price {
+  width: 25%;
+  text-align: right;
+  padding-right: 30px;
+}
 @media screen and (max-width: 576px) {
   .article {
     display: block;
