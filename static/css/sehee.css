@@ -3,12 +3,15 @@
   height: 30vh;
   background-color: #6fb1b4;
   position: relative;
+  display: inline-block;
 }
 .form-main-box {
   width: 95%;
   height: 26vh;
   background-color: #f0f5f2;
+  display: flex;
   position: absolute;
+  flex-wrap: wrap;
   top: 0;
   left: 30px;
   bottom: 0;
@@ -16,24 +19,12 @@
   border-radius: 30px 30px 30px 30px;
   font-size: 100px;
 }
-
-.won {
-  color: #274b58;
-  position: absolute;
-  top: 10px;
-  left: 200px;
-  margin: auto 0;
+.credit {
+  width: 100%;
 }
 
-input {
-  width: 50%;
-  height: 100px;
-  border-radius: 30px 30px 30px 30px;
-  font-size: 100px;
-  position: absolute;
-  top: 10px;
-  left: 300px;
-  margin: auto 0;
+.expense {
+  width: 100%;
 }
 
 .btn:hover {
@@ -41,26 +32,104 @@ input {
   color: white;
 }
 
-.btn-pay1 {
+.btn {
   background-color: #f2d58f;
   color: #274b58;
+  cursor: pointer;
+  width: 15rem;
   border-radius: 30px 30px 30px 30px;
-  width: 10%;
-  font-size: 40px;
+
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  font-size: 35px;
+  top: 30%;
+  left: 30%;
+  justify-content: space-around;
   position: absolute;
-  top: 150px;
-  left: 450px;
-  margin: auto 0;
+}
+
+.btn-pay1 {
+  text-align: center;
 }
 
 .btn-pay2 {
-  background-color: #f2d58f;
-  color: #274b58;
+  text-align: center;
+
+  margin-left: 20%;
+}
+
+.cd,
+.ep {
+  background-color: #eed6e7;
+  border: 0 solid black;
   border-radius: 30px 30px 30px 30px;
-  width: 10%;
+}
+
+.ep:hover {
+  background-color: #0081f3;
+  color: white;
+}
+
+.cd:hover {
+  background-color: #0081f3;
+  color: white;
+}
+
+.cd,
+.ep {
+  position: relative;
+  padding: 20px;
+  top: 0.8rem;
+}
+
+#money {
+  width: 60%;
+  height: 8vh;
   font-size: 40px;
-  position: absolute;
-  top: 150px;
-  right: 450px;
-  margin: auto 0;
+  border-radius: 30px 30px 30px 30px;
+  border: 0;
+  text-align: center;
+}
+
+#list {
+  background-color: #f0f5f2;
+  width: 60%;
+  height: 6vh;
+  font-size: 30px;
+  border: none;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.breakdown2 {
+  width: 80%;
+  font-size: 40px;
+  display: none;
+  position: relative;
+  flex-direction: column;
+  margin: 0 auto;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.breakdown1 {
+  width: 60%;
+  font-size: 40px;
+  display: none;
+  position: relative;
+  flex-direction: column;
+  margin: 0 auto;
+  vertical-align: middle;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
