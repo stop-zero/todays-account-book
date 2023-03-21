@@ -20,13 +20,13 @@
 
 .article_left {
   width: 60%;
-  height: 70vh;
+  height: 100%;
   background-color: beige;
 }
 
 .article_right {
-  width: 50%;
-  height: 70vh;
+  width: 40%;
+  height: 100%;
   background-color: azure;
 }
 
