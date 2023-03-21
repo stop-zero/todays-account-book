@@ -102,9 +102,15 @@ function calendarInit() {
   console.log($(".current"));
 }
 
+// 클릭한 날의 색깔을 바꾸고 정보를 가져오기
 function dateClick() {
   $(".current").click(function () {
     console.log(`${this.innerText}일을 선택하셨습니다.`);
+    $(".clicked").css("background-color", "beige");
+    $(".clicked").removeClass("clicked");
+    // $(".current").css("background-color", "beige");
+    this.style = "background-color: rgb(179, 219, 236);";
+    this.classList.add("clicked");
   });
 
   // 선택한 날짜에 해당되는 지출/소득 리스트 render
@@ -116,14 +122,13 @@ function dateClick() {
     console.log(year, month);
 
     let date = this.innerText;
+
+    let li = document.querySelector(".account-li");
+    document.querySelector(".list").append(li.cloneNode(true));
   }
 
   renderList();
 }
-
-// dateSelected[0].addEventListener("click", function () {
-//   console.log(`${this.innerText}일을 선택하셨습니다.`);
-// });
 
 // 반응형
 // 모바일 버전(576px 이하)으로 바뀌면 요일 표시가 더 짧은 월, 화, 수 로 바뀐다.
