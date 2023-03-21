@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,84 +14,160 @@
       rel="stylesheet"
     />
     <style>
-      * {
+      @media (max-width: 576px) {
+        img {
+          display: none;
+        }
+
+        .body_bg {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+        }
+
+        .title {
+          font-size: 2rem !important;
+        }
+      }
+
+      /* --------------------------------------------------------------------- */
+      .body_bg {
+        background-color: rgb(55, 132, 255);
+      }
+
+      .box {
         font-family: "Noto Sans KR", sans-serif;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 70px;
       }
 
       .container {
-        margin-top: 80px;
+        width: 80%;
+        height: 550px;
+        border-radius: 20px;
+        background-color: rgb(255, 221, 239);
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
+      }
+
+      img {
+        width: 35vw;
+        height: 400px;
+        border-radius: 15px;
+      }
+
+      .container_right {
+        width: 30rem;
+        height: 400px;
+        margin: 30px;
+        display: flex;
         flex-direction: column;
       }
 
       .title {
-        margin: 10px;
-        padding: 20px;
+        margin: 20px;
         font-weight: 700;
         font-size: 4rem;
       }
 
       .catchphrase {
         margin: 20px;
-        padding: 30px;
-        width: 800px;
-        height: 200px;
-        font-size: 1.5rem;
-        text-align: center;
-        line-height: 200px;
+        height: 230px;
+        font-size: 1rem;
         color: black;
-        background-color: #3a797f3f;
+      }
+
+      .button_box {
+        margin: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
       }
 
       button {
-        background-color: #3a797f3f;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-          0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        cursor: pointer;
-        transition: 0.5s;
-      }
-      .yes {
-        margin: 20px;
-        width: 60px;
-        height: 30px;
-        font-size: 20px;
+        width: 8rem;
+        line-height: 2rem;
         text-align: center;
-        line-height: 30px;
+        position: relative;
+        border: none;
+        display: inline-block;
+        padding: 15px 30px;
+        border-radius: 15px;
+        font-family: "paybooc-Light", sans-serif;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.25s;
+        margin-top: 15rem;
+        background-color: #6fb1b4;
+        color: #fff;
+      }
+
+      .yes {
+        margin: 10px;
       }
       .no {
         margin: 20px;
-        margin: 20px;
-        width: 60px;
-        height: 30px;
-        font-size: 20px;
-        line-height: 30px;
+      }
+
+      .yes:hover {
+        letter-spacing: 2px;
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+
+      .no:hover {
+        letter-spacing: 2px;
+        transform: scale(1.2);
+        cursor: pointer;
       }
     </style>
   </head>
 
-  <body>
 
     <!-- tutorial -->
-    <div class="container">
-      <div class="title">
-        <h1>오늘의 가계부</h1>
+    <div class="box">
+      <div class="container">
+        <img src="/static/img/pig_tutorial.jpg" alt="pig_tutorial" />
+
+        <div class="container_right">
+          <div class="title">
+            <p>오늘의 가계부</p>
+          </div>
+
+          <div class="catchphrase">
+            <p>저희 서비스를 이용한 경험이 있으신가요? ㅇㅇㅇㅇ</p>
+            <br />
+            <p>dfjalksdfjhald</p>
+          </div>
+          <div class="button_box">
+            <div class="button">
+              <!-- 캘린더 페이지로 이동 -->
+              <button
+                type="button"
+                class="yes"
+                onclick="location.href='main'"
+                ;
+              >
+                Yes
+              </button>
+
+              <!-- 소비성향 테스트로 이동 -->
+              <button
+                type="button"
+                class="no"
+                onclick="location.href='tutorial2'"
+                ;
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="catchphrase">
-        <p>저희 서비스를 이용한 경험이 있으신가요?</p>
-      </div>
-
-      <div class="button">
-        <!-- 캘린더 페이지로 이동 -->
-        <button type="button" class="yes" onclick="" ;>Yes</button>
-
-        <!-- 소비성향 테스트로 이동 -->
-        <button type="button" class="no" onclick="" ;>No</button>
-      </div>
-
-      <a href="/tutorial2">next</a>
     </div>
   </body>
 </html>
