@@ -6,17 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>오늘의 가계부</title>
     <link rel="stylesheet" href="/static/css/reset.css" />
-    <!-- 폰트 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
-      rel="stylesheet"
-    />
+    
     <style>
-      @media (max-width: 576px) {
+      @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css); 
+      
+      @media (max-width: 996px) {
         img {
           display: none;
+        }
+        .title {
+          font-size: 4.8vw !important;
+        }
+
+        .catchphrase {
+          font-size: 2vw !important;
+        }
+
+        .container_right {
+          width: 52vw !important;
         }
 
         .body_bg {
@@ -24,9 +31,13 @@
           align-items: center;
           flex-direction: column;
         }
+      }
 
-        .title {
-          font-size: 2rem !important;
+      @media (max-width: 547px) {
+        .button {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
         }
       }
 
@@ -40,58 +51,58 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        margin: 70px;
+        margin: 100px 0px;
       }
 
       .container {
-        width: 80%;
-        height: 550px;
+        width: 80vw;
+        height: 70vh;
         border-radius: 20px;
         background-color: rgb(255, 221, 239);
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-evenly;
         align-items: center;
       }
 
       img {
         width: 35vw;
-        height: 400px;
+        height: 50vh;
         border-radius: 15px;
+        margin: 10px;
       }
 
       .container_right {
-        width: 30rem;
-        height: 400px;
+        width: 35vw;
+        height: 50vh;
         margin: 30px;
-        display: flex;
-        flex-direction: column;
       }
 
       .title {
         margin: 20px;
         font-weight: 700;
-        font-size: 4rem;
+        font-size: 4.5vw;
       }
 
       .catchphrase {
+        padding-top: 30px;
         margin: 20px;
-        height: 230px;
-        font-size: 1rem;
+        height: 20vh;
+        font-size: 1.2vw;
+        line-height: 1.5;
         color: black;
       }
 
       .button_box {
-        margin: 20px;
+        height: 10vh;
         display: flex;
         align-items: center;
         flex-direction: column;
       }
 
       button {
-        width: 8rem;
+        width: 9vw;
         line-height: 2rem;
         text-align: center;
-        position: relative;
         border: none;
         display: inline-block;
         padding: 15px 30px;
@@ -101,13 +112,13 @@
         text-decoration: none;
         font-weight: 600;
         transition: 0.25s;
-        margin-top: 15rem;
+
         background-color: #6fb1b4;
         color: #fff;
       }
 
       .yes {
-        margin: 10px;
+        margin: 20px;
       }
       .no {
         margin: 20px;
@@ -127,7 +138,11 @@
     </style>
   </head>
 
+<<<<<<< HEAD
+  <body class="body_bg">
+=======
 
+>>>>>>> 60d4046ec4a1262325acba74c425a6e668c2944f
     <!-- tutorial -->
     <div class="box">
       <div class="container">
@@ -139,10 +154,13 @@
           </div>
 
           <div class="catchphrase">
-            <p>저희 서비스를 이용한 경험이 있으신가요? ㅇㅇㅇㅇ</p>
+            <p>저희 서비스를 이용한 경험이 있으신가요?</p>
             <br />
-            <p>dfjalksdfjhald</p>
+            <p>1인 가구를 위한 간단한 기능부터 생활 꿀팁까지!</p>
+            <br />
+            <p>오늘부터 가계부 작성하시고 알뜰한 삶을 얻어보세요👍</p>
           </div>
+
           <div class="button_box">
             <div class="button">
               <!-- 캘린더 페이지로 이동 -->

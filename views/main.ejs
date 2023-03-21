@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>오늘의 가계부</title>
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
     <script src="/static/js/test.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.6.4.min.js"
@@ -69,8 +73,54 @@
       </div>
     </div>
     <div class="container2">
+      
       <!-- 1인 꿀팁 -->
-    </div>
+    
+      <section id="tip">
+        <div class="container">
+          <h3 class="text "> #생활 태그  </h3>
+          <h1 class="text tag_title">1인 생활 꿀팁</h1>
+        </div>
+        <div class="container">
+          <div class="swiper slider">
+            <div class="swiper-wrapper">
+              <!-- Slide-start -->
+              <div class="swiper-slide tip-slide">
+                <div class="tip-slide-img">
+                  <a href="https://www.thetip.kr/hacks4everyday/">
+                    <img src="/static/img/life1.png" alt="life_tip">
+                  </a>
+                </div>
+              </div>
+              <!-- Slide-end -->
+              <!-- Slide-start -->
+              <div class="swiper-slide tip-slide">
+                <div class="tip-slide-img">
+                  <a href="https://post.naver.com/viewer/postView.nhn?volumeNo=6760692&memberNo=29961208">
+                    <img src="/static/img/life2.png" alt="life_tip">
+                  </a>
+                </div> 
+              </div>
+              <!-- Slide-end -->
+              <!-- Slide-start -->
+              <div class="swiper-slide tip-slide">
+                <div class="tip-slide-img">
+                  <a href="https://happysat.tistory.com/187">
+
+                    <img src="/static/img/life3.jpg" alt="life_tip">
+                  </a>
+                </div>  
+              </div>
+              <!-- Slide-end -->
+            </div>
+            <div class="slider-control">
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+      
     <div class="footer">
       <!-- footer -->
     </div>
