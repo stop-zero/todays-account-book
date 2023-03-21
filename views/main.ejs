@@ -75,10 +75,10 @@
           </button>
 
           <div class="credit">
-            <!-- 입금/지출-->
+            <!-- 입금-->
             <div class="won"></div>
             <!--form에서 입력한 값-->
-            <div class="breakdown1">
+            <div class="breakdown1" style="font-size: 30px">
               <label>
                 ₩
                 <input
@@ -90,6 +90,10 @@
 
               <label>내역: <input type="text" name="list" id="list" /></label>
 
+              <button type="submit" class="enter">입력</button>
+
+              
+
               <div class="d-flex">
                 <button type="button" class="cd cd1">월급</button>
                 <button type="button" class="cd cd2">용돈</button>
@@ -97,11 +101,13 @@
                 <button type="button" class="cd cd4">자산인출</button>
                 <button type="button" class="cd cd5">기타</button>
               </div>
+              
             </div>
+            
           </div>
 
           <div class="expense">
-            <!--입금/지출-->
+            <!--지출-->
             <div class="won"></div>
             <!--form에서 입력한 값-->
             <div class="breakdown2" style="font-size: 30px">
@@ -114,6 +120,8 @@
                   onkeyup="inputNumberFormat(this)"
               /></label>
               <label>내역: <input type="text" name="list" id="list" /></label>
+              <button type="submit" class="enter">입력</button>
+
               <div class="d-flex">
                 <button type="button" class="ep ep1">식비</button>
                 <button type="button" class="ep ep2">여행</button>
