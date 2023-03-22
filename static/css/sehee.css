@@ -13,19 +13,19 @@
   position: absolute;
   flex-wrap: wrap;
   top: 0;
-  left: 30px;
+  right: 0;
+  left: 0;
   bottom: 0;
-  margin: auto 0;
+  margin: auto;
   border-radius: 30px 30px 30px 30px;
-  font-size: 100px;
 }
 .credit {
   width: 100%;
-}
+} /* 입금버튼 후에 뜨는 전체 클래스 */
 
 .expense {
   width: 100%;
-}
+} /* 지출버튼 후에 뜨는 전체 클래스 */
 
 .btn:hover {
   background-color: #274b58;
@@ -36,17 +36,23 @@
   background-color: #f2d58f;
   color: #274b58;
   cursor: pointer;
-  width: 15rem;
+  width: 10%;
+  height: 20%;
+
   border-radius: 30px 30px 30px 30px;
 
-  padding: 15px;
   text-align: center;
   display: flex;
   font-size: 35px;
-  top: 30%;
-  left: 30%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
   justify-content: space-around;
   position: absolute;
+  left: 18%;
+  display: none;
 }
 
 .btn-pay1 {
@@ -150,4 +156,15 @@ input:focus {
 .enter:hover {
   background-color: #0081f3;
   color: white;
+}
+
+@media screen and (max-width: 576px) {
+  .form-main-box {
+    width: 90%;
+  }
+  .btn {
+    display: none;
+    width: 10vh;
+    font-size: 1.5rem;
+  }
 }
