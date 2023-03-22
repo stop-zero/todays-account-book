@@ -24,7 +24,7 @@ const Slider = new Swiper(".slider", {
 const urlParams = new URLSearchParams(location.search);
 let category = urlParams.get("category");
 
-let data = {
+let data01 = {
   meals: [
     {
       link: "https://blog.hanabank.com/1347",
@@ -186,56 +186,56 @@ const text = document.querySelectorAll(".hover-text");
 
 if (category == "교통") {
   for (let i = 0; i < 3; i++) {
-    site[i].setAttribute("href", data.traffic[i].link);
-    photo[i].setAttribute("src", data.traffic[i].img);
-    text[i].innerHTML = data.traffic[i].text;
+    site[i].setAttribute("href", data01.traffic[i].link);
+    photo[i].setAttribute("src", data01.traffic[i].img);
+    text[i].innerHTML = data01.traffic[i].text;
   }
 } else if (category == "식비") {
   for (let i = 0; i < 3; i++) {
-    site[i].setAttribute("href", data.meals[i].link);
-    photo[i].setAttribute("src", data.meals[i].img);
-    text[i].innerHTML = data.meals[i].text;
+    site[i].setAttribute("href", data01.meals[i].link);
+    photo[i].setAttribute("src", data01.meals[i].img);
+    text[i].innerHTML = data01.meals[i].text;
   }
 } else if (category == "여행") {
   for (let i = 0; i < 3; i++) {
-    site[i].setAttribute("href", data.travel[i].link);
-    photo[i].setAttribute("src", data.travel[i].img);
-    text[i].innerHTML = data.travel[i].text;
+    site[i].setAttribute("href", data01.travel[i].link);
+    photo[i].setAttribute("src", data01.travel[i].img);
+    text[i].innerHTML = data01.travel[i].text;
   }
 } else if (category == "건강") {
   for (let i = 0; i < 3; i++) {
-    site[i].setAttribute("href", data.health[i].link);
-    photo[i].setAttribute("src", data.health[i].img);
-    text[i].innerHTML = data.health[i].text;
+    site[i].setAttribute("href", data01.health[i].link);
+    photo[i].setAttribute("src", data01.health[i].img);
+    text[i].innerHTML = data01.health[i].text;
   }
 } else if (category == "주거") {
   for (let i = 0; i < 3; i++) {
-    site[i].setAttribute("href", data.residence[i].link);
-    photo[i].setAttribute("src", data.residence[i].img);
-    text[i].innerHTML = data.residence[i].text;
+    site[i].setAttribute("href", data01.residence[i].link);
+    photo[i].setAttribute("src", data01.residence[i].img);
+    text[i].innerHTML = data01.residence[i].text;
   }
 } else if (category == "통신") {
   for (let i = 0; i < 3; i++) {
-    site[i].setAttribute("href", data.phone[i].link);
-    photo[i].setAttribute("src", data.phone[i].img);
-    text[i].innerHTML = data.phone[i].text;
+    site[i].setAttribute("href", data01.phone[i].link);
+    photo[i].setAttribute("src", data01.phone[i].img);
+    text[i].innerHTML = data01.phone[i].text;
   }
 } else if (category == "카페") {
   for (let i = 0; i < 3; i++) {
-    site[i].setAttribute("href", data.cafe[i].link);
-    photo[i].setAttribute("src", data.cafe[i].img);
-    text[i].innerHTML = data.cafe[i].text;
+    site[i].setAttribute("href", data01.cafe[i].link);
+    photo[i].setAttribute("src", data01.cafe[i].img);
+    text[i].innerHTML = data01.cafe[i].text;
   }
 } else if (category == "생활") {
   for (let i = 0; i < 3; i++) {
-    site[i].setAttribute("href", data.life[i].link);
-    photo[i].setAttribute("src", data.life[i].img);
-    text[i].innerHTML = data.life[i].text;
+    site[i].setAttribute("href", data01.life[i].link);
+    photo[i].setAttribute("src", data01.life[i].img);
+    text[i].innerHTML = data01.life[i].text;
   }
 } else if (category == "금융") {
   for (let i = 0; i < 3; i++) {
-    site[i].setAttribute("href", data.finance[i].link);
-    photo[i].setAttribute("src", data.finance[i].img);
-    text[i].innerHTML = data.finance[i].text;
+    site[i].setAttribute("href", data01.finance[i].link);
+    photo[i].setAttribute("src", data01.finance[i].img);
+    text[i].innerHTML = data01.finance[i].text;
   }
 }
