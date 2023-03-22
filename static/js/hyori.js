@@ -172,18 +172,14 @@ function dateClick() {
     // $(".current").css("background-color", "beige");
     this.style = "background-color: rgb(179, 219, 236);";
     this.classList.add("clicked");
-    
+
     $(".btn").css("display", "block");
-  });
 
-  //세희 수정 --------------------------------------
-  let cc = () => {
-    let btn5 = document.querySelectorAll(".btn");
-    btn5.style.display = "none";
-  };
-
-  // 선택한 날짜에 해당되는 지출/소득 리스트 render
-  function renderList() {
+    //세희 수정 --------------------------------------
+    let cc = () => {
+      let btn5 = document.querySelectorAll(".btn");
+      btn5.style.display = "none";
+    };
 
     let tmp = document.querySelector(".year-month");
     tmp = tmp.innerText;
@@ -196,18 +192,15 @@ function dateClick() {
     }
 
     let date_tmp = this.innerText;
+
     if (date_tmp.length === 1) {
       date_tmp = "0" + date_tmp;
+
+      d = year_tmp + month_tmp + date_tmp;
     }
-
-    console.log(year_tmp, month_tmp, date_tmp);
-
-    d = year_tmp + month_tmp + date_tmp;
-
     renderList(d);
   });
 }
-
 let kind_tmp, category_tmp;
 
 $(".btn").click(function () {
@@ -239,8 +232,25 @@ $(".ep").click(function () {
 });
 
 $(".enter").click(function () {
-  let name_tmp = $("#list").val();
-  let price_tmp = $("#money").val();
+  name1 = document.querySelector("#name1");
+  name2 = document.querySelector("#name2");
+
+  let money1 = document.querySelector("#money1");
+  let money2 = document.querySelector("#money2");
+  let name_tmp, price_tmp;
+
+  if (name1.value.length >= 1) {
+    name_tmp = name1.value;
+  } else {
+    name_tmp = name2.value;
+  }
+
+  if (money1.value.length >= 1) {
+    price_tmp = money1.value;
+  } else {
+    price_tmp = money2.value;
+  }
+
   let tmp = {
     kind: kind_tmp,
     category: category_tmp,
@@ -248,8 +258,8 @@ $(".enter").click(function () {
     price: price_tmp,
   };
 
-  console.log(tmp);
-  console.log(d);
+  // console.log(tmp);
+  // console.log(d);
   if (data[d] === undefined) {
     data[d] = [tmp];
   } else {

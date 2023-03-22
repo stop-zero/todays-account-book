@@ -89,7 +89,8 @@
   top: 0.8rem;
 }
 
-#money {
+#money1,
+#money2 {
   width: 60%;
   height: 8vh;
   font-size: 40px;
@@ -98,7 +99,8 @@
   text-align: center;
 }
 
-#list {
+#name1,
+#name2 {
   background-color: #f0f5f2;
   width: 60%;
   height: 6vh;
