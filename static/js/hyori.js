@@ -157,11 +157,13 @@ function calendarInit() {
     thisMonth = new Date(currentYear, currentMonth + 1, 1);
     renderCalender(thisMonth);
   });
-
-  console.log($(".current"));
 }
 
+let data = {};
+let d;
+
 // 클릭한 날의 색깔을 바꾸고 정보를 가져오기
+//
 function dateClick() {
   $(".current").click(function () {
     console.log(`${this.innerText}일을 선택하셨습니다.`);
@@ -170,36 +172,99 @@ function dateClick() {
     // $(".current").css("background-color", "beige");
     this.style = "background-color: rgb(179, 219, 236);";
     this.classList.add("clicked");
+    
     $(".btn").css("display", "block");
+    $('.enter').css('display','block')
   });
 
   //세희 수정 --------------------------------------
-  let cc = () => {
-    let btn5 = document.querySelectorAll(".btn");
-    btn5.style.display = "none";
-  };
+  // let cc = () => {
+  //   let btn5 = document.querySelectorAll(".btn");
+  //   btn5.style.display = "none";
+  // };
 
-  let dd = () => {
-    let btn6 = document.querySelectorAll(".enter");
-    btn6.style.dispaly = "none";
-  };
+  // let dd = () => {
+  //   let btn6 = document.querySelectorAll(".enter");
+  //   btn6.style.dispaly = "none";
+  // };
 
   // 선택한 날짜에 해당되는 지출/소득 리스트 render
   function renderList() {
+
     let tmp = document.querySelector(".year-month");
     tmp = tmp.innerText;
-    let year,
-      month = tmp.split(".");
-    console.log(year, month);
+    tmp = tmp.split(".");
+    let year_tmp = tmp[0].slice(2, 4);
 
-    let date = this.innerText;
+    let month_tmp = tmp[1];
+    if (month_tmp.length === 1) {
+      month_tmp = "0" + month_tmp;
+    }
 
-    let li = document.querySelector(".account-li");
-    document.querySelector(".list").append(li.cloneNode(true));
+    let date_tmp = this.innerText;
+    if (date_tmp.length === 1) {
+      date_tmp = "0" + date_tmp;
+    }
+
+    console.log(year_tmp, month_tmp, date_tmp);
+
+    d = year_tmp + month_tmp + date_tmp;
+
+    renderList(d);
+  });
+}
+
+let kind_tmp, category_tmp;
+
+$(".btn").click(function () {
+  let tmp = $(this).text();
+  tmp = tmp.trim();
+  kind_tmp = tmp;
+});
+
+$(".cd").click(function () {
+  category_tmp = $(this).text();
+
+  $(".clickedCd").css("background-color", "#eed6e7");
+  $(".clickedCd").css("color", "black");
+
+  $(".clickedCd").removeClass("clickedCd");
+  this.style = "background-color: #0081f3; color: white;";
+  this.classList.add("clickedCd");
+});
+
+$(".ep").click(function () {
+  category_tmp = $(this).text();
+
+  $(".clickedEp").css("background-color", "#eed6e7");
+  $(".clickedEp").css("color", "black");
+
+  $(".clickedEp").removeClass("clickedEp");
+  this.style = "background-color: #0081f3; color: white;";
+  this.classList.add("clickedEp");
+});
+
+$(".enter").click(function () {
+  let name_tmp = $("#list").val();
+  let price_tmp = $("#money").val();
+  let tmp = {
+    kind: kind_tmp,
+    category: category_tmp,
+    name: name_tmp,
+    price: price_tmp,
+  };
+
+  console.log(tmp);
+  console.log(d);
+  if (data[d] === undefined) {
+    data[d] = [tmp];
+  } else {
+    data[d].push(tmp);
   }
 
-  renderList();
-}
+  console.log(data);
+  renderList(d);
+});
 
 // 반응형
 // 모바일 버전(576px 이하)으로 바뀌면 요일 표시가 더 짧은 월, 화, 수 로 바뀐다.
@@ -218,3 +283,24 @@ window.onresize = function () {
     }
   }
 };
+
+// 선택한 날짜에 해당되는 지출/소득 리스트 render
+function renderList(d) {
+  let data_d = data[d];
+  let ul = document.querySelector(".list");
+  ul.innerHTML = "";
+  if (data_d != undefined) {
+    let li = document.createElement("li");
+    li.classList.add("account-li");
+    li.innerHTML =
+      '<div class="li-item category"></div><div class="li-item name"></div><div class="li-item price"></div>';
+
+    for (let i = 0; i < data_d.length; i++) {
+      let clone = li.cloneNode(true);
+      clone.childNodes[0].innerText = data_d[i]["category"];
+      clone.childNodes[1].innerText = data_d[i]["name"];
+      clone.childNodes[2].innerText = data_d[i]["price"];
+      ul.append(clone);
+    }
+  }
+}
