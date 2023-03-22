@@ -89,13 +89,14 @@
                 <input
                   type="text"
                   name="money"
+
                   id="money1"
                   onkeyup="inputNumberFormat(this)"
               /></label>
 
               <label>내역: <input type="text" name="list" id="name2" /></label>
 
-              <button type="submit" class="enter">입력</button>
+              <button type="submit" class="enter" onclick="dd()">입력</button>
 
               
 
@@ -117,10 +118,11 @@
             <!--form에서 입력한 값-->
             <div class="breakdown2" style="font-size: 30px">
               <label>
-                
+                ₩
                 <input
                   type="text"
                   name="money"
+
                   id="money2"
                   onkeyup="inputNumberFormat(this)"
               /></label>
@@ -151,52 +153,50 @@
     
       <section id="tip">
         <div class="container">
-          <h3 class="text "> #생활 태그  </h3>
+          <h3 class="text "> #생활 태그 </h3>
           <h1 class="text tag_title">1인 생활 꿀팁</h1>
         </div>
         <div class="container">
           <div class="swiper slider">
             <div class="swiper-wrapper">
               <!-- Slide-start -->
-              <div class="swiper-slide tip-slide">
+              <div class="swiper-slide tip-slide ">
                 <div class="tip-slide-img">
-                  <a href="https://www.thetip.kr/hacks4everyday/">
-                    <img src="/static/img/life1.png" alt="life_tip">
+                  <img src="" class="photo" alt="tip">
+                  <a class="hover-text site" href="#" >  
+
                   </a>
                 </div>
               </div>
               <!-- Slide-end -->
-              <!-- Slide-start -->
-              <div class="swiper-slide tip-slide">
-                <div class="tip-slide-img">
-                  <a href="https://post.naver.com/viewer/postView.nhn?volumeNo=6760692&memberNo=29961208">
-                    <img src="/static/img/life2.png" alt="life_tip">
-                  </a>
-                </div> 
-              </div>
-              <!-- Slide-end -->
-              <!-- Slide-start -->
-              <div class="swiper-slide tip-slide">
-                <div class="tip-slide-img">
-                  <a href="https://happysat.tistory.com/187">
-
-                    <img src="/static/img/life3.jpg" alt="life_tip">
-                  </a>
-                </div>  
-              </div>
-              <!-- Slide-end -->
             </div>
+           
+          <!-- 화살표 -->
             <div class="slider-control">
+              <div class="swiper-button-prev slider-arrow">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+              </div>
+              <div class="swiper-button-next slider-arrow">
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </div>
               <div class="swiper-pagination"></div>
             </div>
+
           </div>
         </div>
       </section>
       <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-      
-
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <div class="footer">
-      <!-- footer -->
+      <div class="footer-left">
+        오늘의 가계부
+      </div>
+      <div class="footer-right">
+        <p>1인가구의 행복을 응원합니다</p>
+        <p>강민혁 - 이효리 - 정세희 - 정지영</p>
+        <p>@copyright 2023 today`s account book</p>
+      </div>
     </div>
     <script src="/static/js/hyori.js"></script>
     <script src="/static/js/jiyoung.js"></script>

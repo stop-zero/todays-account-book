@@ -173,13 +173,24 @@ function dateClick() {
     this.style = "background-color: rgb(179, 219, 236);";
     this.classList.add("clicked");
 
+    
     $(".btn").css("display", "block");
+  //  $('.enter').css('display','block')
+  });
 
-    //세희 수정 --------------------------------------
-    let cc = () => {
-      let btn5 = document.querySelectorAll(".btn");
-      btn5.style.display = "none";
-    };
+  //세희 수정 --------------------------------------
+   let cc = () => {
+    let btn5 = document.querySelectorAll(".btn");
+     btn5.style.display = "none";
+   };
+
+   let dd = () => {
+    let btn6 = document.querySelectorAll(".enter");
+    btn6.style.dispaly = "none";
+   };
+
+
+
 
     let tmp = document.querySelector(".year-month");
     tmp = tmp.innerText;
