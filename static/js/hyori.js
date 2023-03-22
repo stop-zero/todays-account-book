@@ -1,4 +1,61 @@
-calendarInit();
+console.log("연결");
+
+let btn = document.querySelectorAll(".btn");
+console.log(btn);
+let breakdown1 = document.querySelector(".breakdown1");
+
+let credit = document.querySelector(".btn-pay1");
+let expense = document.querySelector(".btn-pay2");
+
+let enter = document.querySelectorAll(".enter");
+
+let aa = () => {
+  let breakdown1 = document.querySelector(".breakdown1");
+  breakdown1.style.display = "flex";
+  credit.style.display = "none";
+  expense.style.display = "none";
+};
+
+let bb = () => {
+  let breakdown2 = document.querySelector(".breakdown2");
+  breakdown2.style.display = "flex";
+  credit.style.display = "none";
+  expense.style.display = "none";
+};
+
+// btn.addEventListener("click", (e) => {
+//   e.preventDefault(); //브라우저의 기본동작을 막아줌
+//   let li = document.createElement("li");
+//   ul.append(li);
+
+//   let id = document.querySelector("input").value;
+//   let comment = document.querySelector("#input");
+
+//   li.innerHTML = `${id}`;
+// });
+
+// function changeResult() {
+//   let result = document.querySelector("input");
+//   result.innerHTML = `₩ ${input}`;
+// }
+
+function inputNumberFormat(obj) {
+  obj.value = comma(uncomma(obj.value));
+}
+
+function comma(str) {
+  str = String(str);
+  return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, "$1,");
+}
+
+function uncomma(str) {
+  str = String(str);
+  return str.replace(/[^\d]+/g, "");
+}
+
+console.log(
+  "---------------------------------------------------------------------------------------------------------------------"
+);
 // });
 /*
       달력 렌더링 할 때 필요한 정보 목록 
@@ -7,6 +64,8 @@ calendarInit();
       금월 마지막일 날짜와 요일
       전월 마지막일 날짜와 요일
   */
+
+calendarInit();
 
 function calendarInit() {
   // 날짜 정보 가져오기
@@ -27,7 +86,7 @@ function calendarInit() {
   let currentDate = thisMonth.getDate(); // 달력에서 표기하는 일
 
   // kst 기준 현재시간
-  // console.log(thisMonth);
+  // console.log(thidsMonth);
 
   // 캘린더 렌더링
   renderCalender(thisMonth);
@@ -98,32 +157,114 @@ function calendarInit() {
     thisMonth = new Date(currentYear, currentMonth + 1, 1);
     renderCalender(thisMonth);
   });
-
-  console.log($(".current"));
 }
 
+let data = {};
+let d;
+
+// 클릭한 날의 색깔을 바꾸고 정보를 가져오기
+//
 function dateClick() {
   $(".current").click(function () {
     console.log(`${this.innerText}일을 선택하셨습니다.`);
+    $(".clicked").css("background-color", "beige");
+    $(".clicked").removeClass("clicked");
+    // $(".current").css("background-color", "beige");
+    this.style = "background-color: rgb(179, 219, 236);";
+    this.classList.add("clicked");
+    
+    $(".btn").css("display", "block");
+    $('.enter').css('display','block')
   });
+
+  //세희 수정 --------------------------------------
+  // let cc = () => {
+  //   let btn5 = document.querySelectorAll(".btn");
+  //   btn5.style.display = "none";
+  // };
+
+  // let dd = () => {
+  //   let btn6 = document.querySelectorAll(".enter");
+  //   btn6.style.dispaly = "none";
+  // };
 
   // 선택한 날짜에 해당되는 지출/소득 리스트 render
   function renderList() {
+
     let tmp = document.querySelector(".year-month");
     tmp = tmp.innerText;
-    let year,
-      month = tmp.split(".");
-    console.log(year, month);
+    tmp = tmp.split(".");
+    let year_tmp = tmp[0].slice(2, 4);
 
-    let date = this.innerText;
-  }
+    let month_tmp = tmp[1];
+    if (month_tmp.length === 1) {
+      month_tmp = "0" + month_tmp;
+    }
 
-  renderList();
+    let date_tmp = this.innerText;
+    if (date_tmp.length === 1) {
+      date_tmp = "0" + date_tmp;
+    }
+
+    console.log(year_tmp, month_tmp, date_tmp);
+
+    d = year_tmp + month_tmp + date_tmp;
+
+    renderList(d);
+  });
 }
 
-// dateSelected[0].addEventListener("click", function () {
-//   console.log(`${this.innerText}일을 선택하셨습니다.`);
-// });
+let kind_tmp, category_tmp;
+
+$(".btn").click(function () {
+  let tmp = $(this).text();
+  tmp = tmp.trim();
+  kind_tmp = tmp;
+});
+
+$(".cd").click(function () {
+  category_tmp = $(this).text();
+
+  $(".clickedCd").css("background-color", "#eed6e7");
+  $(".clickedCd").css("color", "black");
+
+  $(".clickedCd").removeClass("clickedCd");
+  this.style = "background-color: #0081f3; color: white;";
+  this.classList.add("clickedCd");
+});
+
+$(".ep").click(function () {
+  category_tmp = $(this).text();
+
+  $(".clickedEp").css("background-color", "#eed6e7");
+  $(".clickedEp").css("color", "black");
+
+  $(".clickedEp").removeClass("clickedEp");
+  this.style = "background-color: #0081f3; color: white;";
+  this.classList.add("clickedEp");
+});
+
+$(".enter").click(function () {
+  let name_tmp = $("#list").val();
+  let price_tmp = $("#money").val();
+  let tmp = {
+    kind: kind_tmp,
+    category: category_tmp,
+    name: name_tmp,
+    price: price_tmp,
+  };
+
+  console.log(tmp);
+  console.log(d);
+  if (data[d] === undefined) {
+    data[d] = [tmp];
+  } else {
+    data[d].push(tmp);
+  }
+
+  console.log(data);
+  renderList(d);
+});
 
 // 반응형
 // 모바일 버전(576px 이하)으로 바뀌면 요일 표시가 더 짧은 월, 화, 수 로 바뀐다.
@@ -142,3 +283,24 @@ window.onresize = function () {
     }
   }
 };
+
+// 선택한 날짜에 해당되는 지출/소득 리스트 render
+function renderList(d) {
+  let data_d = data[d];
+  let ul = document.querySelector(".list");
+  ul.innerHTML = "";
+  if (data_d != undefined) {
+    let li = document.createElement("li");
+    li.classList.add("account-li");
+    li.innerHTML =
+      '<div class="li-item category"></div><div class="li-item name"></div><div class="li-item price"></div>';
+
+    for (let i = 0; i < data_d.length; i++) {
+      let clone = li.cloneNode(true);
+      clone.childNodes[0].innerText = data_d[i]["category"];
+      clone.childNodes[1].innerText = data_d[i]["name"];
+      clone.childNodes[2].innerText = data_d[i]["price"];
+      ul.append(clone);
+    }
+  }
+}

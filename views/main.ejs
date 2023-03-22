@@ -47,32 +47,105 @@
           </div>
         </div>
         <div class="article_right">
-          <!-- ul/li 입력 -->
+          <ul class="list" type="none">
+            
+            <li class="account-li">
+              <div class="li-item category"></div>
+              <div class="li-item name"></div>
+              <div class="li-item price"></div>
+            </li>
+
+          </ul>
         </div>
       </div>
       <div class="article_footer">
         <!-- 입금 지출 form 입력 -->
+
         <div class="form-main-box">
-          <div class="won">￦</div>
-          <input type="number" style="border: 0 solid black" />
+          <button
+            type="button"
+            style="border: 0"
+            class="btn btn-pay1"
+            onclick="aa()"
+          >
+            입금
+          </button>
+          <button
+            type="button"
+            style="border: 0"
+            class="btn btn-pay2"
+            onclick="bb()"
+          >
+            지출
+          </button>
+
+          <div class="credit">
+            <!-- 입금-->
+            <div class="won"></div>
+            <!--form에서 입력한 값-->
+            <div class="breakdown1" style="font-size: 30px">
+              <label>
+                ₩
+                <input
+                  type="text"
+                  name="money"
+                  class="money"
+                  onkeyup="inputNumberFormat(this)"
+              /></label>
+
+              <label>내역: <input type="text" name="list" class="list" /></label>
+
+              <button type="submit" class="enter" onclick="dd()">입력</button>
+
+              
+
+              <div class="d-flex">
+                <button type="button" class="cd cd1">월급</button>
+                <button type="button" class="cd cd2">용돈</button>
+                <button type="button" class="cd cd3">이월</button>
+                <button type="button" class="cd cd4">자산인출</button>
+                <button type="button" class="cd cd5">기타</button>
+              </div>
+              
+            </div>
+            
+          </div>
+
+          <div class="expense">
+            <!--지출-->
+            <div class="won"></div>
+            <!--form에서 입력한 값-->
+            <div class="breakdown2" style="font-size: 30px">
+              <label>
+                ₩
+                <input
+                  type="text"
+                  name="money"
+                  class="money"
+                  onkeyup="inputNumberFormat(this)"
+              /></label>
+              <label>내역: <input type="text" name="list" class="list" /></label>
+              <button type="submit" class="enter" onclick="dd()">입력</button>
+
+              <div class="d-flex">
+                <button type="button" class="ep ep1">식비</button>
+                <button type="button" class="ep ep2">여행</button>
+                <button type="button" class="ep ep3">건강</button>
+                <button type="button" class="ep ep4">교통</button>
+                <button type="button" class="ep ep5">주거</button>
+                <button type="button" class="ep ep6">통신</button>
+                <button type="button" class="ep ep7">카페</button>
+                <button type="button" class="ep ep8">생활</button>
+                <button type="button" class="ep ep9">기타</button>
+              </div>
+            </div>
+          </div>
         </div>
-        <button
-          type="button"
-          style="border: 0 solid black"
-          class="btn btn-pay1"
-        >
-          입금
-        </button>
-        <button
-          type="button"
-          style="border: 0 solid black"
-          class="btn btn-pay2"
-        >
-          지출
-        </button>
       </div>
     </div>
+
     <div class="container2">
+
       
       <!-- 1인 꿀팁 -->
     
@@ -114,12 +187,16 @@
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <div class="footer">
-      <!-- footer -->
+      <div class="footer-left">
+        오늘의 가계부
+      </div>
+      <div class="footer-right">
+        <p>1인가구의 행복을 응원합니다</p>
+        <p>강민혁 - 이효리 - 정세희 - 정지영</p>
+        <p>@copyright 2023 today`s account book</p>
+      </div>
     </div>
     <script src="/static/js/hyori.js"></script>
     <script src="/static/js/jiyoung.js"></script>
-    <script defer src="/static/js/sehee.js"></script>
-  
-  
   </body>
 </html>

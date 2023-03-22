@@ -6,20 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>오늘의 가계부</title>
     <link rel="stylesheet" href="/static/css/reset.css" />
-    
+
     <style>
-      @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css); 
-      
+      @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
       @media (max-width: 996px) {
+        html {
+          font-size: 14px;
+        }
         img {
           display: none;
         }
         .title {
-          font-size: 4.8vw !important;
+          font-size: 2rem !important;
         }
 
         .catchphrase {
-          font-size: 2vw !important;
+          font-size: 1.3rem !important;
+          margin: 0 auto !important;
+          margin-left: 1.5rem !important;
+        }
+
+        .catchphrase p {
+          padding-top: 0.5rem;
         }
 
         .container_right {
@@ -33,11 +42,52 @@
         }
       }
 
-      @media (max-width: 547px) {
+      @media screen and (max-width: 680px) {
+        html {
+          font-size: 12px;
+        }
         .button {
           display: flex;
           align-items: center;
           flex-direction: column;
+        }
+
+        .yes,
+        .no {
+          margin: 2em !important;
+        }
+
+        .yes {
+          margin-bottom: 0.5rem !important;
+        }
+
+        .no {
+          margin-top: 0.5rem !important;
+        }
+
+        button {
+          width: 14rem !important;
+          line-height: 1rem !important;
+        }
+
+        .title,
+        .catchphrase {
+          margin: 0 auto !important;
+          margin-bottom: 1.5rem !important;
+        }
+      }
+
+      @media screen and (max-width: 567px) {
+        .button {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+        }
+      }
+
+      @media screen and (max-width: 375px) {
+        .button {
+          margin-top: 2rem !important;
         }
       }
 
@@ -78,17 +128,17 @@
       }
 
       .title {
-        margin: 20px;
+        margin: 1.5rem;
         font-weight: 700;
         font-size: 4.5vw;
       }
 
       .catchphrase {
-        padding-top: 30px;
-        margin: 20px;
+        margin: 1.5rem;
+        margin-bottom: 0;
         height: 20vh;
-        font-size: 1.2vw;
-        line-height: 1.5;
+        font-size: 1rem;
+        line-height: 1.4;
         color: black;
       }
 
@@ -100,7 +150,7 @@
       }
 
       button {
-        width: 9vw;
+        width: 8rem;
         line-height: 2rem;
         text-align: center;
         border: none;
@@ -112,7 +162,6 @@
         text-decoration: none;
         font-weight: 600;
         transition: 0.25s;
-
         background-color: #6fb1b4;
         color: #fff;
       }
@@ -138,7 +187,9 @@
     </style>
   </head>
 
+
   <body class="body_bg">
+
     <!-- tutorial -->
     <div class="box">
       <div class="container">
@@ -150,11 +201,9 @@
           </div>
 
           <div class="catchphrase">
-            <p>저희 서비스를 이용한 경험이 있으신가요?</p>
-            <br />
             <p>1인 가구를 위한 간단한 기능부터 생활 꿀팁까지!</p>
-            <br />
             <p>오늘부터 가계부 작성하시고 알뜰한 삶을 얻어보세요👍</p>
+            <p>저희 서비스를 이용한 경험이 있으신가요?</p>
           </div>
 
           <div class="button_box">

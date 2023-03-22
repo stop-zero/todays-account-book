@@ -238,6 +238,4 @@ if (category == "교통") {
     photo[i].setAttribute("src", data.finance[i].img);
     text[i].innerHTML = data.finance[i].text;
   }
-} else {
 }
-
