@@ -174,13 +174,19 @@ function dateClick() {
     this.classList.add("clicked");
     
     $(".btn").css("display", "block");
+    $('.enter').css('display','block')
   });
 
   //세희 수정 --------------------------------------
-  let cc = () => {
-    let btn5 = document.querySelectorAll(".btn");
-    btn5.style.display = "none";
-  };
+  // let cc = () => {
+  //   let btn5 = document.querySelectorAll(".btn");
+  //   btn5.style.display = "none";
+  // };
+
+  // let dd = () => {
+  //   let btn6 = document.querySelectorAll(".enter");
+  //   btn6.style.dispaly = "none";
+  // };
 
   // 선택한 날짜에 해당되는 지출/소득 리스트 render
   function renderList() {
