@@ -179,6 +179,11 @@ function dateClick() {
     btn5.style.display = "none";
   };
 
+  let dd = () => {
+    let btn6 = document.querySelectorAll(".enter");
+    btn6.style.dispaly = "none";
+  };
+
   // 선택한 날짜에 해당되는 지출/소득 리스트 render
   function renderList() {
     let tmp = document.querySelector(".year-month");
