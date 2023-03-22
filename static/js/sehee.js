@@ -23,31 +23,14 @@ let bb = () => {
   expense.style.display = "none";
 };
 
-// btn.addEventListener("click", (e) => {
-//   e.preventDefault(); //브라우저의 기본동작을 막아줌
-//   let li = document.createElement("li");
-//   ul.append(li);
-
-//   let id = document.querySelector("input").value;
-//   let comment = document.querySelector("#input");
-
-//   li.innerHTML = `${id}`;
-// });
-
-// function changeResult() {
-//   let result = document.querySelector("input");
-//   result.innerHTML = `₩ ${input}`;
-// }
-
+// 숫자 3자리마다 콤마 찍기
 function inputNumberFormat(obj) {
   obj.value = comma(uncomma(obj.value));
 }
-
 function comma(str) {
   str = String(str);
   return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, "$1,");
 }
-
 function uncomma(str) {
   str = String(str);
   return str.replace(/[^\d]+/g, "");

@@ -172,8 +172,18 @@ function dateClick() {
     // $(".current").css("background-color", "beige");
     this.style = "background-color: rgb(179, 219, 236);";
     this.classList.add("clicked");
+    
+    $(".btn").css("display", "block");
+  });
 
-    // 해당 날짜의 내역을 리스트에 띄우기
+  //세희 수정 --------------------------------------
+  let cc = () => {
+    let btn5 = document.querySelectorAll(".btn");
+    btn5.style.display = "none";
+  };
+
+  // 선택한 날짜에 해당되는 지출/소득 리스트 render
+  function renderList() {
 
     let tmp = document.querySelector(".year-month");
     tmp = tmp.innerText;
