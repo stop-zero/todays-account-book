@@ -18,7 +18,7 @@ let linkImg = document.querySelector('.link-img');
 let linkH2 = document.querySelector('.link-right h2');
 let linkA = document.querySelector('.link-right a');
 
-mainHref.setAttribute('href', `/main?category=${getCategory}`)
+mainHref.setAttribute('href', `/main?category=교통`)
 const formatter = new Intl.NumberFormat('ko', { notation: 'compact' });
 // 나이대 별 한달 평균 생활비
 let teen = 328000;
