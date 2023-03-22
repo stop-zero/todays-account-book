@@ -57,8 +57,8 @@
 }
 
 .inner-result p {
-    margin-top: 1.8rem;
-    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 300;
     text-align: left;
 }
@@ -69,7 +69,6 @@
     flex-direction: row;
     justify-content: space-between;
     margin-top: 3rem;
-    background-color: #f2d58f;
     height: 40vh;
 }
 
@@ -92,7 +91,6 @@
 .link-left {
     width: 40%;
     height: 100%;
-    background-color: antiquewhite;
 }
 
 .link-left img {
@@ -103,10 +101,10 @@
 .link-right {
     width: 60%;
     height: 100%;
-    background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    text-align: center;
 }
 
 .href-main {
@@ -116,7 +114,39 @@
     margin-top: 1.5rem;
 }
 
-@media screen and (max-width: 1920px) {
+.link-img {
+    border-radius: 3rem;
+}
+
+.submit_btn {
+    width: 8rem;
+    line-height: 2rem;
+    text-align: center;
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+    margin-top: 15rem;
+}
+
+.submit_btn:hover {
+    letter-spacing: 2px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.w-btn-green {
+    background-color: #6fb1b4;
+    color: #fff;
+}
+
+@media screen and (max-width: 1940px) {
     html {
         font-size: 14px;
     }
