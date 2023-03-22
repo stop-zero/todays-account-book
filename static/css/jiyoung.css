@@ -1,7 +1,6 @@
-@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css); 
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
-
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .tip-slide {
     width: 28rem !important;
     height: 36rem !important;
@@ -10,15 +9,18 @@
     width: 28rem !important;
     height: 36rem !important;
   }
+  .slider {
+    height: 45rem;
+  }
 }
 
-
 html {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 .container {
- /*  max-width: 150rem; */
+  max-width: 100rem;
+
   padding: 0 1rem;
   margin: 0 auto;
 }
@@ -36,17 +38,121 @@ html {
   padding: 4rem 0;
 }
 
-
 .tip-slide {
   width: 30rem;
   height: 40rem;
   position: relative;
 }
 
-
 .tip-slide .tip-slide-img img {
   width: 30rem;
   height: 40rem;
   border-radius: 2rem;
   object-fit: cover;
+}
+
+/* 이미지에 커서 올리면 제목 보이게 */
+/* 반응형 구현 해야함 */
+img {
+  vertical-align: top;
+}
+
+.tip-slide-img:hover:after,
+.tip-slide-img:hover > .hover-text {
+  display: block;
+}
+.tip-slide-img:after,
+.hover-text {
+  display: none;
+}
+
+.tip-slide-img:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  border-radius: 6%;
+}
+
+.tip-slide-img {
+  overflow: hidden;
+}
+
+.tip-slide-img img {
+  height: 340px;
+}
+
+.tip-slide-img:hover img {
+  border-radius: 6%;
+}
+
+.hover-text {
+  position: absolute;  
+  top: 30%;
+  left: 10%;
+  color: #fff;
+  z-index: 2;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+/* 슬라이드 화살표 */
+.slider-control {
+  position: relative;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-control .swiper-button-next {
+  left: 58% !important;
+  transform: translateX(-58%) !important;
+}
+
+@media (max-width: 990px) {
+  .slider-control .swiper-button-next {
+    left: 70% !important;
+    transform: translateX(-70%) !important;
+  }
+  .slider-control .swiper-button-prev {
+    left: 30% !important;
+    transform: translateX(-30%) !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .slider-control .swiper-button-next {
+    left: 80% !important;
+    transform: translateX(-80%) !important;
+  }
+  .slider-control .swiper-button-prev {
+    left: 20% !important;
+    transform: translateX(-20%) !important;
+  }
+}
+
+.slider-control .slider-arrow {
+  height: 1rem;
+  left: 42%;
+  transform: translateX(-42%);
+}
+
+.slider-control .slider-arrow ion-icon {
+  font-size: 3rem;
+  color: #3A727F;
+}
+
+.slider-control .slider-arrow::after {
+  content: "";
+}
+
+.slider-control .swiper-pagination {
+  position: relative;
+  width: 15rem;
+  bottom: 1rem;
 }

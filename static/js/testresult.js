@@ -14,8 +14,11 @@ let tagIcon1 = document.getElementById('tag-icon1');
 let tagIcon2 = document.getElementById('tag-icon2');
 let tagName1 = document.getElementById('tag-name1');
 let tagName2 = document.getElementById('tag-name2');
+let linkImg = document.querySelector('.link-img');
+let linkH2 = document.querySelector('.link-right h2');
+let linkA = document.querySelector('.link-right a');
 
-mainHref.setAttribute('href', `/main?category=${getCategory}`)
+mainHref.setAttribute('href', `/main?category=교통`)
 const formatter = new Intl.NumberFormat('ko', { notation: 'compact' });
 // 나이대 별 한달 평균 생활비
 let teen = 328000;
@@ -30,46 +33,73 @@ if (getCategory == '식비') {
     tagName1.innerHTML = '#과일_박사';
     tagIcon2.innerHTML = '🍕';
     tagName2.innerHTML = '#프로_배달러';
+    linkImg.setAttribute('src', '/static/img/meal1.png');
+    linkH2.innerHTML = '식비 절약 노하우 !';
+    linkA.setAttribute('href', 'https://blog.hanabank.com/1347');
 } else if (getCategory == '여행') {
     tagIcon1.innerHTML = '🌍    ';
     tagName1.innerHTML = '#세계_일주';
     tagIcon2.innerHTML = '🚐';
     tagName2.innerHTML = '#프로_여행러';
+    linkImg.setAttribute('src', '/static/img/travel1.png');
+    linkH2.innerHTML = '여행전에 알아놓을 꿀팁 !';
+    linkA.setAttribute('href', 'https://blog.naver.com/luxury8805/221434054140');
 } else if (getCategory == '건강') {
     tagIcon1.innerHTML = '🤷‍♂️';
     tagName1.innerHTML = '#100세_인생';
     tagIcon2.innerHTML = '🦸‍♂️';
     tagName2.innerHTML = '#건강왕';
+    linkImg.setAttribute('src', '/static/img/health1.png');
+    linkH2.innerHTML = '안심동행 서비스 !';
+    linkA.setAttribute('href', 'https://mediahub.seoul.go.kr/archives/2004954');
 } else if (getCategory == '교통') {
     tagIcon1.innerHTML = '🚃';
     tagName1.innerHTML = '#대중교통_마스터';
     tagIcon2.innerHTML = '🙃';
     tagName2.innerHTML = '#걷기_싫어요';
+    linkImg.setAttribute('src', '/static/img/traffic1.png');
+    linkH2.innerHTML = '청년 교통비 지원 사업';
+    linkA.setAttribute('href', 'https://blog.naver.com/mellongi123/222987565076?isInf=true');
 } else if (getCategory == '주거') {
     tagIcon1.innerHTML = '🛖';
     tagName1.innerHTML = '#집돌이_집순이';
     tagIcon2.innerHTML = '🏠';
     tagName2.innerHTML = '#현모양처';
+    linkImg.setAttribute('src', '/static/img/residence1.png');
+    linkH2.innerHTML = '1인 주거공간 플랫폼';
+    linkA.setAttribute('href', 'https://blog.naver.com/goldentreeconsulting/222654984999');
 } else if (getCategory == '통신') {
     tagIcon1.innerHTML = '📱';
     tagName1.innerHTML = '#현질왕';
     tagIcon2.innerHTML = '📞';
     tagName2.innerHTML = '#통화만_3시간';
+    linkImg.setAttribute('src', '/static/img/phone1.png');
+    linkH2.innerHTML = '통신비 절감 꿀팁 3가지 !';
+    linkA.setAttribute('href', 'https://blog.ibk.co.kr/2775');
 } else if (getCategory == '카페') {
     tagIcon1.innerHTML = '🍞';
     tagName1.innerHTML = '#빵순이_빵돌이';
     tagIcon2.innerHTML = '☕';
     tagName2.innerHTML = '#바리스타';
+    linkImg.setAttribute('src', '/static/img/cafe1.png');
+    linkH2.innerHTML = '맛있는 카페 찾기 !';
+    linkA.setAttribute('href', 'https://m.vingle.net/posts/950263');
 } else if (getCategory == '생활') {
     tagIcon1.innerHTML = '🧘‍♀️';
     tagName1.innerHTML = '#생활의_달인';
     tagIcon2.innerHTML = '👨‍👩‍👧‍👦';
     tagName2.innerHTML = '#아껴쓰기';
+    linkImg.setAttribute('src', '/static/img/life1.png');
+    linkH2.innerHTML = '일상속 꿀팁들';
+    linkA.setAttribute('href', 'https://www.thetip.kr/hacks4everyday/');
 } else if (getCategory == '금융') {
     tagIcon1.innerHTML = '🤖';
     tagName1.innerHTML = '#저축왕';
     tagIcon2.innerHTML = '🐖';
     tagName2.innerHTML = '#인간_저금통';
+    linkImg.setAttribute('src', '/static/img/finance1.png');
+    linkH2.innerHTML = '금융정보 5가지 꿀팁 !';
+    linkA.setAttribute('href', 'https://blog.naver.com/ubuntu55/220619327360');
 }
 
 if (getAge == 10) {
