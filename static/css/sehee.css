@@ -56,7 +56,7 @@
   position: absolute;
   left: 18%;
   transition: 0.5s;
-  /* display: none; */
+  display: none;
 }
 
 .btn-pay1 {

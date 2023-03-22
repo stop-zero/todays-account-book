@@ -23,22 +23,6 @@ let bb = () => {
   expense.style.display = "none";
 };
 
-// btn.addEventListener("click", (e) => {
-//   e.preventDefault(); //브라우저의 기본동작을 막아줌
-//   let li = document.createElement("li");
-//   ul.append(li);
-
-//   let id = document.querySelector("input").value;
-//   let comment = document.querySelector("#input");
-
-//   li.innerHTML = `${id}`;
-// });
-
-// function changeResult() {
-//   let result = document.querySelector("input");
-//   result.innerHTML = `₩ ${input}`;
-// }
-
 function inputNumberFormat(obj) {
   obj.value = comma(uncomma(obj.value));
 }
@@ -178,15 +162,15 @@ function dateClick() {
   });
 
   //세희 수정 --------------------------------------
-  // let cc = () => {
-  //   let btn5 = document.querySelectorAll(".btn");
-  //   btn5.style.display = "none";
-  // };
+  let cc = () => {
+    let btn5 = document.querySelectorAll(".btn");
+    btn5.style.display = "none";
+  };
 
-  // let dd = () => {
-  //   let btn6 = document.querySelectorAll(".enter");
-  //   btn6.style.dispaly = "none";
-  // };
+  let dd = () => {
+    let btn6 = document.querySelectorAll(".enter");
+    btn6.style.dispaly = "none";
+  };
 
   // 선택한 날짜에 해당되는 지출/소득 리스트 render
   function renderList() {
