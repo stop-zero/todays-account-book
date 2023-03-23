@@ -158,18 +158,18 @@ function dateClick() {
     this.classList.add("clicked");
 
     $(".btn").css("display", "block");
-    //  $('.enter').css('display','block')
+    $(".enter").css("display", "block");
 
     //세희 수정 --------------------------------------
     let cc = () => {
       let btn5 = document.querySelectorAll(".btn");
       btn5.style.display = "none";
+      let breakdown1 = $(".breakdown1");
+      let breakdown2 = $(".breakdown2");
+      breakdown1.css("display", "block");
+      breakdown2.css("display", "block");
     };
-
-    let dd = () => {
-      let btn6 = document.querySelectorAll(".enter");
-      btn6.style.dispaly = "none";
-    };
+    //------------------------------------------
 
     let tmp = document.querySelector(".year-month");
     tmp = tmp.innerText;
@@ -259,6 +259,14 @@ $(".enter").click(function () {
 
   console.log(data);
   renderList(d);
+
+  // 세희수정-----------------------------------------------------------------
+  let expense = $(".expense");
+  let credit = $(".credit");
+  let btn7 = $(".btn");
+  expense.css("display", "none");
+  credit.css("display", "none");
+  btn7.css("display", "block");
 });
 
 // 반응형
@@ -270,6 +278,7 @@ window.onresize = function () {
     for (let i = 0; i < days.length; i++) {
       days[i].innerText = days_li[i];
     }
+    s;
   } else if (window.innerWidth > 576) {
     let days = document.querySelectorAll(".days>.day");
     days_li = ["Mon", "Tue", "Wed", "Tur", "Fri", "Sat", "Son"];
