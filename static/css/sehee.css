@@ -1,11 +1,10 @@
-@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
-
 .article_footer {
   width: 100%;
   height: 30vh;
   background-color: #6fb1b4;
   position: relative;
   display: inline-block;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 .form-main-box {
@@ -26,12 +25,14 @@
 
 .credit {
   width: 100%;
+  display: block;
 }
 
 /* 입금버튼 후에 뜨는 전체 클래스 */
 
 .expense {
   width: 100%;
+  display: block;
 }
 
 /* 지출버튼 후에 뜨는 전체 클래스 */
@@ -80,6 +81,10 @@
   background-color: #eed6e7;
   border: 0 solid black;
   border-radius: 30px 30px 30px 30px;
+  position: relative;
+  padding: 20px;
+  top: 5px;
+  transition: 0.5s;
 }
 
 .ep:hover {
@@ -98,24 +103,14 @@
   color: white;
 }
 
-.ep:hover {
+.ep:active {
   cursor: pointer;
   background-color: #0081f3;
   color: white;
 }
 
-.cd,
-.ep {
-  position: relative;
-  padding: 20px;
-  top: 0.8rem;
-  transition: 0.5s;
-}
-
-
 #money1,
 #money2 {
-
   width: 60%;
   height: 8vh;
   font-size: 40px;
@@ -124,10 +119,8 @@
   text-align: center;
 }
 
-
 #name1,
 #name2 {
-
   background-color: #f0f5f2;
   width: 60%;
   height: 6vh;
@@ -137,18 +130,8 @@
   text-align: center;
 }
 
+.breakdown1,
 .breakdown2 {
-  width: 80%;
-  font-size: 40px;
-  display: none;
-  position: relative;
-  flex-direction: column;
-  margin: 0 auto;
-  vertical-align: middle;
-  text-align: center;
-}
-
-.breakdown1 {
   width: 80%;
   font-size: 40px;
   display: none;
@@ -178,7 +161,7 @@ input:focus {
   border: 0;
   text-align: center;
   padding: 3%;
-  left: 85%;
+  left: 90%;
   top: 5%;
   transition: 0.5s;
 }
@@ -186,6 +169,18 @@ input:focus {
 .enter:hover {
   background-color: #0081f3;
   color: white;
+}
+
+.backimg {
+  width: 10%;
+  height: 10%;
+  position: relative;
+  bottom: 110px;
+  right: 100px;
+}
+
+.backimg:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 576px) {
