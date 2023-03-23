@@ -3,21 +3,23 @@ const Slider = new Swiper(".slider", {
   effect: "coverflow",
   centeredSlides: true,
   loop: true,
+ 
   slidesPerView: "auto",
   coverflowEffect: {
     rotate: 0,
     stretch: 0,
     depth: 100,
-    modifier: 2.5,
+    modifier: 2,
   },
-  pagination: {
+  /* pagination: {
     el: ".swiper-pagination",
     clickable: true,
-  },
+  }, */
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  
 });
 
 // url 파라미터 갖고오기
@@ -41,6 +43,10 @@ let data01 = {
       img: "/static/img/meal3.png",
       text: "식비 절약!, 포인트 사용 ",
     },
+    {
+      tag: "#식비",
+      tag_title: "1인 가구 식비 꿀팁",
+    },
   ],
   travel: [
     {
@@ -57,6 +63,10 @@ let data01 = {
       link: "https://blog.naver.com/kim453kr/222300735687",
       img: "/static/img/travel3.png",
       text: "캠핑여행 꿀팁",
+    },
+    {
+      tag: "#여행",
+      tag_title: "1인 가구 여행 꿀팁",
     },
   ],
   health: [
@@ -75,6 +85,10 @@ let data01 = {
       img: "/static/img/health3.png",
       text: "1인 가구 돌봄 시스템",
     },
+    {
+      tag: "#건강",
+      tag_title: "1인 가구 건강 꿀팁",
+    },
   ],
   traffic: [
     {
@@ -91,6 +105,10 @@ let data01 = {
       link: "http://www.dailypop.kr/news/articleView.html?idxno=63823",
       img: "/static/img/traffic3.png",
       text: "1인 가구 교통비 해결",
+    },
+    {
+      tag: "#교통",
+      tag_title: "1인 가구 교통 꿀팁",
     },
   ],
   residence: [
@@ -109,6 +127,10 @@ let data01 = {
       img: "/static/img/residence3.png",
       text: "1인 가구 어플 추천",
     },
+    {
+      tag: "#주거",
+      tag_title: "1인 가구 주거 꿀팁",
+    },
   ],
   phone: [
     {
@@ -125,6 +147,10 @@ let data01 = {
       link: "https://www.kakaobank.com/bank-story/206",
       img: "/static/img/phone3.png",
       text: "알뜰폰으로 절약!",
+    },
+    {
+      tag: "#통신",
+      tag_title: "1인 가구 통신 꿀팁",
     },
   ],
   cafe: [
@@ -143,6 +169,10 @@ let data01 = {
       img: "/static/img/cafe3.png",
       text: "홈카페 스타일링",
     },
+    {
+      tag: "#카페",
+      tag_title: "1인 가구 카페 꿀팁",
+    },
   ],
   life: [
     {
@@ -159,6 +189,10 @@ let data01 = {
       link: "https://happysat.tistory.com/187",
       img: "/static/img/life3.png",
       text: "혼자살 때 ",
+    },
+    {
+      tag: "#생활",
+      tag_title: "1인 가구 생활 꿀팁",
     },
   ],
   finance: [
@@ -177,6 +211,10 @@ let data01 = {
       img: "/static/img/finance3.png",
       text: "연말정산 절세 팁",
     },
+    {
+      tag: "#금융",
+      tag_title: "1인 가구 금융 꿀팁",
+    },
   ],
 };
 
@@ -184,55 +222,76 @@ const site = document.querySelectorAll(".site");
 const photo = document.querySelectorAll(".photo");
 const text = document.querySelectorAll(".hover-text");
 
+const tag = document.querySelector(".tag");
+const tag_title = document.querySelector(".tag_title");
+
 if (category == "교통") {
+  tag_title.innerHTML = data01.traffic[3].tag_title;
+  tag.innerHTML = data01.traffic[3].tag;
   for (let i = 0; i < 3; i++) {
     site[i].setAttribute("href", data01.traffic[i].link);
     photo[i].setAttribute("src", data01.traffic[i].img);
     text[i].innerHTML = data01.traffic[i].text;
   }
 } else if (category == "식비") {
+  tag.innerHTML = data01.meals[3].tag;
+  tag_title.innerHTML = data01.meals[3].tag_title;
   for (let i = 0; i < 3; i++) {
     site[i].setAttribute("href", data01.meals[i].link);
     photo[i].setAttribute("src", data01.meals[i].img);
     text[i].innerHTML = data01.meals[i].text;
   }
 } else if (category == "여행") {
+  tag.innerHTML = data01.travel[3].tag;
+  tag_title.innerHTML = data01.travel[3].tag_title;
   for (let i = 0; i < 3; i++) {
     site[i].setAttribute("href", data01.travel[i].link);
     photo[i].setAttribute("src", data01.travel[i].img);
     text[i].innerHTML = data01.travel[i].text;
   }
 } else if (category == "건강") {
+  tag.innerHTML = data01.health[3].tag;
+  tag_title.innerHTML = data01.health[3].tag_title;
   for (let i = 0; i < 3; i++) {
     site[i].setAttribute("href", data01.health[i].link);
     photo[i].setAttribute("src", data01.health[i].img);
     text[i].innerHTML = data01.health[i].text;
   }
 } else if (category == "주거") {
+  tag.innerHTML = data01.residence[3].tag;
+  tag_title.innerHTML = data01.residence[3].tag_title;
   for (let i = 0; i < 3; i++) {
     site[i].setAttribute("href", data01.residence[i].link);
     photo[i].setAttribute("src", data01.residence[i].img);
     text[i].innerHTML = data01.residence[i].text;
   }
 } else if (category == "통신") {
+  tag.innerHTML = data01.phone[3].tag;
+  tag_title.innerHTML = data01.phone[3].tag_title;
   for (let i = 0; i < 3; i++) {
     site[i].setAttribute("href", data01.phone[i].link);
     photo[i].setAttribute("src", data01.phone[i].img);
     text[i].innerHTML = data01.phone[i].text;
   }
 } else if (category == "카페") {
+  tag.innerHTML = data01.cafe[3].tag;
+  tag_title.innerHTML = data01.cafe[3].tag_title;
   for (let i = 0; i < 3; i++) {
     site[i].setAttribute("href", data01.cafe[i].link);
     photo[i].setAttribute("src", data01.cafe[i].img);
     text[i].innerHTML = data01.cafe[i].text;
   }
 } else if (category == "생활") {
+  tag.innerHTML = data01.life[3].tag;
+  tag_title.innerHTML = data01.life[3].tag_title;
   for (let i = 0; i < 3; i++) {
     site[i].setAttribute("href", data01.life[i].link);
     photo[i].setAttribute("src", data01.life[i].img);
     text[i].innerHTML = data01.life[i].text;
   }
 } else if (category == "금융") {
+  tag.innerHTML = data01.finance[3].tag;
+  tag_title.innerHTML = data01.finance[3].tag_title;
   for (let i = 0; i < 3; i++) {
     site[i].setAttribute("href", data01.finance[i].link);
     photo[i].setAttribute("src", data01.finance[i].img);
