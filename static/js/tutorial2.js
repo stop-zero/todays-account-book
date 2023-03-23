@@ -1,3 +1,4 @@
+
 document.querySelector('.submit_btn').onclick = () => {
     let ageRadios = document.getElementsByName('age');
     let categoryRadios = document.getElementsByName('category');
@@ -26,16 +27,17 @@ document.querySelector('.submit_btn').onclick = () => {
 
 }
 
+
 function inputNumberFormat(obj) {
-    obj.value = comma(uncomma(obj.value));
+  obj.value = comma(uncomma(obj.value));
 }
 
 function comma(str) {
-    str = String(str);
-    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+  str = String(str);
+  return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, "$1,");
 }
 
 function uncomma(str) {
-    str = String(str);
-    return str.replace(/[^\d]+/g, '');
+  str = String(str);
+  return str.replace(/[^\d]+/g, "");
 }

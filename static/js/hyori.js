@@ -100,7 +100,25 @@ function calendarInit() {
   // 캘린더 렌더링
   renderCalender(thisMonth);
 
-  function renderCalender(thisMonth) {
+  function renderCalender(thisMonth, transition) {
+    console.log(transition);
+
+    let month = document.querySelector(".year-month");
+    let wrap = document.querySelector(".cal_wrap");
+
+    if (month.classList.contains("animate__backInRight")) {
+      month.classList.remove("animate__backInRight");
+    }
+    if (month.classList.contains("animate__backInLeft")) {
+      month.classList.remove("animate__backInLeft");
+    }
+    if (wrap.classList.contains("animate__backInRight")) {
+      wrap.classList.remove("animate__backInRight");
+    }
+    if (wrap.classList.contains("animate__backInLeft")) {
+      wrap.classList.remove("animate__backInLeft");
+    }
+
     // 렌더링을 위한 데이터 정리
     currentYear = thisMonth.getFullYear();
     currentMonth = thisMonth.getMonth();
@@ -120,7 +138,6 @@ function calendarInit() {
     let nextDay = endDay.getDay();
 
     // 현재 월 표기
-    let month = document.querySelector(".year-month");
     month.innerText = currentYear + "." + (currentMonth + 1);
 
     // 렌더링 html 요소 생성
@@ -150,6 +167,16 @@ function calendarInit() {
       currentMonthDate[todayDate - 1].classList.add("today");
     }
 
+    let direction;
+    if (transition === "left") {
+      direction = "animate__backInLeft";
+    } else if (transition === "right") {
+      direction = "animate__backInRight";
+    }
+
+    month.classList.add(direction);
+    wrap.classList.add(direction);
+
     dateClick();
   }
 
@@ -157,14 +184,14 @@ function calendarInit() {
   let prev = document.querySelector(".go-prev");
   prev.addEventListener("click", function () {
     thisMonth = new Date(currentYear, currentMonth - 1, 1);
-    renderCalender(thisMonth);
+    renderCalender(thisMonth, "right");
   });
 
   // 다음달로 이동
   let next = document.querySelector(".go-next");
   next.addEventListener("click", function () {
     thisMonth = new Date(currentYear, currentMonth + 1, 1);
-    renderCalender(thisMonth);
+    renderCalender(thisMonth, "left");
   });
 }
 
@@ -176,14 +203,16 @@ let d;
 function dateClick() {
   $(".current").click(function () {
     console.log(`${this.innerText}일을 선택하셨습니다.`);
-    $(".clicked").css("background-color", "beige");
+    $(".clicked").css("background-color", "white");
     $(".clicked").removeClass("clicked");
     // $(".current").css("background-color", "beige");
-    this.style = "background-color: rgb(179, 219, 236);";
+    this.style = "  background-color: rgb(246, 231, 234);";
     this.classList.add("clicked");
 
     $(".btn").css("display", "block");
+
     $(".enter").css("display", "block");
+
 
     //세희 수정 --------------------------------------
     let cc = () => {
@@ -194,6 +223,7 @@ function dateClick() {
       breakdown1.css("display", "block");
       breakdown2.css("display", "block");
     };
+
 
     let img1 = document.querySelector(".backimg1");
     img1.addEventListener("click", () => {
@@ -215,7 +245,7 @@ function dateClick() {
       btn10.css("display", "block");
     });
 
-    //------------------------------------------
+
 
     let tmp = document.querySelector(".year-month");
     tmp = tmp.innerText;
@@ -235,7 +265,7 @@ function dateClick() {
     d = year_tmp + month_tmp + date_tmp;
     console.log(d);
 
-    renderList(d);
+    renderList(d, false);
   });
 }
 let kind_tmp, category_tmp;
@@ -301,25 +331,46 @@ $(".enter").click(function () {
     price_tmp = money2.value;
   }
 
-  let tmp = {
-    kind: kind_tmp,
-    category: category_tmp,
-    name: name_tmp,
-    price: price_tmp,
-  };
-
-  // console.log(tmp);
-  // console.log(d);
-  if (data[d] === undefined) {
-    data[d] = [tmp];
+  // 값이 모두 입력됐을때만 모달 창 뜨게 하기
+  if (
+    category_tmp === undefined ||
+    name_tmp.length < 1 ||
+    price_tmp.length < 1
+  ) {
+    // 아무 일도 안 일어남.
   } else {
-    data[d].push(tmp);
+    Swal.fire({
+      title: `분류 : ${kind_tmp} <br/> 카테고리 : ${category_tmp} <br/> 이름 : ${name_tmp} <br> 가격: ${price_tmp}`,
+      text: "입력하신 정보가 맞으신가요?",
+      // icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#6fb1b4",
+      cancelButtonColor: "#999",
+      confirmButtonText: "네!",
+      cancelButtonText: "아니요",
+    }).then((result) => {
+      if (result.value === true) {
+        let tmp = {
+          kind: kind_tmp,
+          category: category_tmp,
+          name: name_tmp,
+          price: price_tmp,
+        };
+
+        if (data[d] === undefined) {
+          data[d] = [tmp];
+        } else {
+          data[d].push(tmp);
+        }
+
+        console.log(data);
+        renderList(d, true);
+      }
+    });
   }
 
-  console.log(data);
-  renderList(d);
 
-  // 세희수정-----------------------------------------------------------------
+  
   let expense = $(".expense");
   let credit = $(".credit");
   let btn7 = $(".btn");
@@ -331,6 +382,7 @@ $(".enter").click(function () {
   name2.value = null;
   money1.value = null;
   money2.value = null;
+
 });
 
 // 반응형
@@ -353,10 +405,13 @@ window.onresize = function () {
 };
 
 // 선택한 날짜에 해당되는 지출/소득 리스트 render
-function renderList(d) {
+function renderList(d, isNew) {
   let data_d = data[d];
-  let ul = document.querySelector(".list");
-  ul.innerHTML = "";
+  $(".date_inf").text(
+    `20${d.slice(0, 2)}. ${d.slice(2, 4)}. ${d.slice(4, 6)}.`
+  );
+  let ul = $(".list");
+  ul.html("");
   if (data_d != undefined) {
     let li = document.createElement("li");
     li.classList.add("account-li");
@@ -367,7 +422,21 @@ function renderList(d) {
       let clone = li.cloneNode(true);
       clone.childNodes[0].innerText = data_d[i]["category"];
       clone.childNodes[1].innerText = data_d[i]["name"];
-      clone.childNodes[2].innerText = data_d[i]["price"];
+
+      price_tmp = data_d[i]["price"];
+      if (data_d[i]["kind"] == "입금") {
+        price_tmp = `+${price_tmp} 원`;
+        clone.childNodes[2].classList.add("plus");
+      } else {
+        price_tmp = `-${price_tmp} 원`;
+        clone.childNodes[2].classList.add("minus");
+      }
+      clone.childNodes[2].innerText = price_tmp;
+      if (isNew && i == data_d.length - 1) {
+        clone.classList.add("animate__backInRight");
+      } else if (!isNew) {
+        clone.classList.add("animate__backInRight");
+      }
       ul.append(clone);
     }
   }
