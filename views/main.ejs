@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>오늘의 가계부</title>
     <!-- swiper -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+   
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+
     <script src="/static/js/test.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.6.4.min.js"
@@ -79,10 +85,13 @@
           </button>
 
           <div class="credit">
+            
             <!-- 입금-->
             <div class="won"></div>
+            
             <!--form에서 입력한 값-->
             <div class="breakdown1" style="font-size: 30px">
+              
               <label>
                 ₩
                 <input
@@ -92,10 +101,12 @@
                   onkeyup="inputNumberFormat(this)"
               /></label>
 
-              <label>내역: <input type="text" name="list" id="name2" /></label>
 
-              <button type="submit" class="enter">입력</button>
+              <label>내역:  <input type="text" name="list" id="name2" /></label>
 
+
+              <button type="submit" class="enter">확인</button>
+              <img src="../static/img/back.png" alt="back" class="backimg backimg1">
               <div class="d-flex">
                 <button type="button" class="cd cd1">월급</button>
                 <button type="button" class="cd cd2">용돈</button>
@@ -120,14 +131,9 @@
                   onkeyup="inputNumberFormat(this)"
               /></label>
               <label>내역: <input type="text" name="list" id="name1" /></label>
-              <button
-                type="submit"
-                class="enter"
-                data-bs-toggle="modal"
-                data-bs-target="#expenseModal"
-              >
-                입력
-              </button>
+
+              <button type="submit" class="enter" >확인</button>
+              <img src="../static/img/back.png" alt="back" class="backimg backimg2"
 
               <div class="d-flex">
                 <button type="button" class="ep ep1">식비</button>
@@ -167,29 +173,31 @@
               <!-- Slide-end -->
             </div>
            
-          <!-- 화살표 -->
-            <div class="slider-control">
-              <div class="swiper-button-prev slider-arrow">
-                <ion-icon name="arrow-back-outline"></ion-icon>
-              </div>
-              <div class="swiper-button-next slider-arrow">
-                <ion-icon name="arrow-forward-outline"></ion-icon>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
+
+        
+<!-- 화살표 -->
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
 
           </div>
         </div>
       </section>
       <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <div class="footer">
-      <div class="footer-left">오늘의 가계부</div>
+      
+      <div class="footer-left">
+        <img src="/static/img/bill2.png" alt="..."/>
+      </div>
+
       <div class="footer-right">
-        <p>1인가구의 행복을 응원합니다</p>
-        <p>강민혁 - 이효리 - 정세희 - 정지영</p>
-        <p>@copyright 2023 today`s account book</p>
+        <div class="footer-right-left">
+          오늘의 가계부
+        </div>
+        <div class="footer-right-right">
+          <p class="t-lg">강민혁 | 이효리 | 정세희 | 정지영</p>
+          <p>@copyright 2023 today`s account book</p>
+          <p>2023/03/18 ~ 2023/03/24</p>
+        </div>
       </div>
     </div>
     <script src="/static/js/hyori.js"></script>
