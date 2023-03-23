@@ -6,13 +6,15 @@ document.querySelector('.submit_btn').onclick = () => {
     let selectedCategory = Array.from(categoryRadios).find(radio => radio.checked);
     let inputWonValue = inputWon.value;
     const formatter = new Intl.NumberFormat('ko', { notation: 'compact' });
-    console.log(selectedAge.value + selectedCategory.value + inputWonValue);
+    let swal2title = document.querySelector('#swal2-title');
+    // swal2title.classList.toggle('animate__fadeInLeft');
+    // console.log(selectedAge.value + selectedCategory.value + inputWonValue);
     Swal.fire({
         title: `나이 : ${selectedAge.value}대 <br/> 가장 많은 소비 : ${selectedCategory.value} <br/> 평균 소비 금액 : ${formatter.format(inputWonValue)}원`,
         text: "입력하신 정보가 맞으신가요?",
-        icon: 'warning',
+        icon: 'info',
         showCancelButton: true,
-        confirmButtonColor: '#6fb1b4',
+        confirmButtonColor: '#3784ff',
         cancelButtonColor: '#999',
         confirmButtonText: '네!',
         cancelButtonText: '아니요..'
@@ -21,6 +23,7 @@ document.querySelector('.submit_btn').onclick = () => {
             location.href = `/tutorial2/testresult?age=${selectedAge.value}&category=${selectedCategory.value}&inputWon=${inputWonValue}`;
         }
     })
+
 }
 
 function inputNumberFormat(obj) {
