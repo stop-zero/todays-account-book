@@ -10,17 +10,42 @@ let expense = document.querySelector(".btn-pay2");
 let enter = document.querySelectorAll(".enter");
 
 let aa = () => {
+  //입금
   let breakdown1 = document.querySelector(".breakdown1");
-  breakdown1.style.display = "flex";
-  credit.style.display = "none";
-  expense.style.display = "none";
+  let btn = document.querySelector(".btn-pay1");
+  let btn2 = document.querySelector(".btn-pay2");
+  let credit = document.querySelector(".credit");
+  let expense = document.querySelector(".expense");
+
+  if ($(".credit").css("display") == "none") {
+    credit.style.display = "block";
+    expense.style.display = "none";
+    btn.style.display = "none";
+    btn2.style.display = "none";
+    breakdown1.style.display = "block";
+  } else if ($(".credit").css("display") == "block") {
+    credit.style.display = "none";
+    expense.style.display = "none";
+  }
 };
 
 let bb = () => {
+  //지출
   let breakdown2 = document.querySelector(".breakdown2");
-  breakdown2.style.display = "flex";
-  credit.style.display = "none";
-  expense.style.display = "none";
+  let btn = document.querySelector(".btn-pay1");
+  let btn2 = document.querySelector(".btn-pay2");
+  let credit = document.querySelector(".credit");
+  let expense = document.querySelector(".expense");
+  if ($(".credit").css("display") == "none") {
+    credit.style.display = "none";
+    expense.style.display = "block";
+    btn.style.display = "none";
+    btn2.style.display = "none";
+    breakdown2.style.display = "block";
+  } else if ($(".credit").css("display") == "block") {
+    credit.style.display = "none";
+    expense.style.display = "none";
+  }
 };
 
 function inputNumberFormat(obj) {
@@ -169,6 +194,27 @@ function dateClick() {
       breakdown1.css("display", "block");
       breakdown2.css("display", "block");
     };
+
+    let img1 = document.querySelector(".backimg1");
+    img1.addEventListener("click", () => {
+      let expense3 = $(".expense");
+      let credit3 = $(".credit");
+      let btn10 = $(".btn");
+      expense3.css("display", "none");
+      credit3.css("display", "none");
+      btn10.css("display", "block");
+    });
+
+    let img2 = document.querySelector(".backimg2");
+    img2.addEventListener("click", () => {
+      let expense3 = $(".expense");
+      let credit3 = $(".credit");
+      let btn10 = $(".btn");
+      expense3.css("display", "none");
+      credit3.css("display", "none");
+      btn10.css("display", "block");
+    });
+
     //------------------------------------------
 
     let tmp = document.querySelector(".year-month");
@@ -222,6 +268,19 @@ $(".ep").click(function () {
   this.classList.add("clickedEp");
 });
 
+$(".backimg").click(function () {
+  name1 = document.querySelector("#name1");
+  name2 = document.querySelector("#name2");
+
+  let money1 = document.querySelector("#money1");
+  let money2 = document.querySelector("#money2");
+
+  name1.value = null;
+  name2.value = null;
+  money1.value = null;
+  money2.value = null;
+});
+
 $(".enter").click(function () {
   name1 = document.querySelector("#name1");
   name2 = document.querySelector("#name2");
@@ -267,6 +326,11 @@ $(".enter").click(function () {
   expense.css("display", "none");
   credit.css("display", "none");
   btn7.css("display", "block");
+
+  name1.value = null;
+  name2.value = null;
+  money1.value = null;
+  money2.value = null;
 });
 
 // 반응형
