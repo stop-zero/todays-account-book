@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>오늘의 가계부</title>
     <!-- swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/static/js/test.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.6.4.min.js"
@@ -23,7 +25,7 @@
   </head>
   <body>
     <div class="container1">
-      <div class="article">
+      <div v class="article">
         <div class="article_left">
           <!-- 캘린더 입력 -->
           <div class="sec_cal">
@@ -47,15 +49,8 @@
           </div>
         </div>
         <div class="article_right">
-          <ul class="list" type="none">
-            
-            <li class="account-li">
-              <div class="li-item category"></div>
-              <div class="li-item name"></div>
-              <div class="li-item price"></div>
-            </li>
-
-          </ul>
+          <div class="date_inf"></div>
+          <ul class="list" type="none"></ul>
         </div>
       </div>
       <div class="article_footer">
@@ -89,16 +84,13 @@
                 <input
                   type="text"
                   name="money"
-
                   id="money1"
                   onkeyup="inputNumberFormat(this)"
               /></label>
 
               <label>내역: <input type="text" name="list" id="name2" /></label>
 
-              <button type="submit" class="enter" onclick="dd()">입력</button>
-
-              
+              <button type="submit" class="enter">입력</button>
 
               <div class="d-flex">
                 <button type="button" class="cd cd1">월급</button>
@@ -107,9 +99,7 @@
                 <button type="button" class="cd cd4">자산인출</button>
                 <button type="button" class="cd cd5">기타</button>
               </div>
-              
             </div>
-            
           </div>
 
           <div class="expense">
@@ -122,12 +112,18 @@
                 <input
                   type="text"
                   name="money"
-
                   id="money2"
                   onkeyup="inputNumberFormat(this)"
               /></label>
               <label>내역: <input type="text" name="list" id="name1" /></label>
-              <button type="submit" class="enter">입력</button>
+              <button
+                type="submit"
+                class="enter"
+                data-bs-toggle="modal"
+                data-bs-target="#expenseModal"
+              >
+                입력
+              </button>
 
               <div class="d-flex">
                 <button type="button" class="ep ep1">식비</button>
@@ -147,31 +143,27 @@
     </div>
 
     <div class="container2">
-
-      
       <!-- 1인 꿀팁 -->
-    
+
       <section id="tip">
         <div class="container">
-          <h3 class="text "> #생활 태그 </h3>
+          <h3 class="text">#생활 태그</h3>
           <h1 class="text tag_title">1인 생활 꿀팁</h1>
         </div>
         <div class="container">
           <div class="swiper slider">
             <div class="swiper-wrapper">
               <!-- Slide-start -->
-              <div class="swiper-slide tip-slide ">
+              <div class="swiper-slide tip-slide">
                 <div class="tip-slide-img">
-                  <img src="" class="photo" alt="tip">
-                  <a class="hover-text site" href="#" >  
-
-                  </a>
+                  <img src="" class="photo" alt="tip" />
+                  <a class="hover-text site" href="#"> </a>
                 </div>
               </div>
               <!-- Slide-end -->
             </div>
-           
-          <!-- 화살표 -->
+
+            <!-- 화살표 -->
             <div class="slider-control">
               <div class="swiper-button-prev slider-arrow">
                 <ion-icon name="arrow-back-outline"></ion-icon>
@@ -181,17 +173,21 @@
               </div>
               <div class="swiper-pagination"></div>
             </div>
-
           </div>
         </div>
       </section>
-      <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </div>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
     <div class="footer">
-      <div class="footer-left">
-        오늘의 가계부
-      </div>
+      <div class="footer-left">오늘의 가계부</div>
       <div class="footer-right">
         <p>1인가구의 행복을 응원합니다</p>
         <p>강민혁 - 이효리 - 정세희 - 정지영</p>

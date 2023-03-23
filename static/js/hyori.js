@@ -173,10 +173,8 @@ function dateClick() {
     this.style = "background-color: rgb(179, 219, 236);";
     this.classList.add("clicked");
 
-
     $(".btn").css("display", "block");
     //  $('.enter').css('display','block')
-
 
     //세희 수정 --------------------------------------
     let cc = () => {
@@ -188,9 +186,6 @@ function dateClick() {
       let btn6 = document.querySelectorAll(".enter");
       btn6.style.dispaly = "none";
     };
-
-
-
 
     let tmp = document.querySelector(".year-month");
     tmp = tmp.innerText;
@@ -206,7 +201,6 @@ function dateClick() {
 
     if (date_tmp.length === 1) {
       date_tmp = "0" + date_tmp;
-
     }
     d = year_tmp + month_tmp + date_tmp;
     console.log(d);
@@ -264,23 +258,34 @@ $(".enter").click(function () {
     price_tmp = money2.value;
   }
 
-  let tmp = {
-    kind: kind_tmp,
-    category: category_tmp,
-    name: name_tmp,
-    price: price_tmp,
-  };
+  Swal.fire({
+    title: `분류 : ${kind_tmp} <br/> 카테고리 : ${category_tmp} <br/> 이름 : ${name_tmp} <br> 가격: ${price_tmp}`,
+    text: "입력하신 정보가 맞으신가요?",
+    // icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#6fb1b4",
+    cancelButtonColor: "#999",
+    confirmButtonText: "네!",
+    cancelButtonText: "아니요",
+  }).then((result) => {
+    if (result.value === true) {
+      let tmp = {
+        kind: kind_tmp,
+        category: category_tmp,
+        name: name_tmp,
+        price: price_tmp,
+      };
 
-  // console.log(tmp);
-  // console.log(d);
-  if (data[d] === undefined) {
-    data[d] = [tmp];
-  } else {
-    data[d].push(tmp);
-  }
+      if (data[d] === undefined) {
+        data[d] = [tmp];
+      } else {
+        data[d].push(tmp);
+      }
 
-  console.log(data);
-  renderList(d);
+      console.log(data);
+      renderList(d);
+    }
+  });
 });
 
 // 반응형
@@ -304,8 +309,11 @@ window.onresize = function () {
 // 선택한 날짜에 해당되는 지출/소득 리스트 render
 function renderList(d) {
   let data_d = data[d];
-  let ul = document.querySelector(".list");
-  ul.innerHTML = "";
+  $(".date_inf").text(
+    `20${d.slice(0, 2)}. ${d.slice(2, 4)}. ${d.slice(4, 6)}.`
+  );
+  let ul = $(".list");
+  ul.html("");
   if (data_d != undefined) {
     let li = document.createElement("li");
     li.classList.add("account-li");
@@ -316,7 +324,17 @@ function renderList(d) {
       let clone = li.cloneNode(true);
       clone.childNodes[0].innerText = data_d[i]["category"];
       clone.childNodes[1].innerText = data_d[i]["name"];
-      clone.childNodes[2].innerText = data_d[i]["price"];
+
+      price_tmp = data_d[i]["price"];
+      if (data_d[i]["kind"] == "입금") {
+        price_tmp = `+${price_tmp} 원`;
+        clone.childNodes[2].classList.add("plus");
+      } else {
+        price_tmp = `-${price_tmp} 원`;
+        clone.childNodes[2].classList.add("minus");
+      }
+      clone.childNodes[2].innerText = price_tmp;
+
       ul.append(clone);
     }
   }
