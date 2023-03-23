@@ -23,8 +23,6 @@ document.querySelector(".submit_btn").onclick = () => {
   }).then((result) => {
     if (result.value === true) {
       location.href = `/tutorial2/testresult?age=${selectedAge.value}&category=${selectedCategory.value}&inputWon=${inputWonValue}`;
-    } else if (result.value === false) {
-      alert("!!!!");
     }
   });
 };
