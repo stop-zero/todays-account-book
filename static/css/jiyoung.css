@@ -1,22 +1,47 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 
+.swiper {
+
+  width: 80%;
+}
+
+@media (max-width: 1040px) {
+  .tip-slide {
+    width: 20vw !important;
+    height: 30vh !important;
+  }
+  .tip-slide .tip-slide-img img {
+    width: 20vw !important;
+    height: 30vh !important;
+  }
+  .slider {
+    height: 30vh;
+  }
+}
+
+@media (max-width: 990px) {}
+
+/* Mobile - Portrait */
+@media (max-width: 575px) {}
+
 
 
 
 @media (max-width: 500px) {
+
   .tip-slide {
-    width: 28rem !important;
-    height: 36rem !important;
+    width: 20vw !important;
+    height: 23vh !important;
   }
 
   .tip-slide .tip-slide-img img {
-    width: 28rem !important;
-    height: 36rem !important;
+    width: 20vw !important;
+    height: 23vh !important;
   }
 
   .slider {
-    height: 45rem;
+    height: 23vh;
   }
 }
 
@@ -27,8 +52,7 @@ html {
 .container {
   max-width: 100rem;
   padding: 0 1rem;
-  margin: 0 auto;
-
+  margin: 10px auto;
 }
 
 .tag {
@@ -64,7 +88,6 @@ html {
 }
 
 /* 이미지에 커서 올리면 제목 보이게 */
-/* 반응형 구현 해야함 */
 img {
   vertical-align: top;
 }
@@ -128,6 +151,7 @@ img {
     transform: translateX(-30%) !important;
   }
 }
+
 
 @media (max-width: 450px) {
   .swiper-button-next {
