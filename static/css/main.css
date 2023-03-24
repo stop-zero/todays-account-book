@@ -92,3 +92,26 @@
   font-size: 2.5rem;
 }
 
+@media screen and (max-width:768px) {
+  .footer-right-left {
+    font-size: 1.5rem;
+  }
+
+  .t-lg {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width:425px) {
+  .footer-right-left {
+    font-size: 1.2rem;
+  }
+
+  .footer-right-right p {
+    font-size: 0.8rem;
+  }
+
+  .t-lg {
+    font-size: 1.2rem !important;
+  }
+}

@@ -1,14 +1,27 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
+
+/* Mobile - Portrait */
+@media (max-width: 575px) {}
+
+/* Mobile - Landscape */
+@media (max-width: 767px) {}
+
+/* Tablet */
+@media (max-width: 991px) {}
+
+
 @media (max-width: 500px) {
   .tip-slide {
     width: 28rem !important;
     height: 36rem !important;
   }
+
   .tip-slide .tip-slide-img img {
     width: 28rem !important;
     height: 36rem !important;
   }
+
   .slider {
     height: 45rem;
   }
@@ -22,7 +35,7 @@ html {
   max-width: 100rem;
   padding: 0 1rem;
   margin: 0 auto;
-  
+
 }
 
 .tag {
@@ -31,6 +44,7 @@ html {
   font-weight: 500;
   font-size: 1.5rem;
 }
+
 .tag_title {
   color: #3784ff;
   text-align: center;
@@ -61,10 +75,12 @@ html {
 img {
   vertical-align: top;
 }
+
 .tip-slide-img:hover:after,
-.tip-slide-img:hover > .hover-text {
+.tip-slide-img:hover>.hover-text {
   display: block;
 }
+
 .tip-slide-img:after,
 .hover-text {
   display: none;
@@ -113,17 +129,19 @@ img {
     left: 70% !important;
     transform: translateX(-70%) !important;
   }
-   .swiper-button-prev {
+
+  .swiper-button-prev {
     left: 30% !important;
     transform: translateX(-30%) !important;
   }
 }
 
 @media (max-width: 450px) {
-   .swiper-button-next {
+  .swiper-button-next {
     left: 80% !important;
     transform: translateX(-80%) !important;
   }
+
   .swiper-button-prev {
     left: 20% !important;
     transform: translateX(-20%) !important;
@@ -134,4 +152,3 @@ img {
 .swiper-button-next {
   color: #3784ff;
 }
-
