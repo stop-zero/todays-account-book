@@ -5,10 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>오늘의 가계부</title>
-    <!-- swiper -->
-
+    <!-- sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,23 +110,22 @@
             
             <!--form에서 입력한 값-->
             <div class="breakdown1" style="font-size: 30px">
-              
-              <label>
-                ₩
-                <input
+              <img src="../static/img/back.png" alt="back" class="backimg backimg1">
+              <div class="input">
+              <label style='color:#0081f3'>₩<input
                   type="text"
                   name="money"
                   id="money1"
                   onkeyup="inputNumberFormat(this)"
               /></label>
-              <br>
+
+           
+              <label style='color:#0081f3'>내역:<input type="text" name="list" id="name2" /></label>
+            </div>
 
 
-              <label>내역:   <input type="text" name="list" id="name2" /></label>
-
-
-              <button type="submit" class="enter">확인</button>
-              <img src="../static/img/back.png" alt="back" class="backimg backimg1">
+              
+              
               <div class="d-flex">
                 <button type="button" class="cd cd1">월급</button>
                 <button type="button" class="cd cd2">용돈</button>
@@ -136,6 +133,7 @@
                 <button type="button" class="cd cd4">자산인출</button>
                 <button type="button" class="cd cd5">기타</button>
               </div>
+              <button type="submit" class="enter">확인</button>
             </div>
           </div>
 
@@ -144,22 +142,22 @@
             <div class="won"></div>
             <!--form에서 입력한 값-->
             <div class="breakdown2" style="font-size: 30px">
-              <label>
-                ₩
-                <input
+              <img src="../static/img/back.png" alt="back" class="backimg backimg2">
+              <div class="input">
+              <label>₩<input
                   type="text"
                   name="money"
                   id="money2"
                   onkeyup="inputNumberFormat(this)"
               /></label>
-              <br>
-              <label>내역:  <input type="text" name="list" id="name1" /></label>
+            
+              
+              <label>내역:<input type="text" name="list" id="name1" /></label></div>
 
-              <button type="submit" class="enter" >확인</button>
-              <img src="../static/img/back.png" alt="back" class="backimg backimg2"
+              
+              
 
               <div class="d-flex">
-                <br>
                 <button type="button" class="ep ep1">식비</button>
                 <button type="button" class="ep ep2">여행</button>
                 <button type="button" class="ep ep3">건강</button>
@@ -170,6 +168,7 @@
                 <button type="button" class="ep ep8">생활</button>
                 <button type="button" class="ep ep9">기타</button>
               </div>
+              <button type="submit" class="enter" >확인</button>
             </div>
           </div>
         </div>
@@ -178,7 +177,6 @@
 
     <div class="container2">
       <!-- 1인 꿀팁 -->
-
       <section id="tip">
         <div class="container">
           <h3 class="text tag ">  </h3>
@@ -194,15 +192,24 @@
                   <a class="hover-text site" href="#"> </a>
                 </div>
               </div>
+              <div class="swiper-slide tip-slide">
+                <div class="tip-slide-img">
+                  <img src="" class="photo" alt="tip" />
+                  <a class="hover-text site" href="#"> </a>
+                </div>
+              </div>
+              <div class="swiper-slide tip-slide">
+                <div class="tip-slide-img">
+                  <img src="" class="photo" alt="tip" />
+                  <a class="hover-text site" href="#"> </a>
+                </div>
+              </div>
               <!-- Slide-end -->
             </div>
            
-
-        
 <!-- 화살표 -->
 <div class="swiper-button-prev"></div>
 <div class="swiper-button-next"></div>
-
           </div>
         </div>
       </section>

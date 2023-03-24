@@ -22,7 +22,7 @@ let aa = () => {
     expense.style.display = "none";
     btn.style.display = "none";
     btn2.style.display = "none";
-    breakdown1.style.display = "block";
+    breakdown1.style.display = "flex";
   } else if ($(".credit").css("display") == "block") {
     credit.style.display = "none";
     expense.style.display = "none";
@@ -41,7 +41,7 @@ let bb = () => {
     expense.style.display = "block";
     btn.style.display = "none";
     btn2.style.display = "none";
-    breakdown2.style.display = "block";
+    breakdown2.style.display = "flex";
   } else if ($(".credit").css("display") == "block") {
     credit.style.display = "none";
     expense.style.display = "none";
@@ -207,9 +207,12 @@ function dateClick() {
 
     this.classList.add("clicked");
 
-    $(".btn").css("display", "block");
+    $(".btn").css("display", "flex");
 
-    $(".enter").css("display", "block");
+    $(".enter").css("display", "flex");
+
+    $(".credit").css("display", "none");
+    $(".expense").css("display", "none");
 
     //세희 수정 --------------------------------------
     let cc = () => {
@@ -217,8 +220,8 @@ function dateClick() {
       btn5.style.display = "none";
       let breakdown1 = $(".breakdown1");
       let breakdown2 = $(".breakdown2");
-      breakdown1.css("display", "block");
-      breakdown2.css("display", "block");
+      breakdown1.css("display", "flex");
+      breakdown2.css("display", "flex");
     };
 
     let img1 = document.querySelector(".backimg1");
@@ -380,6 +383,18 @@ $(".enter").click(function () {
       }
     });
   }
+
+  let expense = $(".expense");
+  let credit = $(".credit");
+  let btn7 = $(".btn");
+  expense.css("display", "none");
+  credit.css("display", "none");
+  btn7.css("display", "block");
+
+  name1.value = null;
+  name2.value = null;
+  money1.value = null;
+  money2.value = null;
 });
 
 // 반응형
