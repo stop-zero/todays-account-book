@@ -287,10 +287,6 @@ $(".cd").click(function () {
 $(".ep").click(function () {
   category_tmp = $(this).text();
 
-  $(".clickedEp").css("background-color", "#eed6e7");
-  $(".clickedEp").css("color", "black");
-
-  $(".clickedEp").removeClass("clickedEp");
   this.style = "background-color: #0081f3; color: white;";
   this.classList.add("clickedEp");
 });
@@ -374,6 +370,16 @@ $(".enter").click(function () {
         name2.value = null;
         money1.value = null;
         money2.value = null;
+
+        $(".clickedEp").css("background-color", "#eed6e7");
+        $(".clickedEp").css("color", "black");
+
+        $(".clickedEp").removeClass("clickedEp");
+
+        $(".clickedCd").css("background-color", "#eed6e7");
+        $(".clickedCd").css("color", "black");
+
+        $(".clickedCd").removeClass("clickedCd");
       }
     });
   }
