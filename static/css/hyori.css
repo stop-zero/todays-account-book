@@ -1,5 +1,5 @@
 body {
-  background: var(--bg-color)
+  background: var(--bg-color);
 }
 header {
   height: 42px;
@@ -32,6 +32,10 @@ header > .header_left > .h_tag {
   font-size: 0.5rem;
 }
 
+header > .header_right > .color_mode {
+  margin: auto;
+  margin-right: 1.5vw;
+}
 .space {
   height: 70px;
 }
@@ -118,17 +122,26 @@ header > .header_left > .h_tag {
 :root {
   --pink-color: rgb(246, 231, 234);
   --bg-color: white;
-  --blue-color:
-  --font-color:
-
+  --font-color-disabled: #ddd;
+  --font-color: black;
+  --blue-color: #86a2d0;
+  --click-color: rgb(246, 231, 234);
+  --current-color: rgb(242 242 242);
 }
 .darkmode {
-  --pink-color: #999;
-  --bg-color: #999;
-  --blue-color:
-  --font-color:
+  --pink-color: #2e2e2e;
+
+  --bg-color: #2e2e2e;
+  --font-color-disabled: #252525;
+  --font-color: grey;
+  --blue-color: grey;
+  --click-color: rgb(151, 138, 141);
+  --current-color: rgb(139, 138, 138);
 }
 
+.a {
+  background-color: rgb(216, 201, 204);
+}
 /* section calendar */
 
 .sec_cal {
@@ -137,7 +150,7 @@ header > .header_left > .h_tag {
   font-family: "NotoSansR";
   margin: auto;
   border-top: 1.5px solid #498fff;
-  border-bottom: 1.5px solid #86a2d0;
+  border-bottom: 1.5px solid var(--blue-color);
 }
 
 .sec_cal .cal_nav {
@@ -231,7 +244,7 @@ header > .header_left > .h_tag {
 }
 
 .current.today {
-  background: rgb(242 242 242);
+  background: var(--current-color);
 }
 
 .sec_cal .cal_wrap .dates {
@@ -249,16 +262,18 @@ header > .header_left > .h_tag {
 }
 
 .sec_cal .cal_wrap .day.disable {
-  color: #ddd;
+  color: var(--font-color-disabled);
 }
 
 .current:hover {
-  background-color: rgb(246, 231, 234);
+  background-color: var(--click-color);
   width: 100px;
 }
 
 .clicked {
-  background-color: rgb(246, 231, 234);
+  background: var(--click-color);
+
+  /* background-color: rgb(246, 231, 234); */
 }
 
 .date_inf {
@@ -266,11 +281,13 @@ header > .header_left > .h_tag {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
+  color: var(--font-color);
 }
 
 .list {
   overflow-y: auto;
-  height: 95%;
+  overflow-x: hidden;
+  height: 82%;
 }
 
 .list > .account-li {
@@ -280,6 +297,7 @@ header > .header_left > .h_tag {
   padding-bottom: 25px;
   border-bottom: 1px solid #a5c0ed;
   display: flex;
+  color: var(--font-color);
 }
 
 .category {
@@ -353,7 +371,17 @@ header > .header_left > .h_tag {
     padding-bottom: 15px;
   }
 }
+/* 
+.clickedCd {
+  background-color: #0081f3;
+  color: white;
+}
 
+.clickedEp {
+  background-color: #0081f3;
+  color: white;
+}
+ */
 /* 
 .article {
   width: 100%;
