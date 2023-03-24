@@ -18,7 +18,7 @@ let linkImg = document.querySelector('.link-img');
 let linkH2 = document.querySelector('.link-right h2');
 let linkA = document.querySelector('.link-right a');
 
-mainHref.setAttribute('href', `/main?category=교통`)
+mainHref.setAttribute('href', `/main?category=${getCategory}`)
 const formatter = new Intl.NumberFormat('ko', { notation: 'compact' });
 // 나이대 별 한달 평균 생활비
 let teen = 328000;
@@ -30,7 +30,7 @@ const resultArr = ['과소비', '적정', '저소비'];
 
 if (getCategory == '식비') {
     tagIcon1.innerHTML = '🍈';
-    tagName1.innerHTML = '#과일_박사';
+    tagName1.innerHTML = '#내가바로_미식가';
 } else if (getCategory == '여행') {
     tagIcon1.innerHTML = '🌍    ';
     tagName1.innerHTML = '#세계_일주';
@@ -45,10 +45,10 @@ if (getCategory == '식비') {
     tagName1.innerHTML = '#집돌이_집순이';
 } else if (getCategory == '통신') {
     tagIcon1.innerHTML = '📱';
-    tagName1.innerHTML = '#현질왕';
+    tagName1.innerHTML = '#통신왕';
 } else if (getCategory == '카페') {
     tagIcon1.innerHTML = '🍞';
-    tagName1.innerHTML = '#빵순이_빵돌이';
+    tagName1.innerHTML = '#카페순이_카페돌이';
 } else if (getCategory == '생활') {
     tagIcon1.innerHTML = '🧘‍♀️';
     tagName1.innerHTML = '#생활의_달인';

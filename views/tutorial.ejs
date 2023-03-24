@@ -15,12 +15,83 @@
     <style>
       @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
-      @media (max-width: 996px) {
+      @media screen and (max-width: 375px) {
+        .button {
+          margin-top: 2rem !important;
+        }
+      }
+
+      @media screen and (max-width: 425px) {
+        .button {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .coin-container1 {
+          display: none !important;
+        }
+        .box {
+          width: 80%;
+        }
+        html {
+          font-size: 10px;
+        }
+        .button {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+        }
+
+        .yes,
+        .no {
+          margin: 2em !important;
+        }
+
+        .yes {
+          margin-bottom: 0.5rem !important;
+        }
+
+        .no {
+          margin-top: 0.5rem !important;
+        }
+
+        .title p {
+          margin-left: 1.3rem;
+        }
+
+        .catchphrase {
+          height: 15vh !important;
+        }
+
+        .catchphrase p {
+          font-size: 1rem !important;
+        }
+
+        .button_box {
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        button {
+          width: 14rem !important;
+          line-height: 1rem !important;
+        }
+      }
+
+      @media screen and (max-width: 1024px) {
         html {
           font-size: 14px;
         }
         img {
           display: none;
+        }
+        .coin-container1 {
+          margin-left: 4rem;
         }
         .title {
           font-size: 2rem !important;
@@ -44,55 +115,6 @@
           display: flex;
           align-items: center;
           flex-direction: column;
-        }
-      }
-
-      @media screen and (max-width: 680px) {
-        html {
-          font-size: 12px;
-        }
-        .button {
-          display: flex;
-          align-items: center;
-          flex-direction: column;
-        }
-
-        .yes,
-        .no {
-          margin: 2em !important;
-        }
-
-        .yes {
-          margin-bottom: 0.5rem !important;
-        }
-
-        .no {
-          margin-top: 0.5rem !important;
-        }
-
-        button {
-          width: 14rem !important;
-          line-height: 1rem !important;
-        }
-
-        .title,
-        .catchphrase {
-          margin: 0 auto !important;
-          margin-bottom: 1.5rem !important;
-        }
-      }
-
-      @media screen and (max-width: 567px) {
-        .button {
-          display: flex;
-          align-items: center;
-          flex-direction: column;
-        }
-      }
-
-      @media screen and (max-width: 375px) {
-        .button {
-          margin-top: 2rem !important;
         }
       }
 
@@ -192,6 +214,7 @@
 
       /* 오른쪽 글씨  */
       .container_right {
+        min-width: 280px;
         width: 35vw;
         height: 50vh;
         margin: 30px;

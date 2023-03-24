@@ -10,18 +10,18 @@
 
 .article {
   width: 100%;
-  height: 70vh;
+  height: 59vh;
   display: flex;
   flex-direction: row;
 }
 
 .article_left {
-  width: 60%;
+  width: 55%;
   height: 100%;
 }
 
 .article_right {
-  width: 40%;
+  width: 45%;
   height: 100%;
 }
 
@@ -67,7 +67,6 @@
   text-align: left;
 }
 
-
 .footer-right-left {
   width: 100%;
   height: 100%;
@@ -92,3 +91,26 @@
   font-size: 2.5rem;
 }
 
+@media screen and (max-width: 768px) {
+  .footer-right-left {
+    font-size: 1.5rem;
+  }
+
+  .t-lg {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .footer-right-left {
+    font-size: 1.2rem;
+  }
+
+  .footer-right-right p {
+    font-size: 0.8rem;
+  }
+
+  .t-lg {
+    font-size: 1.2rem !important;
+  }
+}

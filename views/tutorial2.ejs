@@ -105,7 +105,7 @@
             display: inline-block;
             cursor: pointer;
             height: 3rem;
-            width: 10rem;
+            width: 9rem;
             line-height: 3rem;
             text-align: center;
             font-weight: bold;
@@ -137,7 +137,7 @@
           }
           #input-won {
             width: 40%;
-            height: 10rem;
+            height: 4rem;
             font-size: 2rem;
             border: 0;
             border-radius: 15px;
@@ -145,12 +145,12 @@
             padding-left: 10px;
             background-color: #fff;
             text-align: center;
-            margin-top: 4rem;
+            margin-top: 6rem;
             border: 3px solid #3784ff;
           }
           #input-won::placeholder {
             font-family: "Noto Sans KR", sans-serif;
-            font-size: 1rem;
+            font-size: 0.8rem;
           }
 
           .submit_btn {
@@ -182,14 +182,19 @@
           .swal2-title b {
             color: #3784ff;
           }
+          @media screen and (max-width: 425px) {
+            .inner-slide {
+              min-width: 300px !important;
+            }
+          }
           @media screen and (max-width: 576px) {
             .inner-slide {
-              min-width: 380px !important;
+              min-width: 380px;
             }
             .inner-slide h2 {
-              font-size: 1.5rem !important;
-              padding-left: 1rem;
-              padding-right: 1rem;
+              font-size: 2rem !important;
+              padding-left: 1.5rem;
+              padding-right: 1.5rem;
             }
             .select input[type="radio"] + label,
             .select2 input[type="radio"] + label {
@@ -205,6 +210,28 @@
             }
             #input-won {
               width: 15rem;
+            }
+          }
+
+          @media screen and (max-width: 768px) {
+            .inner-slide h2 {
+              font-size: 3rem;
+            }
+            .select,
+            .select2 {
+              padding-top: 3rem;
+            }
+            .select input[type="radio"] + label,
+            .select2 input[type="radio"] + label {
+              display: inline-block;
+              cursor: pointer;
+              height: 3rem;
+              width: 7rem !important;
+              line-height: 3rem;
+              text-align: center;
+              font-weight: bold;
+              font-size: 1rem;
+              border-radius: 3rem;
             }
           }
         </style>

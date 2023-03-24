@@ -22,7 +22,7 @@ let aa = () => {
     expense.style.display = "none";
     btn.style.display = "none";
     btn2.style.display = "none";
-    breakdown1.style.display = "block";
+    breakdown1.style.display = "flex";
   } else if ($(".credit").css("display") == "block") {
     credit.style.display = "none";
     expense.style.display = "none";
@@ -41,7 +41,7 @@ let bb = () => {
     expense.style.display = "block";
     btn.style.display = "none";
     btn2.style.display = "none";
-    breakdown2.style.display = "block";
+    breakdown2.style.display = "flex";
   } else if ($(".credit").css("display") == "block") {
     credit.style.display = "none";
     expense.style.display = "none";
@@ -168,9 +168,9 @@ function calendarInit() {
     }
 
     let direction;
-    if (transition === "left") {
+    if (transition === "right") {
       direction = "animate__backInLeft";
-    } else if (transition === "right") {
+    } else if (transition === "left") {
       direction = "animate__backInRight";
     }
 
@@ -203,16 +203,16 @@ let d;
 function dateClick() {
   $(".current").click(function () {
     console.log(`${this.innerText}일을 선택하셨습니다.`);
-    $(".clicked").css("background-color", "white");
     $(".clicked").removeClass("clicked");
-    // $(".current").css("background-color", "beige");
-    this.style = "  background-color: rgb(246, 231, 234);";
+
     this.classList.add("clicked");
 
-    $(".btn").css("display", "block");
+    $(".btn").css("display", "flex");
 
-    $(".enter").css("display", "block");
+    $(".enter").css("display", "flex");
 
+    $(".credit").css("display", "none");
+    $(".expense").css("display", "none");
 
     //세희 수정 --------------------------------------
     let cc = () => {
@@ -220,10 +220,9 @@ function dateClick() {
       btn5.style.display = "none";
       let breakdown1 = $(".breakdown1");
       let breakdown2 = $(".breakdown2");
-      breakdown1.css("display", "block");
-      breakdown2.css("display", "block");
+      breakdown1.css("display", "flex");
+      breakdown2.css("display", "flex");
     };
-
 
     let img1 = document.querySelector(".backimg1");
     img1.addEventListener("click", () => {
@@ -244,8 +243,6 @@ function dateClick() {
       credit3.css("display", "none");
       btn10.css("display", "block");
     });
-
-
 
     let tmp = document.querySelector(".year-month");
     tmp = tmp.innerText;
@@ -365,12 +362,22 @@ $(".enter").click(function () {
 
         console.log(data);
         renderList(d, true);
+
+        let expense = $(".expense");
+        let credit = $(".credit");
+        let btn7 = $(".btn");
+        expense.css("display", "none");
+        credit.css("display", "none");
+        btn7.css("display", "block");
+
+        name1.value = null;
+        name2.value = null;
+        money1.value = null;
+        money2.value = null;
       }
     });
   }
 
-
-  
   let expense = $(".expense");
   let credit = $(".credit");
   let btn7 = $(".btn");
@@ -382,7 +389,6 @@ $(".enter").click(function () {
   name2.value = null;
   money1.value = null;
   money2.value = null;
-
 });
 
 // 반응형
@@ -441,3 +447,18 @@ function renderList(d, isNew) {
     }
   }
 }
+
+const darkModeToggle = document.getElementById("dn"); // 체크박스
+console.log(darkModeToggle);
+
+const Realbody = document.querySelector("body");
+darkModeToggle.addEventListener("change", function (event) {
+  //체크박스의 변화 감지 리스너
+  if (!Realbody.classList.contains("darkmode")) {
+    // 바디에 다크모드 클래스가 없으면
+    Realbody.classList.add("darkmode"); // 다크모드 추가
+  } else {
+    // 바디에 다크모드 클래스가 있으면
+    Realbody.classList.remove("darkmode"); // 다크모드 클래스를 제거
+  }
+});
