@@ -3,7 +3,7 @@ const Slider = new Swiper(".slider", {
   effect: "coverflow",
   centeredSlides: true,
   loop: true,
- 
+
   slidesPerView: "auto",
   coverflowEffect: {
     rotate: 0,
@@ -19,12 +19,12 @@ const Slider = new Swiper(".slider", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-  
+
 });
 
 // url 파라미터 갖고오기
 const urlParams = new URLSearchParams(location.search);
-let category = urlParams.get("category");
+let getCategory = urlParams.get("category");
 
 let data01 = {
   meals: [
@@ -224,8 +224,39 @@ const text = document.querySelectorAll(".hover-text");
 
 const tag = document.querySelector(".tag");
 const tag_title = document.querySelector(".tag_title");
+const tagIcon1 = document.querySelector('.tag-icon');
+const tagName1 = document.querySelector('.tag-name');
 
-if (category == "교통") {
+if (getCategory == '식비') {
+  tagIcon1.innerHTML = '🍈';
+  tagName1.innerHTML = '#내가바로_미식가';
+} else if (getCategory == '여행') {
+  tagIcon1.innerHTML = '🌍    ';
+  tagName1.innerHTML = '#세계_일주';
+} else if (getCategory == '건강') {
+  tagIcon1.innerHTML = '🤷‍♂️';
+  tagName1.innerHTML = '#100세_인생';
+} else if (getCategory == '교통') {
+  tagIcon1.innerHTML = '🚃';
+  tagName1.innerHTML = '#대중교통_마스터';
+} else if (getCategory == '주거') {
+  tagIcon1.innerHTML = '🛖';
+  tagName1.innerHTML = '#집돌이_집순이';
+} else if (getCategory == '통신') {
+  tagIcon1.innerHTML = '📱';
+  tagName1.innerHTML = '#통신왕';
+} else if (getCategory == '카페') {
+  tagIcon1.innerHTML = '🍞';
+  tagName1.innerHTML = '#카페순이_카페돌이';
+} else if (getCategory == '생활') {
+  tagIcon1.innerHTML = '🧘‍♀️';
+  tagName1.innerHTML = '#생활의_달인';
+} else if (getCategory == '금융') {
+  tagIcon1.innerHTML = '🤖';
+  tagName1.innerHTML = '#저축왕';
+}
+
+if (getCategory == "교통") {
   tag_title.innerHTML = data01.traffic[3].tag_title;
   tag.innerHTML = data01.traffic[3].tag;
   for (let i = 0; i < 3; i++) {
@@ -233,7 +264,7 @@ if (category == "교통") {
     photo[i].setAttribute("src", data01.traffic[i].img);
     text[i].innerHTML = data01.traffic[i].text;
   }
-} else if (category == "식비") {
+} else if (getCategory == "식비") {
   tag.innerHTML = data01.meals[3].tag;
   tag_title.innerHTML = data01.meals[3].tag_title;
   for (let i = 0; i < 3; i++) {
@@ -241,7 +272,7 @@ if (category == "교통") {
     photo[i].setAttribute("src", data01.meals[i].img);
     text[i].innerHTML = data01.meals[i].text;
   }
-} else if (category == "여행") {
+} else if (getCategory == "여행") {
   tag.innerHTML = data01.travel[3].tag;
   tag_title.innerHTML = data01.travel[3].tag_title;
   for (let i = 0; i < 3; i++) {
@@ -249,7 +280,7 @@ if (category == "교통") {
     photo[i].setAttribute("src", data01.travel[i].img);
     text[i].innerHTML = data01.travel[i].text;
   }
-} else if (category == "건강") {
+} else if (getCategory == "건강") {
   tag.innerHTML = data01.health[3].tag;
   tag_title.innerHTML = data01.health[3].tag_title;
   for (let i = 0; i < 3; i++) {
@@ -257,7 +288,7 @@ if (category == "교통") {
     photo[i].setAttribute("src", data01.health[i].img);
     text[i].innerHTML = data01.health[i].text;
   }
-} else if (category == "주거") {
+} else if (getCategory == "주거") {
   tag.innerHTML = data01.residence[3].tag;
   tag_title.innerHTML = data01.residence[3].tag_title;
   for (let i = 0; i < 3; i++) {
@@ -265,7 +296,7 @@ if (category == "교통") {
     photo[i].setAttribute("src", data01.residence[i].img);
     text[i].innerHTML = data01.residence[i].text;
   }
-} else if (category == "통신") {
+} else if (getCategory == "통신") {
   tag.innerHTML = data01.phone[3].tag;
   tag_title.innerHTML = data01.phone[3].tag_title;
   for (let i = 0; i < 3; i++) {
@@ -273,7 +304,7 @@ if (category == "교통") {
     photo[i].setAttribute("src", data01.phone[i].img);
     text[i].innerHTML = data01.phone[i].text;
   }
-} else if (category == "카페") {
+} else if (getCategory == "카페") {
   tag.innerHTML = data01.cafe[3].tag;
   tag_title.innerHTML = data01.cafe[3].tag_title;
   for (let i = 0; i < 3; i++) {
@@ -281,7 +312,7 @@ if (category == "교통") {
     photo[i].setAttribute("src", data01.cafe[i].img);
     text[i].innerHTML = data01.cafe[i].text;
   }
-} else if (category == "생활") {
+} else if (getCategory == "생활") {
   tag.innerHTML = data01.life[3].tag;
   tag_title.innerHTML = data01.life[3].tag_title;
   for (let i = 0; i < 3; i++) {
@@ -289,7 +320,7 @@ if (category == "교통") {
     photo[i].setAttribute("src", data01.life[i].img);
     text[i].innerHTML = data01.life[i].text;
   }
-} else if (category == "금융") {
+} else if (getCategory == "금융") {
   tag.innerHTML = data01.finance[3].tag;
   tag_title.innerHTML = data01.finance[3].tag_title;
   for (let i = 0; i < 3; i++) {
