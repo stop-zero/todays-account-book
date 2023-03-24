@@ -23,6 +23,7 @@
       integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css">
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -34,8 +35,26 @@
     <link rel="stylesheet" href="/static/css/hyori.css" />
   </head>
   <body>
+    <header>
+      <div class="header_left">
+        <div class="logo"><a href=""></a><img src="/static/img/pig2.png" alt="돼지 로고" width="37px"></div>
+        <div class="h_tag"><p># 내가바로_요리왕</p></div>
+      </div>
+      <div class="header_right">
+        <div class="position_shift">위치 바꾸기</div>
+        <div class="color_mode">
+          <input type="checkbox" id="dn">
+  <label for="dn" class="toggle2">
+    <span class="toggle__handler">   
+    </span>
+ </label>
+      </div>
+  </div>
+
+    </header>
     <div class="container1">
-      <div v class="article">
+      <div class="space"></div>
+      <div class="article">
         <div class="article_left">
           <!-- 캘린더 입력 -->
           <div class="sec_cal">
@@ -59,8 +78,10 @@
           </div>
         </div>
         <div class="article_right">
-          <div class="date_inf"></div>
-          <ul class="list" type="none"></ul>
+          <div class="right_container">
+            <div class="date_inf"></div>
+            <ul class="list" type="none"></ul>  
+          </div>
         </div>
       </div>
       <div class="article_footer">
@@ -99,9 +120,8 @@
                   id="money1"
                   onkeyup="inputNumberFormat(this)"
               /></label>
-              
 
-
+           
               <label style='color:#0081f3'>내역:<input type="text" name="list" id="name2" /></label>
             </div>
 
@@ -140,7 +160,6 @@
               
 
               <div class="d-flex">
-                
                 <button type="button" class="ep ep1">식비</button>
                 <button type="button" class="ep ep2">여행</button>
                 <button type="button" class="ep ep3">건강</button>
