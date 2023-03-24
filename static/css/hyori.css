@@ -1,11 +1,37 @@
+header {
+  height: 7vh;
+  background-color: #5494fa;
+}
+
+.article {
+  margin-top: 4vh;
+}
+.right_container {
+  height: 95%;
+  border-top: 1.5px solid #498fff;
+  border-bottom: 1.5px solid #498fff;
+}
+
+.article_left {
+  position: relative;
+  z-index: 0;
+}
+
+.article_right {
+  position: relative;
+  background-color: white;
+  z-index: 5;
+}
+
 /* section calendar */
 
 .sec_cal {
   width: 90%;
+  height: 95%;
   font-family: "NotoSansR";
   margin: auto;
-  border-top: 2px solid #3784ff;
-  border-bottom: 2px solid #3784ff;
+  border-top: 1.5px solid #498fff;
+  border-bottom: 1.5px solid #86a2d0;
 }
 
 .sec_cal .cal_nav {
@@ -13,16 +39,17 @@
   justify-content: center;
   align-items: center;
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   line-height: 70px;
   background-color: rgb(246, 231, 234);
+  height: 9vh;
 }
 
 .sec_cal .cal_nav .year-month {
   width: 100%;
   text-align: center;
   line-height: 1;
-  color: #3784ff;
+  color: #2c7bfb;
 }
 
 .sec_cal .cal_nav .nav {
@@ -55,7 +82,7 @@
 
 .sec_cal .cal_nav .go-prev:hover::before,
 .sec_cal .cal_nav .go-next:hover::before {
-  border-color: #ed2a61;
+  border-color: #498fff;
 }
 
 .sec_cal .cal_nav .go-prev::before {
@@ -67,7 +94,7 @@
 }
 
 .sec_cal .cal_wrap {
-  padding-top: 20px;
+  padding-top: 10px;
   position: relative;
   margin: 0;
   height: 70%;
@@ -75,8 +102,7 @@
 
 .sec_cal .cal_wrap .days {
   display: flex;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   border-bottom: 1px solid #ddd;
 }
 
@@ -88,12 +114,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(100% / 7);
   text-align: left;
   color: #666;
   font-size: 1rem;
   text-align: center;
   border-radius: 5px;
+  width: calc((100% - 1.4vw) / 7);
+  margin: 0.1vw;
 }
 
 .current.today {
@@ -123,6 +150,10 @@
   width: 100px;
 }
 
+.clicked {
+  background-color: rgb(246, 231, 234);
+}
+
 .date_inf {
   height: 5%;
   padding-top: 20px;
@@ -140,7 +171,7 @@
   font-size: 1rem;
   padding-top: 25px;
   padding-bottom: 25px;
-  border-bottom: 1px solid rgb(201, 199, 199);
+  border-bottom: 1px solid #a5c0ed;
   display: flex;
 }
 
@@ -185,17 +216,16 @@
 
   .article_left {
     width: 100%;
-    height: 50vh;
-    z-index: 0;
+    height: 41vh;
   }
 
   .article_right {
-    width: 100%;
+    width: 90%;
     height: 50vh;
-    z-index: 5;
+    margin: auto;
   }
   .sec_cal {
-    height: 50vh;
+    height: 49vh;
   }
 
   .sec_cal .cal_nav {
@@ -209,6 +239,11 @@
 
   .sec_cal .cal_wrap .dates {
     height: 70%;
+  }
+
+  .list > .account-li {
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 }
 

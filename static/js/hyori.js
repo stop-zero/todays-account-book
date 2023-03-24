@@ -168,9 +168,9 @@ function calendarInit() {
     }
 
     let direction;
-    if (transition === "left") {
+    if (transition === "right") {
       direction = "animate__backInLeft";
-    } else if (transition === "right") {
+    } else if (transition === "left") {
       direction = "animate__backInRight";
     }
 
@@ -203,16 +203,13 @@ let d;
 function dateClick() {
   $(".current").click(function () {
     console.log(`${this.innerText}일을 선택하셨습니다.`);
-    $(".clicked").css("background-color", "white");
     $(".clicked").removeClass("clicked");
-    // $(".current").css("background-color", "beige");
-    this.style = "  background-color: rgb(246, 231, 234);";
+
     this.classList.add("clicked");
 
     $(".btn").css("display", "block");
 
     $(".enter").css("display", "block");
-
 
     //세희 수정 --------------------------------------
     let cc = () => {
@@ -223,7 +220,6 @@ function dateClick() {
       breakdown1.css("display", "block");
       breakdown2.css("display", "block");
     };
-
 
     let img1 = document.querySelector(".backimg1");
     img1.addEventListener("click", () => {
@@ -244,8 +240,6 @@ function dateClick() {
       credit3.css("display", "none");
       btn10.css("display", "block");
     });
-
-
 
     let tmp = document.querySelector(".year-month");
     tmp = tmp.innerText;
@@ -369,8 +363,6 @@ $(".enter").click(function () {
     });
   }
 
-
-  
   let expense = $(".expense");
   let credit = $(".credit");
   let btn7 = $(".btn");
@@ -382,7 +374,6 @@ $(".enter").click(function () {
   name2.value = null;
   money1.value = null;
   money2.value = null;
-
 });
 
 // 반응형
