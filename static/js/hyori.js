@@ -359,21 +359,21 @@ $(".enter").click(function () {
 
         console.log(data);
         renderList(d, true);
+
+        let expense = $(".expense");
+        let credit = $(".credit");
+        let btn7 = $(".btn");
+        expense.css("display", "none");
+        credit.css("display", "none");
+        btn7.css("display", "block");
+
+        name1.value = null;
+        name2.value = null;
+        money1.value = null;
+        money2.value = null;
       }
     });
   }
-
-  let expense = $(".expense");
-  let credit = $(".credit");
-  let btn7 = $(".btn");
-  expense.css("display", "none");
-  credit.css("display", "none");
-  btn7.css("display", "block");
-
-  name1.value = null;
-  name2.value = null;
-  money1.value = null;
-  money2.value = null;
 });
 
 // 반응형
@@ -432,3 +432,18 @@ function renderList(d, isNew) {
     }
   }
 }
+
+const darkModeToggle = document.getElementById("dn"); // 체크박스
+console.log(darkModeToggle);
+
+const Realbody = document.querySelector("body");
+darkModeToggle.addEventListener("change", function (event) {
+  //체크박스의 변화 감지 리스너
+  if (!Realbody.classList.contains("darkmode")) {
+    // 바디에 다크모드 클래스가 없으면
+    Realbody.classList.add("darkmode"); // 다크모드 추가
+  } else {
+    // 바디에 다크모드 클래스가 있으면
+    Realbody.classList.remove("darkmode"); // 다크모드 클래스를 제거
+  }
+});

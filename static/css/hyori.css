@@ -1,10 +1,39 @@
+body {
+  background: var(--bg-color)
+}
 header {
-  height: 7vh;
-  background-color: #5494fa;
+  height: 42px;
+  width: 100%;
+  background-color: #87b4fc;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
 }
 
-.article {
-  margin-top: 4vh;
+header > .header_left,
+header > .header_right {
+  display: flex;
+}
+
+header > .header_left > .logo {
+  margin-left: 0.8vw;
+}
+
+header > .header_left > .h_tag {
+  background-color: white;
+  height: 28px;
+  margin: auto;
+  line-height: 4.5vh;
+  margin-left: 25px;
+  border-radius: 30%;
+  font-size: 0.5rem;
+}
+
+.space {
+  height: 70px;
 }
 .right_container {
   height: 95%;
@@ -12,15 +41,92 @@ header {
   border-bottom: 1.5px solid #498fff;
 }
 
-.article_left {
-  position: relative;
-  z-index: 0;
+.article_right {
+  background-color: --bg-color;
 }
 
-.article_right {
+#dn {
+  display: none;
+}
+.toggle2 {
+  cursor: pointer;
+  display: inline-block;
   position: relative;
-  background-color: white;
-  z-index: 5;
+  margin-left: 75px;
+  width: 56px;
+  height: 32px;
+  background: #dfe2e3;
+  border-radius: 84px;
+  transition: background 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.toggle2:before,
+.toggle2:after {
+  margin-top: 5px;
+}
+.toggle2:before {
+  position: absolute;
+  left: -85px;
+  color: #749ed7;
+}
+.toggle2:after {
+  position: absolute;
+  right: -75px;
+}
+.toggle__handler {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  background: #ffe5b5;
+  background: #ffde7b;
+  border-color: #debd56;
+  box-shadow: none;
+  background-size: 0;
+  transition: transform 0.5s;
+  border: 0.188em solid #caba94;
+}
+#dn:checked + .toggle2 {
+  background: #dfe2e3;
+}
+#dn:checked + .toggle2:before {
+  color: var(--font-color);
+}
+#dn:checked + .toggle2:after {
+  color: var(--check-color);
+}
+#dn:checked + .toggle2 .toggle__handler {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-block;
+  transform: translate3d(28px, 0, 0) rotate(0);
+  border: 0.188em solid #caba94;
+  background: #ffefb5;
+  box-shadow: inset -0.15em -0.15em #ffe096;
+  background-image: radial-gradient(
+      circle at 60% 10%,
+      #e6cea5 15%,
+      transparent 0
+    ),
+    radial-gradient(circle at 30% 50%, #e6cea5 10%, transparent 0),
+    radial-gradient(circle at 60% 70%, #e6cea5 13%, transparent 0);
+  transition: transform 0.2s ease-in-out, background 0.3s, border-color 0.3s;
+}
+
+:root {
+  --pink-color: rgb(246, 231, 234);
+  --bg-color: white;
+  --blue-color:
+  --font-color:
+
+}
+.darkmode {
+  --pink-color: #999;
+  --bg-color: #999;
+  --blue-color:
+  --font-color:
 }
 
 /* section calendar */
@@ -41,7 +147,8 @@ header {
   font-weight: 700;
   font-size: 2.3rem;
   line-height: 70px;
-  background-color: rgb(246, 231, 234);
+  background: var(--pink-color);
+  /* background-color: rgb(246, 231, 234); */
   height: 9vh;
 }
 
