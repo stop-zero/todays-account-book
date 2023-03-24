@@ -1,16 +1,35 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
-@media (max-width: 500px) {
+.swiper {
+  /* border: 1px solid black; */
+  width: 80%;
+}
+
+@media (max-width: 1040px) {
   .tip-slide {
-    width: 28rem !important;
-    height: 36rem !important;
+    width: 20vw !important;
+    height: 30vh !important;
   }
   .tip-slide .tip-slide-img img {
-    width: 28rem !important;
-    height: 36rem !important;
+    width: 20vw !important;
+    height: 30vh !important;
   }
   .slider {
-    height: 45rem;
+    height: 30vh;
+  }
+}
+
+@media (max-width: 990px) {
+  .tip-slide {
+    width: 20vw !important;
+    height: 23vh !important;
+  }
+  .tip-slide .tip-slide-img img {
+    width: 20vw !important;
+    height: 23vh !important;
+  }
+  .slider {
+    height: 23vh;
   }
 }
 
@@ -21,8 +40,7 @@ html {
 .container {
   max-width: 100rem;
   padding: 0 1rem;
-  margin: 0 auto;
-  
+  margin: 10px auto;
 }
 
 .tag {
@@ -57,14 +75,15 @@ html {
 }
 
 /* 이미지에 커서 올리면 제목 보이게 */
-/* 반응형 구현 해야함 */
 img {
   vertical-align: top;
 }
+
 .tip-slide-img:hover:after,
 .tip-slide-img:hover > .hover-text {
   display: block;
 }
+
 .tip-slide-img:after,
 .hover-text {
   display: none;
@@ -106,21 +125,8 @@ img {
   font-size: 1.5rem;
 }
 
-/* 슬라이드 화살표 */
-
-@media (max-width: 990px) {
-  .swiper-button-next {
-    left: 70% !important;
-    transform: translateX(-70%) !important;
-  }
-   .swiper-button-prev {
-    left: 30% !important;
-    transform: translateX(-30%) !important;
-  }
-}
-
 @media (max-width: 450px) {
-   .swiper-button-next {
+  .swiper-button-next {
     left: 80% !important;
     transform: translateX(-80%) !important;
   }
@@ -135,3 +141,4 @@ img {
   color: #3784ff;
 }
 
+/* sweetalert */
