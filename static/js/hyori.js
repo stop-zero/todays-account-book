@@ -394,6 +394,12 @@ $(".enter").click(function () {
   }
 });
 
+let topBtn = document.querySelector('.position_shift')
+console.log(topBtn)
+topBtn.addEventListener('click', function () {
+  $(window).scrollTop(0);
+})
+
 // 반응형
 // 모바일 버전(576px 이하)으로 바뀌면 요일 표시가 더 짧은 월, 화, 수 로 바뀐다.
 window.onresize = function () {
