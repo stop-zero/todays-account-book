@@ -25,11 +25,7 @@
 /* Mobile - Portrait */
 @media (max-width: 575px) {}
 
-/* Mobile - Landscape */
-@media (max-width: 767px) {}
 
-/* Tablet */
-@media (max-width: 991px) {}
 
 
 @media (max-width: 500px) {
@@ -166,6 +162,10 @@ img {
   .swiper-button-prev {
     left: 20% !important;
     transform: translateX(-20%) !important;
+  }
+
+  .tag_title {
+    font-size: 2rem;
   }
 }
 

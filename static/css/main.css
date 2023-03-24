@@ -1,3 +1,7 @@
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
 .container1 {
   width: 100%;
   height: 100vh;
@@ -33,19 +37,20 @@
 
 .footer {
   width: 100%;
-  height: 30vh;
+  height: 20vh;
   background-color: #3874ff;
   display: flex;
   flex-direction: row;
   align-items: center;
   color: #fff;
   font-weight: 600;
+  padding: 2rem 0;
 }
 
 .footer-left {
   width: 20%;
   height: 100%;
-  font-size: 3rem;
+  font-size: 2rem;
   position: relative;
 }
 
@@ -60,7 +65,7 @@
 }
 
 .footer-right {
-  width: 80%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -70,8 +75,7 @@
 .footer-right-left {
   width: 100%;
   height: 100%;
-  font-size: 3rem;
-  padding-top: 1rem;
+  font-size: 2rem;
 }
 
 .footer-right-right {
@@ -80,7 +84,6 @@
   display: flex;
   flex-direction: column;
   text-align: end;
-  padding-top: 1rem;
 }
 
 .footer-right-right p {
@@ -88,7 +91,7 @@
 }
 
 .t-lg {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 @media screen and (max-width: 768px) {
