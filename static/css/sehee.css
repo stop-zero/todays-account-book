@@ -8,7 +8,7 @@
 }
 
 .form-main-box {
-  width: 95%;
+  width: 98%;
   height: 26vh;
   background-color: rgb(246, 231, 234);
   display: flex;
@@ -19,20 +19,21 @@
   left: 0;
   bottom: 0;
   margin: auto;
+  border: 2px solid #0081f3;
   border-radius: 30px 30px 30px 30px;
   text-align: center;
 }
 
 .credit {
   width: 100%;
-  display: block;
+  display: flex;
 }
 
 /* 입금버튼 후에 뜨는 전체 클래스 */
 
 .expense {
   width: 100%;
-  display: block;
+  display: flex;
 }
 
 /* 지출버튼 후에 뜨는 전체 클래스 */
@@ -46,24 +47,18 @@
   background-color: #fff;
   color: #0081f3;
   cursor: pointer;
-  width: 10vw;
+  width: 15vw;
   height: 60px;
-
   border-radius: 30px 30px 30px 30px;
-
   text-align: center;
   display: flex;
   font-size: 3vw;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   margin: auto;
-  justify-content: space-around;
-  position: absolute;
+  justify-content: center;
   left: 18%;
   transition: 0.5s;
   display: none;
+  align-items: center;
 }
 
 .btn-pay1 {
@@ -72,19 +67,25 @@
 
 .btn-pay2 {
   text-align: center;
-
-  margin-left: 18%;
+  /* 
+  margin-left: 18%; */
 }
 
 .cd,
 .ep {
+  /* width: 40%; */
+  font-size: 50%;
   background-color: #eed6e7;
   border: 0 solid black;
-  border-radius: 30px 30px 30px 30px;
-  position: relative;
-  padding: 20px;
-  top: 5px;
+  border-radius: 50%;
+  height: 30%;
+  align-items: center;
+  justify-content: center;
   transition: 0.5s;
+  text-align: center;
+  padding: 10%;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
 .ep:hover {
@@ -111,36 +112,43 @@
 
 #money1,
 #money2 {
-  width: 50%;
-  height: 8vh;
+  background-color: rgb(246, 231, 234);
+  /* width: 50%; */
+  height: 6vh;
   font-size: 40px;
-  border-radius: 30px 30px 30px 30px;
-  border: 0;
+  border: none;
+  border-bottom: 1px solid #0081f3;
   text-align: center;
 }
 
 #name1,
 #name2 {
   background-color: rgb(246, 231, 234);
-  width: 40%;
+  /* width: 50%; */
   height: 6vh;
 
   font-size: 30px;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #0081f3;
   text-align: center;
+}
+
+.input {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .breakdown1,
 .breakdown2 {
-  width: 80%;
   font-size: 40px;
   display: none;
-  position: relative;
-  flex-direction: column;
-  margin: 0 auto;
-  vertical-align: middle;
-  text-align: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 input:focus {
@@ -151,19 +159,20 @@ input:focus {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+  justify-content: center;
 }
 
 .enter {
-  position: absolute;
   background-color: #274b58;
   color: white;
   font-size: 1.5rem;
   border-radius: 30px 30px 30px 30px;
   border: 0;
-  text-align: center;
-  padding: 3%;
-  left: 90%;
-  top: 5%;
+  width: 10%;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem;
   transition: 0.5s;
 }
 
@@ -173,11 +182,8 @@ input:focus {
 }
 
 .backimg {
-  width: 8%;
-  height: 8%;
-  position: relative;
-  right: 80%;
-  bottom: 8vh;
+  width: 5%;
+  height: 50%;
 }
 
 .backimg:hover {
