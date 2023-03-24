@@ -1,20 +1,17 @@
-const Slider = new Swiper(".slider", {
+const swiper = new Swiper(".swiper", {
   // 슬라이드 효과
-  effect: "coverflow",
   centeredSlides: true,
-  loop: true,
- 
+  // loop: true,
+  // loopAdditionalSlides: 1,
   slidesPerView: "auto",
+  slidePerGroup: 1,
+  effect: "coverflow",
   coverflowEffect: {
     rotate: 0,
     stretch: 0,
     depth: 100,
     modifier: 2,
   },
-  /* pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  }, */
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -218,9 +215,12 @@ let data01 = {
   ],
 };
 
-const site = document.querySelectorAll(".site");
-const photo = document.querySelectorAll(".photo");
+// const site = document.querySelectorAll(".site");
+// const photo = document.querySelectorAll(".photo");
 const text = document.querySelectorAll(".hover-text");
+
+const swiperImg = document.querySelectorAll(".tip-slide-img > .photo");
+const swiperSite = document.querySelectorAll(".tip-slide-img > .site");
 
 const tag = document.querySelector(".tag");
 const tag_title = document.querySelector(".tag_title");
@@ -229,72 +229,126 @@ if (category == "교통") {
   tag_title.innerHTML = data01.traffic[3].tag_title;
   tag.innerHTML = data01.traffic[3].tag;
   for (let i = 0; i < 3; i++) {
-    site[i].setAttribute("href", data01.traffic[i].link);
-    photo[i].setAttribute("src", data01.traffic[i].img);
+    console.log(i);
+    swiperSite[i].setAttribute("href", data01.traffic[i].link);
+    swiperImg[i].setAttribute("src", data01.traffic[i].img);
     text[i].innerHTML = data01.traffic[i].text;
   }
 } else if (category == "식비") {
   tag.innerHTML = data01.meals[3].tag;
   tag_title.innerHTML = data01.meals[3].tag_title;
   for (let i = 0; i < 3; i++) {
-    site[i].setAttribute("href", data01.meals[i].link);
-    photo[i].setAttribute("src", data01.meals[i].img);
+    swiperSite[i].setAttribute("href", data01.meals[i].link);
+    swiperImg[i].setAttribute("src", data01.meals[i].img);
     text[i].innerHTML = data01.meals[i].text;
   }
 } else if (category == "여행") {
   tag.innerHTML = data01.travel[3].tag;
   tag_title.innerHTML = data01.travel[3].tag_title;
   for (let i = 0; i < 3; i++) {
-    site[i].setAttribute("href", data01.travel[i].link);
-    photo[i].setAttribute("src", data01.travel[i].img);
+    swiperSite[i].setAttribute("href", data01.travel[i].link);
+    swiperImg[i].setAttribute("src", data01.travel[i].img);
     text[i].innerHTML = data01.travel[i].text;
   }
 } else if (category == "건강") {
   tag.innerHTML = data01.health[3].tag;
   tag_title.innerHTML = data01.health[3].tag_title;
   for (let i = 0; i < 3; i++) {
-    site[i].setAttribute("href", data01.health[i].link);
-    photo[i].setAttribute("src", data01.health[i].img);
+    swiperSite[i].setAttribute("href", data01.health[i].link);
+    swiperImg[i].setAttribute("src", data01.health[i].img);
     text[i].innerHTML = data01.health[i].text;
   }
 } else if (category == "주거") {
   tag.innerHTML = data01.residence[3].tag;
   tag_title.innerHTML = data01.residence[3].tag_title;
   for (let i = 0; i < 3; i++) {
-    site[i].setAttribute("href", data01.residence[i].link);
-    photo[i].setAttribute("src", data01.residence[i].img);
+    swiperSite[i].setAttribute("href", data01.residence[i].link);
+    swiperImg[i].setAttribute("src", data01.residence[i].img);
     text[i].innerHTML = data01.residence[i].text;
   }
 } else if (category == "통신") {
   tag.innerHTML = data01.phone[3].tag;
   tag_title.innerHTML = data01.phone[3].tag_title;
   for (let i = 0; i < 3; i++) {
-    site[i].setAttribute("href", data01.phone[i].link);
-    photo[i].setAttribute("src", data01.phone[i].img);
+    swiperSite[i].setAttribute("href", data01.phone[i].link);
+    swiperImg[i].setAttribute("src", data01.phone[i].img);
     text[i].innerHTML = data01.phone[i].text;
   }
 } else if (category == "카페") {
   tag.innerHTML = data01.cafe[3].tag;
   tag_title.innerHTML = data01.cafe[3].tag_title;
   for (let i = 0; i < 3; i++) {
-    site[i].setAttribute("href", data01.cafe[i].link);
-    photo[i].setAttribute("src", data01.cafe[i].img);
+    swiperSite[i].setAttribute("href", data01.cafe[i].link);
+    swiperImg[i].setAttribute("src", data01.cafe[i].img);
     text[i].innerHTML = data01.cafe[i].text;
   }
 } else if (category == "생활") {
   tag.innerHTML = data01.life[3].tag;
   tag_title.innerHTML = data01.life[3].tag_title;
   for (let i = 0; i < 3; i++) {
-    site[i].setAttribute("href", data01.life[i].link);
-    photo[i].setAttribute("src", data01.life[i].img);
+    swiperSite[i].setAttribute("href", data01.life[i].link);
+    swiperImg[i].setAttribute("src", data01.life[i].img);
     text[i].innerHTML = data01.life[i].text;
   }
 } else if (category == "금융") {
   tag.innerHTML = data01.finance[3].tag;
   tag_title.innerHTML = data01.finance[3].tag_title;
   for (let i = 0; i < 3; i++) {
-    site[i].setAttribute("href", data01.finance[i].link);
-    photo[i].setAttribute("src", data01.finance[i].img);
+    swiperSite[i].setAttribute("href", data01.finance[i].link);
+    swiperImg[i].setAttribute("src", data01.finance[i].img);
     text[i].innerHTML = data01.finance[i].text;
   }
 }
+
+/* sweetalert */
+/* 
+
+Swal.fire({
+  title: '처음이신가요?!',
+  text: '날짜를 선택해주세요',
+  imageUrl: 'https://unsplash.it/400/200',
+  imageWidth: 400,
+  imageHeight: 200,
+  imageAlt: 'Custom image',
+}).then((result) => {
+  
+  if (result.isConfirmed) {
+    Swal.fire('Saved!', '', 'success')
+  } else if (result.isDenied) {
+    Swal.fire('Changes are not saved', '', 'info')
+  }
+}) */
+
+Swal.fire({
+  title: "사용법을 보시겠습니까?",
+  showDenyButton: true,
+  showCancelButton: true,
+  confirmButtonText: "네",
+  denyButtonText: `아니요`,
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire({
+      title: "처음이신가요?!",
+      text: "날짜를 선택해주세요",
+      confirmButtonText: "다음",
+      imageUrl: "https://unsplash.it/400/200",
+      imageWidth: 400,
+      imageHeight: 200,
+      imageAlt: "Custom image",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "지출인가요 수입인가요?!",
+          text: "선택 후 내역을 작성해주세요",
+          confirmButtonText: "다음",
+          imageUrl: "https://unsplash.it/400/200",
+          imageWidth: 400,
+          imageHeight: 200,
+          imageAlt: "Custom image",
+        });
+      }
+    });
+  } else if (result.isDenied) {
+    Swal.fire("역시 한국인은 설명서따위,,", "", "info");
+  }
+});
