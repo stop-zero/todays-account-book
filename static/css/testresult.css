@@ -78,6 +78,7 @@
     font-size: 1.8rem;
     font-weight: 300;
     text-align: left;
+    line-height: 2.2rem;
 }
 
 .d-flex-setter h2 {
@@ -144,6 +145,12 @@
     background-color: #f4f4f4;
     border-radius: 1rem;
     font-size: 1.5rem;
+    transition: .5s;
+}
+
+.href-main span:hover {
+    background-color: rgb(102, 102, 251);
+    color: #fff;
 }
 
 .link-img {
