@@ -275,20 +275,25 @@ $(".btn").click(function () {
 
 $(".cd").click(function () {
   category_tmp = $(this).text();
-
-  $(".clickedCd").css("background-color", "#eed6e7");
-  $(".clickedCd").css("color", "black");
-
-  $(".clickedCd").removeClass("clickedCd");
-  this.style = "background-color: #0081f3; color: white;";
-  this.classList.add("clickedCd");
+  let cds = document.querySelectorAll(".cd");
+  for (let i of cds) {
+    if (i.classList.contains("clickedCategory")) {
+      i.classList.remove("clickedCategory");
+    }
+  }
+  this.classList.add("clickedCategory");
 });
 
 $(".ep").click(function () {
   category_tmp = $(this).text();
 
-  this.style = "background-color: #0081f3; color: white;";
-  this.classList.add("clickedEp");
+  let eps = document.querySelectorAll(".ep");
+  for (let i of eps) {
+    if (i.classList.contains("clickedCategory")) {
+      i.classList.remove("clickedCategory");
+    }
+  }
+  this.classList.add("clickedCategory");
 });
 
 $(".backimg").click(function () {
@@ -371,30 +376,22 @@ $(".enter").click(function () {
         money1.value = null;
         money2.value = null;
 
-        $(".clickedEp").css("background-color", "#eed6e7");
-        $(".clickedEp").css("color", "black");
+        let cds = document.querySelectorAll(".cd");
+        for (let i of cds) {
+          if (i.classList.contains("clickedCategory")) {
+            i.classList.remove("clickedCategory");
+          }
+        }
 
-        $(".clickedEp").removeClass("clickedEp");
-
-        $(".clickedCd").css("background-color", "#eed6e7");
-        $(".clickedCd").css("color", "black");
-
-        $(".clickedCd").removeClass("clickedCd");
+        let eps = document.querySelectorAll(".ep");
+        for (let i of eps) {
+          if (i.classList.contains("clickedCategory")) {
+            i.classList.remove("clickedCategory");
+          }
+        }
       }
     });
   }
-
-  let expense = $(".expense");
-  let credit = $(".credit");
-  let btn7 = $(".btn");
-  expense.css("display", "none");
-  credit.css("display", "none");
-  btn7.css("display", "block");
-
-  name1.value = null;
-  name2.value = null;
-  money1.value = null;
-  money2.value = null;
 });
 
 // 반응형
@@ -406,7 +403,6 @@ window.onresize = function () {
     for (let i = 0; i < days.length; i++) {
       days[i].innerText = days_li[i];
     }
-    s;
   } else if (window.innerWidth > 576) {
     let days = document.querySelectorAll(".days>.day");
     days_li = ["Mon", "Tue", "Wed", "Tur", "Fri", "Sat", "Son"];
@@ -468,3 +464,21 @@ darkModeToggle.addEventListener("change", function (event) {
     Realbody.classList.remove("darkmode"); // 다크모드 클래스를 제거
   }
 });
+
+let scrollCount = 0;
+const scrollToggle = document.getElementById("dn_shift");
+scrollToggle.addEventListener("change", function (event) {
+  console.log("toggle");
+  scrollCount += 1;
+  if (scrollCount % 2 === 1) {
+    window.scrollTo({ left: 0, top: 609, behavior: "smooth" });
+  } else {
+    window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+  }
+});
+
+// console.log(window.scrollY);
+
+// window.addEventListener("scroll", function () {
+//   console.log(window.scrollY);
+// });
