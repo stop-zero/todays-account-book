@@ -384,6 +384,7 @@ header > .header_right > .position_shift {
 .current {
   cursor: pointer;
 }
+
 .clicked {
   background: var(--click-color);
 
@@ -458,11 +459,9 @@ header > .header_right > .position_shift {
 }
 
 .plus {
-  color: var(--plus-color);
 }
 
 .minus {
-  color: var(--minus-color);
 }
 
 .modal_content {
