@@ -331,7 +331,7 @@ if (getCategory == "교통") {
 Swal.fire({
   title: "사용법을 보시겠습니까?",
   showDenyButton: true,
-  showCloseButton: true,
+  // showCloseButton: true,
   confirmButtonText: "네",
   denyButtonText: `아니요`,
   // imageUrl:
@@ -400,7 +400,7 @@ Swal.fire({
                           text: "변경 가능합니다!",
                           showCloseButton: true,
                           confirmButtonText: "다음",
-                          image: "https://unsplash.it/400/200",
+                          imageUrl: "https://blog.kakaocdn.net/dn/Ia5Xw/btr5N4RF5qr/2seDQpjgdyvyQuUA25JJBK/img.png",
                           imageWidth: 400,
                           imageHeight: 200,
                           imageAlt: "Custom image",
