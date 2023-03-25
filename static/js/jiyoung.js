@@ -400,7 +400,7 @@ Swal.fire({
                           text: "변경 가능합니다!",
                           showCloseButton: true,
                           confirmButtonText: "다음",
-                          image: "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FIa5Xw%2Fbtr5N4RF5qr%2F2seDQpjgdyvyQuUA25JJBK%2Fimg.png",
+                          imageUrl: "https://blog.kakaocdn.net/dn/Ia5Xw/btr5N4RF5qr/2seDQpjgdyvyQuUA25JJBK/img.png",
                           imageWidth: 400,
                           imageHeight: 200,
                           imageAlt: "Custom image",
