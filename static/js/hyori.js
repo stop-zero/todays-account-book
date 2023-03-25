@@ -65,7 +65,7 @@ function uncomma(str) {
 console.log(
   "---------------------------------------------------------------------------------------------------------------------"
 );
-// });
+
 /*
       달력 렌더링 할 때 필요한 정보 목록 
   
@@ -95,7 +95,6 @@ function calendarInit() {
   let currentDate = thisMonth.getDate(); // 달력에서 표기하는 일
 
   // kst 기준 현재시간
-  // console.log(thidsMonth);
 
   // 캘린더 렌더링
   renderCalender(thisMonth);
@@ -199,7 +198,6 @@ let data = {};
 let d;
 
 // 클릭한 날의 색깔을 바꾸고 정보를 가져오기
-//
 function dateClick() {
   $(".current").click(function () {
     console.log(`${this.innerText}일을 선택하셨습니다.`);
@@ -277,6 +275,7 @@ $(".cd").click(function () {
   category_tmp = $(this).text();
   let cds = document.querySelectorAll(".cd");
   for (let i of cds) {
+    gi;
     if (i.classList.contains("clickedCategory")) {
       i.classList.remove("clickedCategory");
     }
