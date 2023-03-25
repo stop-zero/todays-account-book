@@ -14,10 +14,6 @@ const swiper = new Swiper(".swiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-<<<<<<< HEAD
-=======
-
->>>>>>> 1c360cbbd289893d43a85d4e7d3a6deaa6a9d5f8
 });
 
 // url 파라미터 갖고오기
@@ -225,36 +221,36 @@ const swiperSite = document.querySelectorAll(".tip-slide-img > .site");
 
 const tag = document.querySelector(".tag");
 const tag_title = document.querySelector(".tag_title");
-const tagIcon1 = document.querySelector('.tag-icon');
-const tagName1 = document.querySelector('.tag-name');
+const tagIcon1 = document.querySelector(".tag-icon");
+const tagName1 = document.querySelector(".tag-name");
 
-if (getCategory == '식비') {
-  tagIcon1.innerHTML = '🍈';
-  tagName1.innerHTML = '#내가바로_미식가';
-} else if (getCategory == '여행') {
-  tagIcon1.innerHTML = '🌍    ';
-  tagName1.innerHTML = '#세계_일주';
-} else if (getCategory == '건강') {
-  tagIcon1.innerHTML = '🤷‍♂️';
-  tagName1.innerHTML = '#100세_인생';
-} else if (getCategory == '교통') {
-  tagIcon1.innerHTML = '🚃';
-  tagName1.innerHTML = '#대중교통_마스터';
-} else if (getCategory == '주거') {
-  tagIcon1.innerHTML = '🛖';
-  tagName1.innerHTML = '#집돌이_집순이';
-} else if (getCategory == '통신') {
-  tagIcon1.innerHTML = '📱';
-  tagName1.innerHTML = '#통신왕';
-} else if (getCategory == '카페') {
-  tagIcon1.innerHTML = '🍞';
-  tagName1.innerHTML = '#카페순이_카페돌이';
-} else if (getCategory == '생활') {
-  tagIcon1.innerHTML = '🧘‍♀️';
-  tagName1.innerHTML = '#생활의_달인';
-} else if (getCategory == '금융') {
-  tagIcon1.innerHTML = '🤖';
-  tagName1.innerHTML = '#저축왕';
+if (getCategory == "식비") {
+  tagIcon1.innerHTML = "🍈";
+  tagName1.innerHTML = "#내가바로_미식가";
+} else if (getCategory == "여행") {
+  tagIcon1.innerHTML = "🌍    ";
+  tagName1.innerHTML = "#세계_일주";
+} else if (getCategory == "건강") {
+  tagIcon1.innerHTML = "🤷‍♂️";
+  tagName1.innerHTML = "#100세_인생";
+} else if (getCategory == "교통") {
+  tagIcon1.innerHTML = "🚃";
+  tagName1.innerHTML = "#대중교통_마스터";
+} else if (getCategory == "주거") {
+  tagIcon1.innerHTML = "🛖";
+  tagName1.innerHTML = "#집돌이_집순이";
+} else if (getCategory == "통신") {
+  tagIcon1.innerHTML = "📱";
+  tagName1.innerHTML = "#통신왕";
+} else if (getCategory == "카페") {
+  tagIcon1.innerHTML = "🍞";
+  tagName1.innerHTML = "#카페순이_카페돌이";
+} else if (getCategory == "생활") {
+  tagIcon1.innerHTML = "🧘‍♀️";
+  tagName1.innerHTML = "#생활의_달인";
+} else if (getCategory == "금융") {
+  tagIcon1.innerHTML = "🤖";
+  tagName1.innerHTML = "#저축왕";
 }
 
 if (getCategory == "교통") {
@@ -417,7 +413,6 @@ Swal.fire({
                                 imageWidth: 400,
                                 imageHeight: 200,
                                 imageAlt: "Custom image",
-              
                               });
                             }
                           });
