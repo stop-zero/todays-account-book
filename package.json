@@ -1,8 +1,11 @@
 {
   "name": "frontend-team-project",
   "version": "1.0.0",
+
   "description": "html, css, javascript, express로 가계부를 구현한 프로젝트",
-  "main": "index.js",
+  "main": "app.js",
+
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
