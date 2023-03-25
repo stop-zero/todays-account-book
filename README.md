@@ -12,9 +12,10 @@
 3. javascript   
 4. node.js   
 5. jQuery   
-6. animate (애니메이션 라이브러리)   
-7. sweetalert2 (모달 라이브러리)   
-8. swiper (슬라이드 라이브러리)
+6. express
+7. animate (애니메이션 라이브러리)   
+8. sweetalert2 (모달 라이브러리)   
+9. swiper (슬라이드 라이브러리)
 
 ##개요   
 주제 : 1인 생활 가구를 위한 가계부    
