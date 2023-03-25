@@ -29,6 +29,12 @@
         }
       }
 
+      @media screen and (max-width: 660px) {
+        html {
+          font-size: 12px !important;
+        }
+      }
+
       @media screen and (max-width: 768px) {
         .coin-container1 {
           display: none !important;
@@ -41,7 +47,7 @@
         }
         .button {
           display: flex;
-          align-items: center;
+          align-items: end;
           flex-direction: column;
         }
 
@@ -72,7 +78,7 @@
 
         .button_box {
           position: absolute;
-          top: 60%;
+          top: 80%;
           left: 50%;
           transform: translate(-50%, -50%);
         }
@@ -87,11 +93,14 @@
         html {
           font-size: 14px;
         }
-        img {
+        .container-left {
           display: none;
         }
         .coin-container1 {
           margin-left: 4rem;
+        }
+        .coin-container2 img {
+          display: none;
         }
         .title {
           font-size: 2rem !important;
@@ -115,6 +124,12 @@
           display: flex;
           align-items: center;
           flex-direction: column;
+        }
+      }
+
+      @media screen and (max-width: 1160px) {
+        .container-left {
+          display: none;
         }
       }
 
