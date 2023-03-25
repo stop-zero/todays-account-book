@@ -16,15 +16,22 @@
   --font-color-disabled: #ddd;
   --font-color: black;
   --blue-color: #86a2d0;
+  --input-background-color: white;
+  --typing-color: black;
+  --pay-btn-color: #0081f3;
+  --cdep-btn-color: black;
 }
 
 .darkmode {
   --pink-color: #2e2e2e;
-
   --button-color: rgb(106, 106, 181);
   --font-color-disabled: #252525;
   --font-color: grey;
   --blue-color: grey;
+  --input-background-color: rgb(45 45 125);
+  --typing-color: white;
+  --pay-btn-color: white;
+  --cdep-btn-color: white;
 }
 
 .article_footer {
@@ -75,7 +82,7 @@
 
 .btn {
   background-color: var(--button-color);
-  color: #0081f3;
+  color: var(--pay-btn-color);
   cursor: pointer;
   width: 15vw;
   height: 60px;
@@ -115,6 +122,7 @@
   transition: 0.5s;
   text-align: center;
   font-weight: 700;
+  color: var(--cdep-btn-color);
   cursor: pointer;
 }
 
@@ -142,18 +150,19 @@
 
 #money1,
 #money2 {
-  background-color: rgb(246, 231, 234);
+  background-color: var(--input-background-color);
   width: 80%;
   height: 6vh;
   font-size: 1.5rem;
   border: none;
   border-bottom: 1px solid #0081f3;
   text-align: center;
+  color: var(--typing-color);
 }
 
 #name1,
 #name2 {
-  background-color: rgb(246, 231, 234);
+  background-color: var(--input-background-color);
   width: 80%;
   height: 6vh;
   padding-top: 10px;
@@ -161,10 +170,12 @@
   border: none;
   border-bottom: 1px solid #0081f3;
   text-align: center;
+  color: var(--typing-color);
 }
 
 label {
   font-size: 1rem;
+  width: 80%;
 }
 
 .input {
@@ -199,7 +210,7 @@ input:focus {
 }
 
 .enter {
-  background-color: #274b58;
+  background-color: #87b5fc;
 
   color: var(--button-color);
   font-size: 1rem;
