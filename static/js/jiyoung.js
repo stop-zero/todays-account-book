@@ -215,7 +215,6 @@ let data01 = {
 // const site = document.querySelectorAll(".site");
 // const photo = document.querySelectorAll(".photo");
 const text = document.querySelectorAll(".hover-text");
-
 const swiperImg = document.querySelectorAll(".tip-slide-img > .photo");
 const swiperSite = document.querySelectorAll(".tip-slide-img > .site");
 
@@ -332,19 +331,20 @@ if (getCategory == "교통") {
 Swal.fire({
   title: "사용법을 보시겠습니까?",
   showDenyButton: true,
-  showCancelButton: true,
+  showCloseButton: true,
   confirmButtonText: "네",
   denyButtonText: `아니요`,
-  imageUrl:
-    "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbEvnTr%2Fbtr5Rf4T0RT%2FA3Nh1NYr6eSA5hp2bDoiE0%2Fimg.png",
-  imageWidth: 400,
-  imageHeight: 200,
-  imageAlt: "Custom image",
+  // imageUrl:
+  //   "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbEvnTr%2Fbtr5Rf4T0RT%2FA3Nh1NYr6eSA5hp2bDoiE0%2Fimg.png",
+  // imageWidth: 400,
+  // imageHeight: 200,
+  // imageAlt: "Custom image",
 }).then((result) => {
   if (result.isConfirmed) {
     Swal.fire({
-      title: "처음이신가요?!",
+      title: "달력에서 ",
       text: "날짜를 선택해주세요",
+      showCloseButton: true,
       confirmButtonText: "다음",
       imageUrl:
         "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEzGnm%2Fbtr5Nx0GvPa%2F9kWa6En2ctfVM68lsKfcwk%2Fimg.png",
@@ -354,8 +354,9 @@ Swal.fire({
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
-          title: "지출인가요 수입인가요?!",
+          title: "입금인가요 지출인가요?!",
           text: "선택 후 내역을 작성해주세요",
+          showCloseButton: true,
           confirmButtonText: "다음",
           imageUrl:
             "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FuJO1d%2Fbtr5R1ZErgT%2F9oCyHpWQQgfaLFGbUFwbDK%2Fimg.png",
@@ -367,6 +368,7 @@ Swal.fire({
             Swal.fire({
               title: "선택한 날짜에 내역이 추가됩니다.",
               text: "날짜를 선택해보세요!",
+              showCloseButton: true,
               confirmButtonText: "다음",
               imageUrl:
                 "https://blog.kakaocdn.net/dn/S2y58/btr5PHVqd4g/WtcociPYec3T6cSsWGKKiK/img.png",
@@ -379,8 +381,9 @@ Swal.fire({
                 if (result.isConfirmed) {
                   Swal.fire({
                     title:
-                      "사용자님의 태그에 맞게 꿀팁 사이트를 확인하실 수 있습니다.",
+                      "스크롤을 내리면 사용자님의 태그에 맞는 꿀팁 사이트를 확인하실 수 있습니다.",
                     text: "슬라이드를 넘겨보세요!",
+                    showCloseButton: true,
                     confirmButtonText: "다음",
                     imageUrl:
                       "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FqhIWh%2Fbtr5ORjGx3u%2FKFSFQMKcOcJ0xxokkLjQuk%2Fimg.png",
@@ -393,8 +396,9 @@ Swal.fire({
                     .then((result) => {
                       if (result.isConfirmed) {
                         Swal.fire({
-                          title: "라이트모드, 다크 모드💡",
+                          title: "라이트 모드, 다크 모드💡",
                           text: "변경 가능합니다!",
+                          showCloseButton: true,
                           confirmButtonText: "다음",
                           image: "https://unsplash.it/400/200",
                           imageWidth: 400,
@@ -406,12 +410,13 @@ Swal.fire({
                             if (result.isConfirmed) {
                               Swal.fire({
                                 title: "오늘의 가계부 사용하시고",
-                                text: "알뜰한 생활하세요~!",
+                                text: "알뜰한 생활하세요🤑",
+                                showCloseButton: true,
                                 confirmButtonText: "확인",
                                 imageUrl:
                                   "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fv47yJ%2Fbtr5Q25EoBg%2Fz3dQtSkqb5OWfKRnsjXmc1%2Fimg.png",
-                                imageWidth: 400,
-                                imageHeight: 200,
+                                imageWidth: 300,
+                                imageHeight: 300,
                                 imageAlt: "Custom image",
                               });
                             }
@@ -423,11 +428,13 @@ Swal.fire({
           }
         });
       }
+      
     });
   } else if (result.isDenied) {
     Swal.fire({
-      title: "역시 한국인은 설명서따위",
-      // confirmButtonText: "확인",
+      title: "한국인은 설명서따위",
+      confirmButtonText: "필요없습니다!",
+      showCloseButton: true,
       imageUrl:
         "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbFZGgl%2Fbtr5PGhWqKN%2FELpuo4dBzEi9N0KWOWKXF0%2Fimg.png",
       imageWidth: 200,
