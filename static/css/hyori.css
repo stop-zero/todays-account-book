@@ -8,7 +8,6 @@ header {
   width: 100%;
   background-color: #87b4fc;
   position: fixed;
-  /* line-height: 42px; */
   top: 0px;
   left: 0px;
   z-index: 50;
@@ -49,11 +48,6 @@ header>.header_left>.h_tag {
 .header_center img {
   width: 100%;
 }
-
-/* .position_shift {
-  color: #fff;
-}
- */
 
 .tag-icon {
   width: 30%;
@@ -295,7 +289,6 @@ header>.header_right>.position_shift {
   font-size: 2.3rem;
   line-height: 70px;
   background: var(--pink-color);
-  /* background-color: rgb(246, 231, 234); */
   height: 9vh;
 }
 
@@ -307,14 +300,12 @@ header>.header_right>.position_shift {
 }
 
 .sec_cal .cal_nav .nav {
-  /* display: flex; */
   border: 1px solid #333333;
   border-radius: 5px;
 }
 
 .sec_cal .cal_nav .go-prev,
 .sec_cal .cal_nav .go-next {
-  /* display: block; */
   width: 50px;
   height: 78px;
   font-size: 0;
@@ -377,12 +368,6 @@ header>.header_right>.position_shift {
   margin: 0.1vw;
 }
 
-/* 
-.current.today {
-  background: var(--current-color);
-}
- */
-
 .current {
   cursor: pointer;
 }
@@ -390,7 +375,6 @@ header>.header_right>.position_shift {
 .clicked {
   background: var(--click-color);
 
-  /* background-color: rgb(246, 231, 234); */
 }
 
 .clickedCategory {
@@ -520,38 +504,3 @@ header>.header_right>.position_shift {
     padding-bottom: 15px;
   }
 }
-
-/* 
-.clickedCd {
-  background-color: #0081f3;
-  color: white;
-}
-
-.clickedEp {
-  background-color: #0081f3;
-  color: white;
-}
- */
-/* 
-.article {
-  width: 100%;
-  height: 70vh;
-  background-color: beige;
-  display: flex;
-  flex-direction: row;
-}
-
-.article_left {
-  width: 60%;
-  height: 100%;
-  background-color: beige;
-}
-
-.article_right {
-  width: 40%;
-  height: 100%;
-  background-color: azure;
-}
-
-
-*/
