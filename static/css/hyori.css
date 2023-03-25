@@ -257,6 +257,8 @@ header>.header_right>.position_shift {
   --click-color: rgb(246, 231, 234);
   --current-color: rgb(255, 255, 255);
   --font-color-current: #757373;
+  --plus-color: blue;
+  --minus-color: red;
 }
 
 .darkmode {
@@ -269,6 +271,8 @@ header>.header_right>.position_shift {
   --click-color: rgb(151, 138, 141);
   --current-color: rgb(139, 138, 138);
   --font-color-current: white;
+  --plus-color: #3b6ffa;
+  --minus-color: #ed2961;
 }
 
 /* section calendar */
@@ -458,6 +462,7 @@ header>.header_right>.position_shift {
 
 .plus {
   color: #3b6ffa;
+
 }
 
 .minus {
