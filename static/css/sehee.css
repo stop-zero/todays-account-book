@@ -17,6 +17,7 @@
   --font-color: black;
   --blue-color: #86a2d0;
 }
+
 .darkmode {
   --pink-color: #2e2e2e;
 
@@ -50,6 +51,7 @@
   border: 2px solid #0081f3;
   border-radius: 30px 30px 30px 30px;
   text-align: center;
+  box-shadow: 0px 0px 22px 4px rgba(0, 0, 0, 0.15);
 }
 
 .credit {
@@ -113,6 +115,7 @@
   transition: 0.5s;
   text-align: center;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .ep:hover {
@@ -225,6 +228,7 @@ input:focus {
 }
 
 @media screen and (max-width: 1180px) {
+
   .cd,
   .ep {
     width: 2.5rem;
