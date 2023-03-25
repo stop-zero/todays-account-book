@@ -380,6 +380,10 @@ header > .header_right > .position_shift {
   background: var(--current-color);
 }
  */
+
+.current {
+  cursor: pointer;
+}
 .clicked {
   background: var(--click-color);
 
