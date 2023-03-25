@@ -85,10 +85,14 @@ header>.header_right>.position_shift {
   border-top: 1.5px solid #498fff;
   border-bottom: 1.5px solid #498fff;
   box-shadow: 0px 0px 22px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--bg-color);
+  position: relative;
+  z-index: 10;
 }
 
 .article_right {
-  background-color: --bg-color;
+  position: relative;
+  background-color: var(--bg-color);
 }
 
 #dn {
