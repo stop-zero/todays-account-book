@@ -224,17 +224,19 @@ header > .header_right > .position_shift {
   --font-color: black;
   --blue-color: #86a2d0;
   --click-color: rgb(246, 231, 234);
-  --current-color: rgb(242 242 242);
+  --current-color: rgb(255, 255, 255);
+  --font-color-current: #757373;
 }
 .darkmode {
   --pink-color: rgb(45, 45, 125);
 
   --bg-color: rgb(45, 45, 125);
   --font-color-disabled: #252525;
-  --font-color: grey;
+  --font-color: rgb(255, 255, 255);
   --blue-color: grey;
   --click-color: rgb(151, 138, 141);
   --current-color: rgb(139, 138, 138);
+  --font-color-current: white;
 }
 
 /* section calendar */
@@ -330,7 +332,7 @@ header > .header_right > .position_shift {
   align-items: center;
   justify-content: center;
   text-align: left;
-  color: #666;
+  color: var(--font-color-current);
   font-size: 1rem;
   text-align: center;
   border-radius: 5px;
