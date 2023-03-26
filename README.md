@@ -3,7 +3,7 @@ HTML & CSS & JS + node.js expree 서버 사용까지 수업 후 일주일간 개
 
 
 ## 🪙todays-account-book 프로젝트 소개
-1인 생활 가구를 위한 가계부  
+1인 가구를 위한 가계부  
  
  
 ## ⏰ 개발 기간
