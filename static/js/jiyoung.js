@@ -223,6 +223,8 @@ const tag_title = document.querySelector(".tag_title");
 const tagIcon1 = document.querySelector(".tag-icon");
 const tagName1 = document.querySelector(".tag-name");
 
+
+//함수 사용해서 변경하기
 if (getCategory == "식비") {
   tagIcon1.innerHTML = "🍈";
   tagName1.innerHTML = "#내가바로_미식가";
